@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
     # =========================================================================
 
 
-        DB::table('roles')->delete();
+        DB::table('users_roles')->delete();
 
         $roles = [
                 ['name' => 'Admin'],
