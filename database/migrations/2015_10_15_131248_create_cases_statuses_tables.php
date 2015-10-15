@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShipsTable extends Migration
+class CreateCasesStatusTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class CreateShipsTable extends Migration
      */
     public function up()
     {
-         Schema::create('ships',function($table){
+        Schema::create('cases_statuses',function($table){
             $table->increments('id');
-            $table->string('shipName');
-            $table->string('shipDescription');
-            $table->string('shipGPS');
-            $table->decimal('shipHeading');
-            $table->string('shipImg_url');
+            $table->string('slug')->unique();
+            $table->string('name');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -31,6 +28,6 @@ class CreateShipsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ships');
+        Schema::drop('cases_statuses');
     }
 }

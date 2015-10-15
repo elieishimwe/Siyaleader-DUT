@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubCategoriesTable extends Migration
+class CreateCaseActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class CreateSubCategoriesTable extends Migration
      */
     public function up()
     {
-         Schema::create('sub-categories',function($table){
+        Schema::create('case_activities',function($table){
             $table->increments('id');
-            $table->string('slug')->unique();
-            $table->string('name');
-            $table->integer('category');
+            $table->integer('case_id');
+            $table->integer('user');
+            $table->string('note');
+            $table->integer('addressbook');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CreateSubCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sub-categories');
+        Schema::drop('case_activities');
     }
 }

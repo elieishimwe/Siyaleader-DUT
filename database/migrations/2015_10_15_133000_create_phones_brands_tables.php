@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCriticalTeamUsers extends Migration
+class CreatePhonesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateCriticalTeamUsers extends Migration
      */
     public function up()
     {
-        Schema::create('critical_team',function($table){
+        Schema::create('phone_brands',function($table){
             $table->increments('id');
-            $table->integer('user');
+            $table->string('slug')->unique();
+            $table->string('name');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -28,6 +28,6 @@ class CreateCriticalTeamUsers extends Migration
      */
     public function down()
     {
-     Schema::drop('critical_team');
+        Schema::drop('phone_brands');
     }
 }

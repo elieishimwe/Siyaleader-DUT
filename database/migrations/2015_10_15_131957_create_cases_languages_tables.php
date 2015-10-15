@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRespondersTable extends Migration
+class CreateCasesLanguagesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,10 @@ class CreateRespondersTable extends Migration
      */
     public function up()
     {
-        Schema::create('responders',function($table){
+        Schema::create('cases_languages',function($table){
             $table->increments('id');
-            $table->integer('department');
-            $table->integer('category');
-            $table->integer('sub_category');
-            $table->integer('sub_sub_category');
-            $table->integer('firstResponder');
-            $table->integer('secondResponder');
-            $table->integer('thirdResponder');
+            $table->string('slug')->unique();
+            $table->string('name');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -33,6 +28,6 @@ class CreateRespondersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('responders');
+        Schema::drop('cases_languages');
     }
 }

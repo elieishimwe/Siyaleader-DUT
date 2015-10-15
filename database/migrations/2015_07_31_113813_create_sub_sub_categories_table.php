@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMessagesTables extends Migration
+class CreateSubSubCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class CreateMessagesTables extends Migration
      */
     public function up()
     {
-        Schema::create('messages',function($table){
+         Schema::create('sub_sub_categories',function($table){
             $table->increments('id');
-            $table->integer('from');
-            $table->integer('to');
-            $table->string('message');
+            $table->string('slug')->unique();
+            $table->string('name');
+            $table->integer('sub_category');
+            $table->string('color');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CreateMessagesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('messages');
+        Schema::drop('sub_sub_categories');
     }
 }

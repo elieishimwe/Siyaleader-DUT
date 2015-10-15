@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaseNotesTable extends Migration
+class CreatePhonesNetworksTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,13 @@ class CreateCaseNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('caseNotes',function($table){
+        Schema::create('phone_networks',function($table){
             $table->increments('id');
-            $table->integer('caseId');
-            $table->integer('user');
-            $table->text('note');
+            $table->string('slug')->unique();
+            $table->string('name');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
-
     }
 
     /**
@@ -30,6 +28,6 @@ class CreateCaseNotesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('caseNotes');
+        Schema::drop('phone_networks');
     }
 }

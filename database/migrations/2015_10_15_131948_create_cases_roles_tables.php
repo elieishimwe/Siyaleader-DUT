@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistrictTable extends Migration
+class CreateCasesRolesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateDistrictTable extends Migration
      */
     public function up()
     {
-        Schema::create('districts',function($table){
+         Schema::create('cases_roles',function($table){
             $table->increments('id');
-            $table->string('name');
             $table->string('slug')->unique();
-            $table->integer('province');
+            $table->string('name');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ class CreateDistrictTable extends Migration
      */
     public function down()
     {
-        Schema::drop('districts');
+        Schema::drop('cases_roles');
     }
 }

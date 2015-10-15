@@ -4,8 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         <meta name="format-detection" content="telephone=no">
         <meta charset="UTF-8">
-        <meta name="description" content="Siyaleader Ports Case Console Management">
-        <meta name="keywords" content="Siyaleader, Ports, Trasnet,">
+        <meta name="description" content="Siyaleader Durban University of Technology">
+        <meta name="keywords" content="Siyaleader,Durban University of Technology, HIV/AIDS">
         <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
 
         <title>Siyaleader</title>
@@ -17,7 +17,7 @@
         <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('css/generics.css') }}" rel="stylesheet">
     </head>
-    <body id="skin-blur-sunset">
+    <body id="skin-blur-blue">
 
     @if (count($errors) > 0)
     <div class="alert alert-danger">

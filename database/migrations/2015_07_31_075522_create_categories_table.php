@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaseFilesTables extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateCaseFilesTables extends Migration
      */
     public function up()
     {
-          Schema::create('caseFiles',function($table){
+          Schema::create('categories',function($table){
             $table->increments('id');
-            $table->integer('caseId');
-            $table->integer('user');
-            $table->string('file');
-            $table->integer('addressbook');
+            $table->string('slug')->unique();
+            $table->string('name');
+            $table->integer('department');
+            $table->string('color');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateCaseFilesTables extends Migration
      */
     public function down()
     {
-         Schema::drop('caseFiles');
+        Schema::drop('categories');
     }
 }

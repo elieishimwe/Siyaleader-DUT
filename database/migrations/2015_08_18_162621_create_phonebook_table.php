@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaseEscalationTable extends Migration
+class CreatePhoneBookTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,14 @@ class CreateCaseEscalationTable extends Migration
      */
     public function up()
     {
-        Schema::create('caseEscalations',function($table){
+        Schema::create('addressbook',function($table){
             $table->increments('id');
-            $table->integer('caseId');
-            $table->integer('from');
-            $table->integer('to');
-            $table->integer('type');
-            $table->string('message');
+            $table->integer('user');
+            $table->integer('relationship');
+            $table->string('email')->unique();
+            $table->string('cellphone')->unique();
+            $table->string('first_name');
+            $table->string('surname');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class CreateCaseEscalationTable extends Migration
      */
     public function down()
     {
-        Schema::drop('caseEscalations');
+         Schema::drop('addressbook');
     }
 }
