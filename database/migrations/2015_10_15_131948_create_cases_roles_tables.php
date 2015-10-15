@@ -12,7 +12,7 @@ class CreateCasesRolesTables extends Migration
      */
     public function up()
     {
-         Schema::create('cases_roles',function($table){
+         Schema::create('users_roles',function($table){
             $table->increments('id');
             $table->string('slug')->unique();
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateCasesRolesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('cases_roles');
+        Schema::drop('users_roles');
     }
 }
