@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhonesTables extends Migration
+class CreateCasesStatusesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreatePhonesTables extends Migration
      */
     public function up()
     {
-        Schema::create('phone_brands',function($table){
+        Schema::create('cases_statuses',function($table){
             $table->increments('id');
             $table->string('slug')->unique();
             $table->string('name');
@@ -28,6 +28,6 @@ class CreatePhonesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('phone_brands');
+        Schema::drop('cases_statuses');
     }
 }

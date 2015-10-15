@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->integer('ward');
             $table->integer('phone_brand');
             $table->integer('phone_type');
-            $table->integer('phone_brand');
+            $table->integer('phone_network');
             $table->integer('municipality');
             $table->string('img_url');
             $table->string('api_key');

@@ -17,7 +17,7 @@ class CreateMessagesTables extends Migration
             $table->integer('from');
             $table->integer('to');
             $table->string('message');
-            $table->integer('online');
+            $table->integer('message_type');
             $table->integer('case_id');
             $table->integer('read');
             $table->string('subject');

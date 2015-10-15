@@ -25,7 +25,6 @@ class CreateCasesTable extends Migration
             $table->integer('category');
             $table->integer('sub_category');
             $table->integer('sub_sub_category');
-            $table->integer('ward');
             $table->integer('priority');
             $table->integer('status');
             $table->string('gps_lat');
