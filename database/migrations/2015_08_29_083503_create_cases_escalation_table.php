@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaseNotesTable extends Migration
+class CreateCasesEscalationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,16 @@ class CreateCaseNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('case_notes',function($table){
+        Schema::create('cases_escalations',function($table){
             $table->increments('id');
             $table->integer('case_id');
-            $table->integer('user');
-            $table->text('note');
+            $table->integer('from');
+            $table->integer('to');
+            $table->integer('type');
+            $table->string('message');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
-
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateCaseNotesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('case_notes');
+        Schema::drop('cases_escalations');
     }
 }

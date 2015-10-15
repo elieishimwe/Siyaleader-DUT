@@ -7,7 +7,7 @@ class addressbook extends Eloquent
 
 
     protected $table    = 'addressbook';
-    protected $fillable = ['user','relationship','email','cellphone','FirstName','Surname'];
+    protected $fillable = ['user','relationship','email','cellphone','first_name','surname'];
 
 
 

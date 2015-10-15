@@ -6,7 +6,7 @@ class SubCategory extends Eloquent
 {
 
 
-    protected $table    = 'sub-categories';
+    protected $table    = 'sub_categories';
     protected $fillable = ['name','slug','active','category'];
 
 

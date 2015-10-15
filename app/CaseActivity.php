@@ -6,8 +6,8 @@ class CaseActivity extends Eloquent
 {
 
 
-    protected $table    = 'caseActivities';
-    protected $fillable = ['caseId','user','note','active','addressbook'];
+    protected $table    = 'cases_activities';
+    protected $fillable = ['case_id','user','note','active','addressbook'];
 
 
 

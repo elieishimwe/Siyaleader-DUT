@@ -6,8 +6,8 @@ class CaseNote extends Eloquent
 {
 
 
-    protected $table    = 'caseNotes';
-    protected $fillable = ['caseId','user','note','active'];
+    protected $table    = 'cases_notes';
+    protected $fillable = ['case_id','user','note','active'];
 
 
 

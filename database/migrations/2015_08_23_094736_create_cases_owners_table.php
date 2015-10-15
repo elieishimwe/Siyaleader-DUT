@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaseOwnersTable extends Migration
+class CreateCasesOwnersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCaseOwnersTable extends Migration
      */
     public function up()
     {
-       Schema::create('case_owners',function($table){
+       Schema::create('cases_owners',function($table){
             $table->increments('id');
             $table->integer('case_id');
             $table->integer('user');
@@ -31,6 +31,6 @@ class CreateCaseOwnersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('case_owners');
+        Schema::drop('cases_owners');
     }
 }

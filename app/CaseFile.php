@@ -6,8 +6,8 @@ class CaseFile extends Eloquent
 {
 
 
-    protected $table    = 'caseFiles';
-    protected $fillable = ['caseId','user','file','active','addressbook','fileNote'];
+    protected $table    = 'cases_files';
+    protected $fillable = ['case_id','user','file','active','addressbook','file_note'];
 
 
 

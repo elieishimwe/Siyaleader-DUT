@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaseFilesTables extends Migration
+class CreateCasesFilesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCaseFilesTables extends Migration
      */
     public function up()
     {
-          Schema::create('case_files',function($table){
+          Schema::create('cases_files',function($table){
             $table->increments('id');
             $table->integer('case_id');
             $table->integer('user');
@@ -32,6 +32,6 @@ class CreateCaseFilesTables extends Migration
      */
     public function down()
     {
-         Schema::drop('case_files');
+         Schema::drop('cases_files');
     }
 }
