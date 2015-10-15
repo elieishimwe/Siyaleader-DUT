@@ -8,6 +8,8 @@ use App\Department;
 use App\Province;
 use App\District;
 use App\Municipality;
+use App\UserRole;
+use App\Ward;
 
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +28,24 @@ class DatabaseSeeder extends Seeder
         Model::reguard();
 
     # =========================================================================
+    # ROLES SEEDS
+    # =========================================================================
+
+
+        DB::table('users_roles')->delete();
+
+        $roles = [
+                ['name' => 'Admin','slug' => 'Admin'],
+                ['name' => 'Call Center Agent','slug'=>'Call_Center_Agent'],
+                ['name' => 'Field Worker','slug' => 'Field_Worker']
+        ];
+
+        foreach ($roles as $role) {
+            UserRole::create($role);
+        }
+
+
+    # =========================================================================
     # USERS SEEDS
     # =========================================================================
 
@@ -38,27 +58,8 @@ class DatabaseSeeder extends Seeder
                         'email'     => 'elie@ubulwembu.net',
                         'password'  =>  bcrypt('198430'),
                         'cellphone' => '0829699114',
-                        'slug'      => 'elie_ishimwe',
                         'role'      => 1
         ]);
-
-
-    # =========================================================================
-    # ROLES SEEDS
-    # =========================================================================
-
-
-        DB::table('users_roles')->delete();
-
-        $roles = [
-                ['name' => 'Admin'],
-                ['name' => 'Call Center Agent'],
-                ['name' => 'Field Worker']
-        ];
-
-        foreach ($roles as $role) {
-            Role::create($role);
-        }
 
 
     # =========================================================================
