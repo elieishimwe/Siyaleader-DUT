@@ -45,7 +45,7 @@
             <form class="box tile animated active" id="box-login" role="form" method="POST" action="{{ url('/auth/login') }}">
                 <h2 class="m-t-0 m-b-15">Login</h2>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="text" class="login-control m-b-10" placeholder="Cellphone number" name="email">
+                <input type="text" class="login-control m-b-10" placeholder="Cellphone number" name="cellphone">
                 <input type="password" class="login-control" placeholder="Password" name="password">
                 <div class="checkbox m-b-20">
                     <label>

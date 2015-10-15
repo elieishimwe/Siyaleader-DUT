@@ -24,6 +24,8 @@ class AuthController extends Controller
 
     protected $redirectPath = '/home';
 
+    protected $username     = 'cellphone';
+
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
