@@ -26,20 +26,20 @@ class HomeController extends Controller
             if (\Auth::user()->role == 1) {
 
                 $numberReferredCases = \DB::table('cases')
-                                ->join('cases_owners', 'cases.id', '=', 'cases_owners.caseId')
+                                ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                                 ->where('cases.status','<>','Pending Closure')
                                 ->where('cases.status','<>','Resolved')
                                 ->groupBy('cases.id')
                                 ->get();
 
                 $numberPendingClosureCases = \DB::table('cases')
-                                            ->join('cases_owners', 'cases.id', '=', 'cases_owners.caseId')
+                                            ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                                             ->where('cases.status','=','Pending Closure')
                                             ->groupBy('cases.id')
                                             ->get();
 
                 $numberResolvedCases = \DB::table('cases')
-                                        ->join('cases_owners', 'cases.id', '=', 'cases_owners.caseId')
+                                        ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                                         ->where('cases.status','=','Resolved')
                                         ->groupBy('cases.id')
                                         ->get();
@@ -52,7 +52,7 @@ class HomeController extends Controller
             else {
 
                 $numberReferredCases = \DB::table('cases')
-                                        ->join('cases_owners', 'cases.id', '=', 'cases_owners.caseId')
+                                        ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                                         ->where('cases.status','<>','Pending Closure')
                                         ->where('cases.status','<>','Resolved')
                                         ->where('cases_owners.user','=',\Auth::user()->id)
@@ -60,14 +60,14 @@ class HomeController extends Controller
                                         ->get();
 
                 $numberPendingClosureCases = \DB::table('cases')
-                                            ->join('cases_owners', 'cases.id', '=', 'cases_owners.caseId')
+                                            ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                                             ->where('cases.status','=','Pending Closure')
                                             ->where('cases_owners.user','=',\Auth::user()->id)
                                             ->groupBy('cases.id')
                                             ->get();
 
                 $numberResolvedCases = \DB::table('cases')
-                                        ->join('cases_owners', 'cases.id', '=', 'cases_owners.caseId')
+                                        ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                                         ->where('cases.status','=','Resolved')
                                         ->where('cases_owners.user','=',\Auth::user()->id)
                                         ->groupBy('cases.id')
