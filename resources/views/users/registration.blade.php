@@ -41,6 +41,16 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('ID No', 'ID No', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::text('id_number',NULL,['class' => 'form-control input-sm','id' => 'id_number']) !!}
+                  @if ($errors->has('id_number')) <p class="help-block red">*{{ $errors->first('id_number') }}</p> @endif
+                </div>
+            </div>
+            <hr class="whiter m-t-20">
+            <hr class="whiter m-b-20">
+
+            <div class="form-group">
                 {!! Form::label('Cell Number', 'Cell Number', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
                   {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
@@ -49,10 +59,26 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('Alternative Cell Number', 'Alternative Cell Number', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::text('alt_cellphone',NULL,['class' => 'form-control input-sm','id' => 'alt_cellphone']) !!}
+                  @if ($errors->has('alt_cellphone')) <p class="help-block red">*{{ $errors->first('alt_cellphone') }}</p> @endif
+              </div>
+            </div>
+
+            <div class="form-group">
                 {!! Form::label('Email', 'Email', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
                   {!! Form::text('email',NULL,['class' => 'form-control input-sm','email']) !!}
                   @if ($errors->has('email')) <p class="help-block red">*{{ $errors->first('email') }}</p> @endif
+              </div>
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('Alternative Email', 'Alternative Email', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::text('alt_email',NULL,['class' => 'form-control input-sm','alt_email']) !!}
+                  @if ($errors->has('alt_email')) <p class="help-block red">*{{ $errors->first('alt_email') }}</p> @endif
               </div>
             </div>
 

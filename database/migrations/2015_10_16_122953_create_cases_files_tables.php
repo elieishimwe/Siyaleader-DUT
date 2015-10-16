@@ -12,7 +12,7 @@ class CreateCasesFilesTables extends Migration
      */
     public function up()
     {
-          Schema::create('cases_files',function($table){
+        Schema::create('cases_files',function($table){
             $table->increments('id');
             $table->integer('case_id');
             $table->integer('user');
@@ -32,6 +32,5 @@ class CreateCasesFilesTables extends Migration
      */
     public function down()
     {
-         Schema::drop('cases_files');
-    }
+        Schema::drop('cases_files');    }
 }

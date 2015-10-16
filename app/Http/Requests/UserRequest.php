@@ -24,12 +24,12 @@ class UserRequest extends Request
     public function rules()
     {
         return [
-            'Fname'        =>'required',
-            'Sname'        =>'required',
-            'Province'     =>'required|not_in:0',
-            'District'     =>'required|not_in:0',
-            'Position'     =>'required|not_in:0',
-            'Department'   =>'required|not_in:0',
+            'name'         =>'required',
+            'surname'      =>'required',
+            'province'     =>'required|not_in:0',
+            'district'     =>'required|not_in:0',
+            'position'     =>'required|not_in:0',
+            'department'   =>'required|not_in:0',
             'Cell1'        =>'required|not_in:0|digits:10|unique:users,email',
             'Email'        =>'email|unique:users,username'
 

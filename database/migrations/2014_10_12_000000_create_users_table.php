@@ -17,7 +17,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email')->unique();
+            $table->string('alt_email');
             $table->string('cellphone')->unique();
+            $table->string('alt_cellphone');
             $table->string('title');
             $table->integer('position');
             $table->integer('role');
@@ -28,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->integer('province');
             $table->integer('district');
             $table->integer('ward');
+            $table->string('area');
             $table->integer('phone_brand');
             $table->integer('phone_type');
             $table->integer('phone_network');
@@ -38,6 +41,7 @@ class CreateUsersTable extends Migration
             $table->integer('availability');
             $table->datetime('last_login');
             $table->datetime('last_logout');
+            $table->integer('registrar');
             $table->boolean('active')->default(1);
             $table->rememberToken();
             $table->timestamps();
