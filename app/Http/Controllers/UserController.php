@@ -86,12 +86,11 @@ class UserController extends Controller
         $user->surname      = $request['surname'];
         $user->cellphone    = $request['cellphone'];
         $user->email        = $request['email'];
-
-        $position           = Position::where('slug','=',$request['Position'])->first();
+        $position           = Position::where('slug','=',$request['position'])->first();
         $user->position     = $position->id;
-        $province           = Province::where('slug','=',$request['Province'])->first();
+        $province           = Province::where('slug','=',$request['province'])->first();
         $user->province     = $province->id;
-        $district           = District::where('slug','=',$request['District'])->first();
+        $district           = District::where('slug','=',$request['district'])->first();
         $user->district     = $district->id;
         $municipalityIds    = array();
         foreach ($request['Municipality'] as $municipalityName) {
