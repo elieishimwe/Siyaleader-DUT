@@ -94,21 +94,6 @@
             <hr class="whiter m-t-20">
             <hr class="whiter m-b-20">
 
-            <div class="form-group">
-                {!! Form::label('Department', 'Department', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-6">
-                  {!! Form::select('department',$selectDepartments,0,['class' => 'form-control input-sm' ,'id' => 'department']) !!}
-                  @if ($errors->has('department')) <p class="help-block red">*{{ $errors->first('department') }}</p> @endif
-              </div>
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('Position', 'Position', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-6">
-                  {!! Form::select('position',$selectPositions,0,['class' => 'form-control input-sm' ,'id' => 'position']) !!}
-                  @if ($errors->has('position')) <p class="help-block red">*{{ $errors->first('position') }}</p> @endif
-              </div>
-            </div>
 
             <div class="form-group">
               {!! Form::label('Province', 'Province', array('class' => 'col-md-2 control-label')) !!}
@@ -141,6 +126,27 @@
                 @if ($errors->has('ward')) <p class="help-block red">*{{ $errors->first('ward') }}</p> @endif
               </div>
             </div>
+
+            <hr class="whiter m-t-20">
+            <hr class="whiter m-b-20">
+
+            <div class="form-group">
+                {!! Form::label('Department', 'Department', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-6">
+                  {!! Form::select('department',$selectDepartments,0,['class' => 'form-control input-sm' ,'id' => 'department']) !!}
+                  @if ($errors->has('department')) <p class="help-block red">*{{ $errors->first('department') }}</p> @endif
+              </div>
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('Position', 'Position', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-6">
+                  {!! Form::select('position',$selectPositions,0,['class' => 'form-control input-sm' ,'id' => 'position']) !!}
+                  @if ($errors->has('position')) <p class="help-block red">*{{ $errors->first('position') }}</p> @endif
+              </div>
+            </div>
+
+
 
             <div class="form-group">
               {!! Form::label('Business Unit', 'Business Unit', array('class' => 'col-md-2 control-label')) !!}
