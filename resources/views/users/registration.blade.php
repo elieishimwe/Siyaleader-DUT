@@ -89,6 +89,14 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('Ward', 'Ward', array('class' => 'col-md-2 control-label')) !!}
+              <div class="col-md-10">
+                {!! Form::select('ward',$selectWards,0,['class' => 'form-control input-sm' ,'name' => 'ward','id' => 'ward']) !!}
+                @if ($errors->has('ward')) <p class="help-block red">*{{ $errors->first('ward') }}</p> @endif
+              </div>
+            </div>
+
+            <div class="form-group">
               {!! Form::label('Business Unit', 'Business Unit', array('class' => 'col-md-2 control-label')) !!}
               <div class="col-md-10">
                 {!! Form::select('Department',$selectDepartments,0,['class' => 'form-control' ,'id' => 'department']) !!}
@@ -112,32 +120,47 @@
 <script>
    $(document).ready(function() {
 
-      $("#Province").change(function(){
+      $("#province").change(function(){
 
         $.get("{{ url('/api/dropdown/districts/province')}}",
         { option: $(this).val()},
         function(data) {
-        $('#District').empty();
+        $('#district').empty();
         $('#municipality').empty();
-        $('#District').removeAttr('disabled');
-        $('#District').append("<option value='0'>Select one</option>");
-        $('#Municipality').append("<option value='0'>Select one</option>");
+        $('#ward').empty();
+        $('#district').removeAttr('disabled');
+        $('#district').append("<option value='0'>Select one</option>");
+        $('#municipality').append("<option value='0'>Select one</option>");
+        $('#ward').append("<option value='0'>Select one</option>");
         $.each(data, function(key, element) {
-        $('#District').append("<option value="+ key +">" + element + "</option>");
+        $('#district').append("<option value="+ key +">" + element + "</option>");
         });
         });
 
    })
 
-    $("#District").change(function(){
+    $("#district").change(function(){
         $.get("{{ url('/api/dropdown/municipalities/district')}}",
         { option: $(this).val() },
         function(data) {
-        $('#Municipality').empty();
-        $('#Municipality').removeAttr('disabled');
-        $('#Municipality').append("<option value='0'>Select one</option>");
+        $('#municipality').empty();
+        $('#municipality').removeAttr('disabled');
+        $('#municipality').append("<option value='0'>Select one</option>");
         $.each(data, function(key, element) {
-        $('#Municipality').append("<option value="+ key +">" + element + "</option>");
+        $('#municipality').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+    });
+
+    $("#municipality").change(function(){
+        $.get("{{ url('/api/dropdown/wards/municipalities')}}",
+        { option: $(this).val() },
+        function(data) {
+        $('#ward').empty();
+        $('#ward').removeAttr('disabled');
+        $('#ward').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#ward').append("<option value="+ key +">" + element + "</option>");
         });
         });
     });

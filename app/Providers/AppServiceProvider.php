@@ -7,6 +7,7 @@ use App\Department;
 use App\Province;
 use App\District;
 use App\Municipality;
+use App\Ward;
 use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
@@ -95,6 +96,18 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
+        if (\Schema::hasTable('wards'))
+        {
+            $wards          = Ward::all();
+            $selectWards    = array();
+            $selectWards[0] = "Select / All";
+            foreach ($wards as $ward) {
+               $selectWards[$ward->slug] = $ward->name;
+            }
+
+             \View::share('selectWards',$selectWards);
+
+        }
 
         if (\Schema::hasTable('categories'))
         {

@@ -477,15 +477,15 @@ if ($from == 'district')
   $object = District::where('slug','=',$name)->first();
 }
 
-if ($from == 'province')
+if ($from == 'municipalities')
 {
-  $listing = DB::table($to)->where($from,$object->id)->lists('name', 'slug');
-}
-else {
-  $listing = DB::table($to)->where($from,$object->id)->lists('name', 'slug');
+  $object = Municipality::where('slug','=',$name)->first();
 }
 
+$listing = DB::table($to)->where($from,$object->id)->lists('name', 'slug');
+
 return $listing;
+
 });
 
 Route::get('/api/dropdownCategory/{to}/{from}', function($to,$from){
