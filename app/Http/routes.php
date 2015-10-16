@@ -57,20 +57,10 @@ Route::get('list-roles', ['middleware' => 'auth', function()
 
 Route::get('roles-list', ['middleware' => 'auth', 'uses' => 'RolesController@index']);
 
-Route::get('add-user', ['middleware' => 'auth', function()
+Route::get('add-role', ['middleware' => 'auth', function()
 {
     return view('users.registration');
 }]);
-
-
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::controllers([
-    'auth'     => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
 
 
 /*
@@ -79,7 +69,6 @@ Route::controllers([
 |--------------------------------------------------------------------------
 |
 */
-
 
 
 

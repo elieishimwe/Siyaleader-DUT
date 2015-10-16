@@ -143,7 +143,7 @@
                         </a>
                         <ul class="list-unstyled menu-item">
                          @if ( Auth::user()->role == 1)
-                            <li><a href="{{ url('list-users') }}">Roles  <span class="badge">{{ count($noUsers,0) }}</a></li>
+                            <li><a href="{{ url('list-roles') }}">Roles  <span class="badge">{{ count($noRoles,0) }}</a></li>
                             <li><a href="{{ url('list-users') }}">Users  <span class="badge">{{ count($noUsers,0) }}</a></li>
                             <li><a href="{{ url('list-departments') }}">Departments  <span class="badge">{{ count($noDepartments,0) }}</span></a></li>
                             <li><a href="{{ url('list-positions') }}">Positions</a></li>

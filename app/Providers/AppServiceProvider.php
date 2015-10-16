@@ -16,6 +16,7 @@ use App\User;
 use App\Relationship;
 use App\addressbook;
 use App\Message;
+use App\UserRole;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -222,6 +223,10 @@ class AppServiceProvider extends ServiceProvider
             $noUsers = User::all();
 
             $view->with('noUsers',$noUsers);
+
+            $noRoles = UserRole::all();
+
+            $view->with('noRoles',$noRoles);
 
 
           }

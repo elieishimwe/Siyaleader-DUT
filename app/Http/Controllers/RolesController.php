@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\UserRole;
 
 class RolesController extends Controller
 {
@@ -15,7 +16,10 @@ class RolesController extends Controller
      */
     public function index()
     {
-        //
+        $roles = UserRole::select(array('id','name','created_at'));
+        return \Datatables::of($roles)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->make(true);
     }
 
     /**
