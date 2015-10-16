@@ -127,6 +127,14 @@
               </div>
             </div>
 
+            <div class="form-group">
+                {!! Form::label('Area', 'Area', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-6">
+                  {!! Form::text('area',NULL,['class' => 'form-control input-sm','area']) !!}
+                  @if ($errors->has('area')) <p class="help-block red">*{{ $errors->first('area') }}</p> @endif
+              </div>
+            </div>
+
             <hr class="whiter m-t-20">
             <hr class="whiter m-b-20">
 
@@ -143,16 +151,6 @@
                 <div class="col-md-6">
                   {!! Form::select('position',$selectPositions,0,['class' => 'form-control input-sm' ,'id' => 'position']) !!}
                   @if ($errors->has('position')) <p class="help-block red">*{{ $errors->first('position') }}</p> @endif
-              </div>
-            </div>
-
-
-
-            <div class="form-group">
-              {!! Form::label('Business Unit', 'Business Unit', array('class' => 'col-md-2 control-label')) !!}
-              <div class="col-md-6">
-                {!! Form::select('Department',$selectDepartments,0,['class' => 'form-control' ,'id' => 'department']) !!}
-                @if ($errors->has('department')) <p class="help-block red">*{{ $errors->first('department') }}</p> @endif
               </div>
             </div>
 
