@@ -13,6 +13,7 @@ use App\Position;
 use App\Province;
 use App\District;
 use App\Municipality;
+use App\Ward;
 use App\Department;
 
 
@@ -97,28 +98,19 @@ class UserController extends Controller
         $user->district      = $district->id;
         $municipality        = Municipality::where('slug','=',$request['municipality'])->first();
         $user->municipality  = $municipality->id;
-
-
-
-
+        $ward                = Ward::where('slug','=',$request['ward'])->first();
+        $user->ward          = $ward->id;
+        $department          = Department::where('slug','=',$request['Department'])->first();
+        $user->department    = $department->id;
         $position            = Position::where('slug','=',$request['position'])->first();
         $user->position      = $position->id;
-
-
-
-
-        $department         = Department::where('slug','=',$request['Department'])->first();
-        $user->department   = $department->id;
-        $password           = rand(1000,99999);
-        $user->password     = \Hash::make($password);
-        $user->api_key      = uniqid();
-        $user->status       = 1;
-        $user->role         = 2;
+        $password            = rand(1000,99999);
+        $user->password      = \Hash::make($password);
+        $user->api_key       = uniqid();
+        $user->created_by    = \Auth::user()->id;
         $user->save();
 
-
          \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
-
 
         $data = array(
             'name'     =>$user->name,
