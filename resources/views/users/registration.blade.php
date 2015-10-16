@@ -82,6 +82,9 @@
               </div>
             </div>
 
+            <hr class="whiter m-t-20">
+            <hr class="whiter m-b-20">
+
             <div class="form-group">
                 {!! Form::label('Position', 'Position', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
