@@ -19,7 +19,7 @@ class RolesController extends Controller
     {
         $roles = UserRole::select(array('id','name','created_at'));
         return \Datatables::of($roles)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateRoleModal({{$id}});" data-target=".modalEditRole">Edit</a>')
                             ->make(true);
     }
 
@@ -41,10 +41,11 @@ class RolesController extends Controller
      */
     public function store(RolesRequest $request)
     {
-        $role       = new UserRole();
-        $role->name = $request['name'];
-        $slug       = preg_replace('/\s+/','-',$request['name']);
-        $role->slug = $slug;
+        $role             = new UserRole();
+        $role->name       = $request['name'];
+        $slug             = preg_replace('/\s+/','-',$request['name']);
+        $role->slug       = $slug;
+        $role->created_by = \Auth::user()->id;
         $role->save();
         \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
         return redirect()->back();
@@ -69,7 +70,8 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role    = UserRole::where('id',$id)->first();
+        return [$role];
     }
 
     /**
@@ -79,9 +81,14 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RolesRequest $request)
     {
-        //
+        $role             = UserRole::where('id',$request['roleID'])->first();
+        $role->name       = $request['name'];
+        $role->updated_by = \Auth::user()->id;
+        $role->save();
+        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully updated!');
+        return redirect()->back();
     }
 
     /**

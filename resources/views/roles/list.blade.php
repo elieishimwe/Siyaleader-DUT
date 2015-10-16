@@ -76,24 +76,24 @@
 
   });
 
-   function launchUpdateDepartmentModal(id)
+   function launchUpdateRoleModal(id)
     {
 
-       $(".modal-body #deptID").val(id);
+       $(".modal-body #roleID").val(id);
        $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/departments/"+ id + "')!!}",
+        url     :"{!! url('/roles/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalDepartment #name").val(data[0].name);
+               $("#modalEditRole #name").val(data[0].name);
 
             }
             else {
-               $("#modalDepartment #name").val('');
+               $("#modalEditRole #name").val('');
             }
 
         }

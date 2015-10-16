@@ -54,12 +54,12 @@ Route::get('list-roles', ['middleware' => 'auth', function()
 {
     return view('roles.list');
 }]);
-
 Route::get('roles-list', ['middleware' => 'auth', 'uses' => 'RolesController@index']);
+Route::get('roles/{id}', ['middleware' => 'auth', 'uses' => 'RolesController@edit']);
+
 
 Route::post('add-role', ['middleware' => 'auth', 'uses' => 'RolesController@store']);
-
-
+Route::post('update-role', ['middleware' => 'auth', 'uses' => 'RolesController@update']);
 
 /*
 |--------------------------------------------------------------------------
