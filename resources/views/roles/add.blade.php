@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id='roleTitle'>Role</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'addRole', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addRoleForm" ]) !!}
+            {!! Form::open(['url' => 'add-role', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addRoleForm" ]) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}

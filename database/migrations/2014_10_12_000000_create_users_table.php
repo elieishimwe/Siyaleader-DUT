@@ -41,7 +41,8 @@ class CreateUsersTable extends Migration
             $table->integer('availability');
             $table->datetime('last_login');
             $table->datetime('last_logout');
-            $table->integer('registrar');
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->boolean('active')->default(1);
             $table->rememberToken();
             $table->timestamps();
