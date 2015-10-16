@@ -126,7 +126,7 @@
 
                     <li {{ (Request::is('map') ? "class=active" : '') }}>
                         <a class="sa-side-home" href="{{ url('map') }}">
-                            <span class="menu-item">Map</span>
+                            <span class="menu-item">Calendar</span>
                         </a>
                     </li>
 
@@ -146,8 +146,8 @@
                             <li><a href="{{ url('list-roles') }}"><span class="badge badge-r">{{ count($noRoles,0) }}</span>Roles</a></li>
                             <li><a href="{{ url('list-users') }}"><span class="badge badge-r">{{ count($noUsers,0) }}</span>Users</a></li>
                             <li><a href="{{ url('list-departments') }}"><span class="badge badge-r">{{ count($noDepartments,0) }}</span>Departments</a></li>
-                            <li><a href="{{ url('list-positions') }}">Positions</a></li>
-                            <li><a href="{{ url('list-relationships') }}">Relationships</a></li>
+                            <li><a href="{{ url('list-positions') }}"><span class="badge badge-r">{{ count($noDepartments,0) }}</span>Positions</a></li>
+                            <li><a href="{{ url('list-relationships') }}"><span class="badge badge-r">{{ count($noDepartments,0) }}</span>Relationships</a></li>
                          @endif
                         </ul>
                     </li>
