@@ -40,7 +40,13 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role       = new UserRole();
+        $role->name = $request['name'];
+        $slug       = preg_replace('/\s+/','-',$request['name']);
+        $role->slug = $slug;
+        $role->save();
+        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**

@@ -57,10 +57,8 @@ Route::get('list-roles', ['middleware' => 'auth', function()
 
 Route::get('roles-list', ['middleware' => 'auth', 'uses' => 'RolesController@index']);
 
-Route::get('add-role', ['middleware' => 'auth', function()
-{
-    return view('users.registration');
-}]);
+Route::post('add-role', ['middleware' => 'auth', 'uses' => 'RolesController@store']);
+
 
 
 /*
