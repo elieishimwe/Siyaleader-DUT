@@ -56,6 +56,21 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
+        if (\Schema::hasTable('users_roles'))
+        {
+            $roles          = UserRole::all();
+            $selectRoles    = array();
+            $selectRoles[0] = "Select / All";
+
+            foreach ($roles as $role) {
+               $selectRoles[$role->slug] = $role->name;
+            }
+
+             \View::share('selectRoles',$selectRoles);
+
+        }
+
+
         if (\Schema::hasTable('provinces'))
         {
             $provinces          = Province::all();

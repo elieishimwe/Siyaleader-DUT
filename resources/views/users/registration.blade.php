@@ -17,6 +17,15 @@
         {!! Form::open(['url' => 'users', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
 
             <div class="form-group">
+                {!! Form::label('User Type', 'User Type', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-6">
+                  {!! Form::select('role',$selectRoles,0,['class' => 'form-control input-sm' ,'id' => 'role']) !!}
+                  @if ($errors->has('role')) <p class="help-block red">*{{ $errors->first('role') }}</p> @endif
+              </div>
+            </div>
+
+
+            <div class="form-group">
                 {!! Form::label('Title', 'Title', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
                   {!! Form::select('title',['Mr' => 'Mr','Mrs' => 'Mrs','Miss' => 'Miss','Ms' => 'Ms'],0,['class' => 'form-control' ,'id' => 'title']) !!}
