@@ -143,9 +143,9 @@
                         </a>
                         <ul class="list-unstyled menu-item">
                          @if ( Auth::user()->role == 1)
-                            <li><a href="{{ url('list-roles') }}">Roles  <span class="badge">{{ count($noRoles,0) }}</a></li>
-                            <li><a href="{{ url('list-users') }}">Users  <span class="badge">{{ count($noUsers,0) }}</a></li>
-                            <li><a href="{{ url('list-departments') }}">Departments  <span class="badge">{{ count($noDepartments,0) }}</span></a></li>
+                            <li><a href="{{ url('list-roles') }}"><span class="badge badge-r">{{ count($noRoles,0) }}</span>Roles</a></li>
+                            <li><a href="{{ url('list-users') }}"><span class="badge badge-r">{{ count($noUsers,0) }}</span>Users</a></li>
+                            <li><a href="{{ url('list-departments') }}"><span class="badge badge-r">{{ count($noDepartments,0) }}</span>Departments</a></li>
                             <li><a href="{{ url('list-positions') }}">Positions</a></li>
                             <li><a href="{{ url('list-relationships') }}">Relationships</a></li>
                          @endif
