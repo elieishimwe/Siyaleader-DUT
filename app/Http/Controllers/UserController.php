@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
+use App\UserRole;
 use App\User;
 use App\Position;
 use App\Province;
@@ -81,6 +82,8 @@ class UserController extends Controller
     public function store(UserRequest $request, User $user)
     {
 
+        $role               = UserRole::where('slug','=',$request['role'])->first();
+        $user->role         = $role->id;
         $user->title        = $request['title'];
         $user->name         = $request['name'];
         $user->surname      = $request['surname'];
