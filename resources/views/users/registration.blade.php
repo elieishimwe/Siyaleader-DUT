@@ -86,6 +86,14 @@
             <hr class="whiter m-b-20">
 
             <div class="form-group">
+                {!! Form::label('Department', 'Department', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::select('department',$selectDepartments,0,['class' => 'form-control input-sm' ,'id' => 'department']) !!}
+                  @if ($errors->has('department')) <p class="help-block red">*{{ $errors->first('department') }}</p> @endif
+              </div>
+            </div>
+
+            <div class="form-group">
                 {!! Form::label('Position', 'Position', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
                   {!! Form::select('position',$selectPositions,0,['class' => 'form-control input-sm' ,'id' => 'position']) !!}
