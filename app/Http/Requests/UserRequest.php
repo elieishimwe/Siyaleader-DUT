@@ -28,12 +28,13 @@ class UserRequest extends Request
             'title'        =>'required|not_in:0',
             'name'         =>'required',
             'surname'      =>'required',
+            'cellphone'    =>'required|not_in:0|digits:10|unique:users,cellphone',
+            'email'        =>'email|unique:users,email',
             'province'     =>'required|not_in:0',
             'district'     =>'required|not_in:0',
             'position'     =>'required|not_in:0',
             'department'   =>'required|not_in:0',
-            'Cell1'        =>'required|not_in:0|digits:10|unique:users,email',
-            'Email'        =>'email|unique:users,username'
+
 
         ];
     }
