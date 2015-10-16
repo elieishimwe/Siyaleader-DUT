@@ -108,7 +108,7 @@
                             <h4 class="m-0">
                                 {{ Auth::user()->name }}  {{ Auth::user()->surname }}
                             </h4>
-                            {{ Auth::user()->username }}
+                            {{ Auth::user()->email }}
                         @endif
 
 
