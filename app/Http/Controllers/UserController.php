@@ -95,8 +95,8 @@ class UserController extends Controller
         $user->province      = $province->id;
         $district            = District::where('slug','=',$request['district'])->first();
         $user->district      = $district->id;
-        $municipality        = Municipality::where('slug','=',$municipalityName)->first();
-        $municipalityIds[]   = $municipality->id;
+        $municipality        = Municipality::where('slug','=',$request['municipality'])->first();
+        $user->municipality  = $municipality->id;
 
 
 
@@ -105,12 +105,8 @@ class UserController extends Controller
         $user->position      = $position->id;
 
 
-        $municipalityIds     = array();
-        foreach ($request['Municipality'] as $municipalityName) {
-            $municipality      = Municipality::where('slug','=',$municipalityName)->first();
-            $municipalityIds[] = $municipality->id;
-        }
-        $user->municipality = implode(",",$municipalityIds);
+
+
         $department         = Department::where('slug','=',$request['Department'])->first();
         $user->department   = $department->id;
         $password           = rand(1000,99999);
