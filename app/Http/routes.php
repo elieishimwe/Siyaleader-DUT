@@ -45,6 +45,46 @@ Route::get('home', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 /*
 |--------------------------------------------------------------------------
+| ROLES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('list-roles', ['middleware' => 'auth', function()
+{
+    return view('roles.list');
+}]);
+
+Route::get('roles-list', ['middleware' => 'auth', 'uses' => 'RolesController@index']);
+
+Route::get('add-user', ['middleware' => 'auth', function()
+{
+    return view('users.registration');
+}]);
+
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+Route::controllers([
+    'auth'     => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+
+/*
+|--------------------------------------------------------------------------
+| END ROLES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
+
+/*
+|--------------------------------------------------------------------------
 | USERS ROUTING
 |--------------------------------------------------------------------------
 |
