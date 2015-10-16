@@ -153,7 +153,7 @@
     });
 
     $("#municipality").change(function(){
-        $.get("{{ url('/api/dropdown/wards/municipalities')}}",
+        $.get("{{ url('/api/dropdown/wards/municipality')}}",
         { option: $(this).val() },
         function(data) {
         $('#ward').empty();

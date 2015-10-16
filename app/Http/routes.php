@@ -477,7 +477,7 @@ if ($from == 'district')
   $object = District::where('slug','=',$name)->first();
 }
 
-if ($from == 'municipalities')
+if ($from == 'municipality')
 {
   $object = Municipality::where('slug','=',$name)->first();
 }
