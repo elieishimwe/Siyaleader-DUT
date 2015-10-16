@@ -81,12 +81,12 @@ class UserController extends Controller
     public function store(UserRequest $request, User $user)
     {
 
+        $user->title        = $request['title'];
+        $user->name         = $request['name'];
+        $user->surname      = $request['surname'];
+        $user->cellphone    = $request['cellphone'];
+        $user->email        = $request['email'];
 
-        $user->name         = $request['Fname'];
-        $user->surname      = $request['Sname'];
-        $user->cellphone    = $request['Cell1'];
-        $user->username     = $request['Email'];
-        $user->email        = $request['Cell1'];
         $position           = Position::where('slug','=',$request['Position'])->first();
         $user->position     = $position->id;
         $province           = Province::where('slug','=',$request['Province'])->first();
