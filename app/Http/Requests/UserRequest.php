@@ -24,6 +24,8 @@ class UserRequest extends Request
     public function rules()
     {
         return [
+            'role'         =>'required|not_in:0',
+            'title'        =>'required|not_in:0',
             'name'         =>'required',
             'surname'      =>'required',
             'province'     =>'required|not_in:0',

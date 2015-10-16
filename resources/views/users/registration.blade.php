@@ -28,7 +28,7 @@
             <div class="form-group">
                 {!! Form::label('Title', 'Title', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                  {!! Form::select('title',['Mr' => 'Mr','Mrs' => 'Mrs','Miss' => 'Miss','Ms' => 'Ms'],0,['class' => 'form-control' ,'id' => 'title']) !!}
+                  {!! Form::select('title',['0' => 'Select/All','Mr' => 'Mr','Mrs' => 'Mrs','Miss' => 'Miss','Ms' => 'Ms'],0,['class' => 'form-control' ,'id' => 'title']) !!}
                   @if ($errors->has('surname')) <p class="help-block red">*{{ $errors->first('surname') }}</p> @endif
                 </div>
             </div>
