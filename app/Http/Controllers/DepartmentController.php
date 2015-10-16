@@ -46,6 +46,7 @@ class DepartmentController extends Controller
         $department->name = $request['name'];
         $slug             = preg_replace('/\s+/','-',$request['name']);
         $department->slug = $slug;
+        $department->created_by = \Auth::user()->id;
         $department->save();
         \Session::flash('success', 'well done! Department '.$request['name'].' has been successfully added!');
         return redirect()->back();
@@ -87,8 +88,9 @@ class DepartmentController extends Controller
 
         $dept       = Department::where('id',$request['deptID'])->first();
         $dept->name = $request['name'];
+        $dept->updated_by = \Auth::user()->id;
         $dept->save();
-        \Session::flash('success', $request['name'].' has been successfully updated!');
+        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
         return redirect()->back();
     }
 
