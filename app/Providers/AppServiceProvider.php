@@ -214,6 +214,16 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('noInboxMessages',$noInboxMessages);
 
+
+            $noDepartments = Department::all();
+
+            $view->with('noDepartments',$noDepartments);
+
+            $noUsers = User::all();
+
+            $view->with('noUsers',$noUsers);
+
+
           }
 
 

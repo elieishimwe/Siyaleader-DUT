@@ -9,7 +9,7 @@
         <meta name="keywords" content="Siyaleader, Ports, Transnet,Port Management System,Incidents Management System">
         <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
 
-        <title>Siyaleader Ports</title>
+        <title>Siyaleader D.U.T</title>
 
         <!-- CSS -->
         <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -143,8 +143,8 @@
                         </a>
                         <ul class="list-unstyled menu-item">
                          @if ( Auth::user()->role == 1)
-                            <li><a href="{{ url('list-users') }}">Users</a></li>
-                            <li><a href="{{ url('list-departments') }}">Departments</a></li>
+                            <li><a href="{{ url('list-users') }}">Users  <span class="badge">{{ count($noUsers,0) }}</a></li>
+                            <li><a href="{{ url('list-departments') }}">Departments  <span class="badge">{{ count($noDepartments,0) }}</span></a></li>
                             <li><a href="{{ url('list-positions') }}">Positions</a></li>
                             <li><a href="{{ url('list-relationships') }}">Relationships</a></li>
                          @endif

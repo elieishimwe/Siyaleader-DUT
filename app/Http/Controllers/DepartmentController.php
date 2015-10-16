@@ -47,7 +47,7 @@ class DepartmentController extends Controller
         $slug             = preg_replace('/\s+/','-',$request['name']);
         $department->slug = $slug;
         $department->save();
-        \Session::flash('success', 'well done! '.$request['name'].'department has been successfully added!');
+        \Session::flash('success', 'well done! Department '.$request['name'].' has been successfully added!');
         return redirect()->back();
     }
 
