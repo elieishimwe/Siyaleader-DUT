@@ -12,7 +12,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Roles Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddRoleModal();" data-target=".modalAddRole">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddRole">
      Add Role
     </a>
 </div>
