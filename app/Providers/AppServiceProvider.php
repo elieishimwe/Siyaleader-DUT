@@ -243,6 +243,14 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('noRoles',$noRoles);
 
+            $noPositions = Position::all();
+
+            $view->with('noPositions',$noPositions);
+
+            $noRelationships = Relationship::all();
+
+            $view->with('noRelationships',$noRelationships);
+
 
           }
 
