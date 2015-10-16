@@ -82,20 +82,30 @@ class UserController extends Controller
     public function store(UserRequest $request, User $user)
     {
 
-        $role               = UserRole::where('slug','=',$request['role'])->first();
-        $user->role         = $role->id;
-        $user->title        = $request['title'];
-        $user->name         = $request['name'];
-        $user->surname      = $request['surname'];
-        $user->cellphone    = $request['cellphone'];
-        $user->email        = $request['email'];
-        $position           = Position::where('slug','=',$request['position'])->first();
-        $user->position     = $position->id;
-        $province           = Province::where('slug','=',$request['province'])->first();
-        $user->province     = $province->id;
-        $district           = District::where('slug','=',$request['district'])->first();
-        $user->district     = $district->id;
-        $municipalityIds    = array();
+        $role                = UserRole::where('slug','=',$request['role'])->first();
+        $user->role          = $role->id;
+        $user->title         = $request['title'];
+        $user->name          = $request['name'];
+        $user->surname       = $request['surname'];
+        $user->cellphone     = $request['cellphone'];
+        $user->alt_cellphone = $request['alt_cellphone'];
+        $user->email         = $request['email'];
+        $user->alt_email     = $request['alt_email'];
+        $province            = Province::where('slug','=',$request['province'])->first();
+        $user->province      = $province->id;
+        $district            = District::where('slug','=',$request['district'])->first();
+        $user->district      = $district->id;
+        $municipality        = Municipality::where('slug','=',$municipalityName)->first();
+        $municipalityIds[]   = $municipality->id;
+
+
+
+
+        $position            = Position::where('slug','=',$request['position'])->first();
+        $user->position      = $position->id;
+
+
+        $municipalityIds     = array();
         foreach ($request['Municipality'] as $municipalityName) {
             $municipality      = Municipality::where('slug','=',$municipalityName)->first();
             $municipalityIds[] = $municipality->id;
