@@ -81,7 +81,7 @@ class UserController extends Controller
     public function store(UserRequest $request, User $user)
     {
 
-        /*  New User Table */
+
         $user->name         = $request['Fname'];
         $user->surname      = $request['Sname'];
         $user->cellphone    = $request['Cell1'];
