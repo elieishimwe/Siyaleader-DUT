@@ -6,7 +6,7 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="#">Users</a></li>
-    <li class="active">User Registration Form</li>
+    <li class="active">Registration Form</li>
 </ol>
 <h4 class="page-title">USERS</h4>
 
