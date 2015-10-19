@@ -36,10 +36,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::select(array('id','created_at','name','surname','email','username'));
+        $users = User::select(array('id','created_at','name','surname','email','username','cellphone'));
 
         return \Datatables::of($users)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" href="{{ url("resend_password/$id") }}" >Resend password</a>
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" href="{{ url("resend_password/$id") }}" >Edit</a>
 
 
                                         '

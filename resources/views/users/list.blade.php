@@ -4,7 +4,7 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="#">Users</a></li>
+    <li><a href="{{ url('list-users') }}">Users</a></li>
     <li class="active">Users Listing</li>
 </ol>
 
@@ -34,7 +34,7 @@
                     <th>Surname</th>
                     <th>Cell Number</th>
                     <th>Email</th>
-                    <th>Password</th>
+                    <th>Actions</th>
               </tr>
             </thead>
         </table>
@@ -58,8 +58,8 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: 'name', name: 'name'},
                 {data: 'surname', name: 'surname'},
+                {data: 'cellphone', name: 'cellphone'},
                 {data: 'email', name: 'email'},
-                {data: 'username', name: 'username'},
                 {data: 'actions',  name: 'actions'}
 
                ],
