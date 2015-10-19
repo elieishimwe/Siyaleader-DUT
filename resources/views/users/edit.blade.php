@@ -56,7 +56,7 @@
             <div class="form-group">
                 {!! Form::label('Cell Number', 'Cell Number', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                  {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
+                  {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone','disabled']) !!}
                   @if ($errors->has('Cellphone')) <p class="help-block red">*{{ $errors->first('Cellphone') }}</p> @endif
               </div>
             </div>
@@ -72,7 +72,7 @@
             <div class="form-group">
                 {!! Form::label('Email', 'Email', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                  {!! Form::text('email',NULL,['class' => 'form-control input-sm','id' => 'email']) !!}
+                  {!! Form::text('email',NULL,['class' => 'form-control input-sm','id' => 'email','disabled']) !!}
                   @if ($errors->has('email')) <p class="help-block red">*{{ $errors->first('email') }}</p> @endif
               </div>
             </div>
