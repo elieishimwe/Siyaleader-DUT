@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Relationship;
+use App\Http\Requests\RelationshipsRequest;
 
 class RelationshipController extends Controller
 {
@@ -16,7 +18,10 @@ class RelationshipController extends Controller
      */
     public function index()
     {
-        //
+        $relationships = Relationship::select(array('id','name','created_at'));
+        return \Datatables::of($relationships)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateRelationshipModal({{$id}});" data-target=".modalEditRelationship">Edit</a>')
+                            ->make(true);
     }
 
     /**
@@ -35,9 +40,16 @@ class RelationshipController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(RelationshipsRequest $request)
     {
-        //
+        $relatitionship       = new Relationship();
+        $relatitionship->name = $request['name'];
+        $relatitionship->created_by = \Auth::user()->id;
+        $slug           = preg_replace('/\s+/','-',$request['name']);
+        $relatitionship->slug = $slug;
+        $relatitionship->save();
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**

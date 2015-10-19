@@ -278,6 +278,33 @@ Route::get('getContacts', ['middleware' => 'auth', 'uses' => 'AddressBookControl
 */
 
 
+/*
+|--------------------------------------------------------------------------
+| POSITIONS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('list-relationships', ['middleware' => 'auth', function()
+{
+    return view('relationships.list');
+
+}]);
+
+Route::get('relationships-list', ['middleware' => 'auth', 'uses' => 'RelationshipController@index']);
+Route::get('relationships/{id}', ['middleware' => 'auth', 'uses' => 'RelationshipController@edit']);
+Route::post('updateRelationship', ['middleware' => 'auth', 'uses' => 'RelationshipController@update']);
+Route::post('addRelationship', ['middleware' => 'auth', 'uses' => 'RelationshipController@store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| END POSITIONS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 
 
