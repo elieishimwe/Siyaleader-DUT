@@ -145,7 +145,7 @@
                          @if ( Auth::user()->role == 1)
                             <li><a href="{{ url('list-departments') }}"><span class="badge badge-r">{{ count($noDepartments,0) }}</span>Departments</a></li>
                             <li><a href="{{ url('list-positions') }}"><span class="badge badge-r">{{ count($noPositions,0) }}</span>Positions</a></li>
-                            <li><a href="{{ url('list-provinces') }}"><span class="badge badge-r">{{ count($noPositions,0) }}</span>Provinces</a></li>
+                            <li><a href="{{ url('list-provinces') }}"><span class="badge badge-r">{{ count($noProvinces,0) }}</span>Provinces</a></li>
                             <li><a href="{{ url('list-relationships') }}"><span class="badge badge-r">{{ count($noRelationships,0) }}</span>Relationships</a></li>
                             <li><a href="{{ url('list-roles') }}"><span class="badge badge-r">{{ count($noRoles,0) }}</span>Roles</a></li>
                             <li><a href="{{ url('list-users') }}"><span class="badge badge-r">{{ count($noUsers,0) }}</span>Users</a></li>

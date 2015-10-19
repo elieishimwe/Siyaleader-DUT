@@ -21,6 +21,7 @@ use App\Title;
 use App\Language;
 
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -283,6 +284,9 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('noRelationships',$noRelationships);
 
+            $noProvinces = Province::all();
+
+            $view->with('noProvinces',$noProvinces);
 
           }
 
