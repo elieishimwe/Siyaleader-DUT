@@ -4,7 +4,7 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="#">Relationships</a></li>
+    <li><a href="{{ url('list-relationships') }}">Relationships</a></li>
     <li class="active">Relationships Listing</li>
 </ol>
 
