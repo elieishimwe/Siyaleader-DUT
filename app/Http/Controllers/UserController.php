@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Controllers\Controller;
 use App\UserRole;
 use App\User;
@@ -180,14 +181,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(UserRequest $request)
+    public function update(UpdateUserRequest $request)
     {
         $user       = User::where('id',$request['userID'])->first();
-        dd($user);
         $user->name = $request['name'];
         $user->updated_by = \Auth::user()->id;
         $user->save();
-        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
+        \Session::flash('success', 'well done! User '.$request['name'].' has been successfully updated!');
         return redirect()->back();
     }
 
