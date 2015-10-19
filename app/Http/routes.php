@@ -142,6 +142,32 @@ Route::post('addDepartment', ['middleware' => 'auth', 'uses' => 'DepartmentContr
 */
 
 
+/*
+|--------------------------------------------------------------------------
+| PROVINCES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('list-provinces', ['middleware' => 'auth', function()
+{
+    return view('provinces.list');
+}]);
+
+Route::get('provinces-list', ['middleware' => 'auth', 'uses' => 'ProvincesController@index']);
+Route::get('provinces/{id}', ['middleware' => 'auth', 'uses' => 'ProvincesController@edit']);
+Route::post('updateProvince', ['middleware' => 'auth', 'uses' => 'ProvincesController@update']);
+Route::post('addProvince', ['middleware' => 'auth', 'uses' => 'ProvincesController@store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| END PROVINCES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
 
 /*
 |--------------------------------------------------------------------------

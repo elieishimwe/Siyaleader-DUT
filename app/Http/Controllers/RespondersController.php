@@ -18,12 +18,12 @@ class RespondersController extends Controller
     public function index($id)
     {
 
-        $caseResponders = \DB::table('caseOwners')
+        $caseResponders = \DB::table('cases_owners')
                         ->where('caseId','=',$id)
                         ->where('type','>',0)
-                        ->join('users','users.id','=','caseOwners.user')
+                        ->join('users','users.id','=','cases_owners.user')
                         ->join('positions','users.position','=','positions.id')
-                        ->select(array('users.id','users.name','users.surname','users.cellphone','positions.name as position','caseOwners.type','caseOwners.accept'));
+                        ->select(array('users.id','users.name','users.surname','users.cellphone','positions.name as position','cases_owners.type','cases_owners.accept'));
 
         return \Datatables::of($caseResponders)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-dest="{{$id}}" data-name="{{$name}} {{$surname}}" data-toggle="modal" onClick="launchMessageModal({{$id}},this);" data-target=".compose-message"><i class="fa fa-envelope"></i></a>'

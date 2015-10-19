@@ -52,22 +52,22 @@ class CasesController extends Controller
         if (\Auth::user()->role == 1) {
 
               $cases = \DB::table('cases')
-                ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                 ->where('cases.status','<>','Pending Closure')
                 ->where('cases.status','<>','Resolved')
-                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
+                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,cases_owners.accept,cases_owners.type"))
                 ->groupBy('cases.id');
 
         }
         else {
 
               $cases = \DB::table('cases')
-                ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
                 ->whereIn('cases.id',$caseIds)
-                ->where('caseOwners.user','=',\Auth::user()->id)
+                ->where('cases_owners.user','=',\Auth::user()->id)
                 ->where('cases.status','<>','Pending Closure')
                 ->where('cases.status','<>','Resolved')
-                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
+                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,cases_owners.accept,cases_owners.type"))
                 ->groupBy('cases.id');
 
         }
