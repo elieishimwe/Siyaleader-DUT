@@ -186,6 +186,7 @@ class UserController extends Controller
         $user       = User::where('id',$request['userID'])->first();
         $user->name = $request['name'];
         $user->updated_by = \Auth::user()->id;
+        $user->updated_at =  \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         $user->save();
         \Session::flash('success', 'well done! User '.$request['name'].' has been successfully updated!');
         return redirect()->back();
