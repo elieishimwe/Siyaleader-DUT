@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'updateProvince', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateProvinceForm" ]) !!}
-            {!! Form::hidden('deptID',NULL,['id' => 'deptID']) !!}
+            {!! Form::hidden('provinceID',NULL,['id' => 'provinceID']) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}
