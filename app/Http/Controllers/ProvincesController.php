@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Province;
 
 class ProvincesController extends Controller
 {
@@ -15,7 +16,10 @@ class ProvincesController extends Controller
      */
     public function index()
     {
-        //
+        $provinces = Province::select(array('id','name','created_at'));
+        return \Datatables::of($provinces)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->make(true);
     }
 
     /**
