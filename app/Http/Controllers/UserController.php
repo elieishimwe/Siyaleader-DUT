@@ -117,7 +117,7 @@ class UserController extends Controller
 
          \Session::flash('success', $request['name'].' '.$request['surname'].' has been added successfully!');
 
-      /*  $data = array(
+        $data = array(
             'name'     =>$user->name,
             'username' =>$user->email,
             'password' =>$user->password,
@@ -126,9 +126,9 @@ class UserController extends Controller
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
             $message->from('info@siyaleader.net', 'Siyaleader');
-            $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
+            $message->to($user->email)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
-        });*/
+        });
 
         return redirect('list-users');
 
