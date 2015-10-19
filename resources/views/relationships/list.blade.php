@@ -87,11 +87,11 @@
             if(data[0] !== null)
             {
 
-               $("#modalRelationship #name").val(data[0].name);
+               $("#modalEditRelationship #name").val(data[0].name);
 
             }
             else {
-               $("#modalRelationship #name").val('');
+               $("#modalEditRelationship #name").val('');
             }
 
         }

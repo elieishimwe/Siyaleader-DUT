@@ -85,6 +85,7 @@ class PositionsController extends Controller
     {
         $position       = Position::where('id',$request['positionID'])->first();
         $position->name = $request['name'];
+        $position->updated_by = \Auth::user()->id;
         $position->save();
         \Session::flash('success', $request['name'].' has been successfully updated!');
         return redirect()->back();

@@ -1,14 +1,14 @@
 <!-- Modal Default -->
-<div class="modal fade modalEditPosition" id="modalPosition" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modalEditRelationship" id="modalEditRelationship" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id='depTitle'>Position</h4>
+                <h4 class="modal-title" id='depTitle'>Relationship</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'updatePosition', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updatePositionForm" ]) !!}
-            {!! Form::hidden('positionID',NULL,['id' => 'positionID']) !!}
+            {!! Form::open(['url' => 'updateRelationship', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateRelationshipForm" ]) !!}
+            {!! Form::hidden('relationshipID',NULL,['id' => 'relationshipID']) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" id='submitUpdatePositionForm' type="button" class="btn btn-sm">Save Changes</button>
+                    <button type="submit" id='submitUpdateRelationshipForm' type="button" class="btn btn-sm">Save Changes</button>
                 </div>
             </div>
             </div>

@@ -71,7 +71,8 @@ class RelationshipController extends Controller
      */
     public function edit($id)
     {
-        //
+        $relationship    = Relationship::where('id',$id)->first();
+        return [$relationship];
     }
 
     /**
@@ -81,9 +82,14 @@ class RelationshipController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(RelationshipsRequest $request)
     {
-        //
+        $relationship       = Relationship::where('id',$request['relationshipID'])->first();
+        $relationship->name = $request['name'];
+        $relationship->updated_by = \Auth::user()->id;
+        $relationship->save();
+        \Session::flash('success', $request['name'].' has been successfully updated!');
+        return redirect()->back();
     }
 
     /**
