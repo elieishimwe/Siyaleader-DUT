@@ -16,6 +16,8 @@ class CreatePhonesNetworksTables extends Migration
             $table->increments('id');
             $table->string('slug')->unique();
             $table->string('name');
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

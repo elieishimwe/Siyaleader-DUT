@@ -18,6 +18,8 @@ class CreateDistrictTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->integer('province');
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

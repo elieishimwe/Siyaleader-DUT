@@ -18,6 +18,8 @@ class CreateSubCategoriesTable extends Migration
             $table->string('name');
             $table->integer('category');
             $table->string('color');
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

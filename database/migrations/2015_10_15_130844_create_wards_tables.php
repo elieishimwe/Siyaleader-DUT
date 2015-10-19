@@ -17,6 +17,8 @@ class CreateWardsTables extends Migration
             $table->string('slug')->unique();
             $table->integer('name');
             $table->integer('municipality');
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
