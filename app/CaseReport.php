@@ -7,7 +7,7 @@ class CaseReport extends Eloquent
 
 
     protected $table    = 'cases';
-    protected $fillable = ['description','user','department','category','sub_category','sub_sub_category','priority','status','gps_lat','gps_lng','img_url','active','severity'];
+    protected $fillable = ['description','user','department','category','sub_category','sub_sub_category','priority','status','gps_lat','gps_lng','img_url','active','severity','source'];
 
 
 

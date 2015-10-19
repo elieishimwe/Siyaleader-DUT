@@ -33,6 +33,7 @@ class CreateCasesTable extends Migration
             $table->integer('addressbook');
             $table->integer('reporter');
             $table->integer('severity');
+            $table->integer('source');
             $table->dateTime('accepted_at');
             $table->dateTime('referred_at');
             $table->dateTime('escalated_at');
