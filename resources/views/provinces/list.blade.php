@@ -12,7 +12,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Provinces Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddDepartmentModal();" data-target=".modalAddDepartment">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddProvince">
      Add Province
     </a>
 </div>
@@ -28,7 +28,7 @@
     @endif
 
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="departmentsTable">
+        <table class="table tile table-striped" id="provincesTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -40,8 +40,8 @@
         </table>
     </div>
 </div>
-@include('departments.edit')
-@include('departments.add')
+@include('provinces.edit')
+@include('provinces.add')
 @endsection
 
 @section('footer')
@@ -49,12 +49,12 @@
  <script>
   $(document).ready(function() {
 
-  var oTable     = $('#departmentsTable').DataTable({
+  var oTable     = $('#provincesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/departments-list/')!!}",
+                "ajax": "{!! url('/provinces-list/')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
