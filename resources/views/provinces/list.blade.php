@@ -5,15 +5,15 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-provinces') }}">Provinces</a></li>
-    <li class="active">Departments Listing</li>
+    <li class="active">Provinces Listing</li>
 </ol>
 
-<h4 class="page-title">DEPARTMENTS</h4>
+<h4 class="page-title">PROVINCES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
-    <h3 class="block-title">Departments Listing</h3>
+    <h3 class="block-title">Provinces Listing</h3>
     <a class="btn btn-sm" data-toggle="modal" onClick="launchAddDepartmentModal();" data-target=".modalAddDepartment">
-     Add Department
+     Add Province
     </a>
 </div>
 
