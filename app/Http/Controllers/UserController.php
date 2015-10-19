@@ -159,8 +159,9 @@ class UserController extends Controller
             ->join('titles', 'users.title', '=', 'titles.id')
             ->join('provinces', 'users.province', '=', 'provinces.id')
             ->join('districts', 'users.district', '=', 'districts.id')
+            ->join('departments', 'users.department', '=', 'departments.id')
             ->where('users.id','=',$id)
-            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district"))
+            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department"))
             ->first();
 
         return [$user];
