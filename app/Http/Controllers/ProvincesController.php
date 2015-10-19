@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProvinceRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Province;
@@ -75,9 +76,14 @@ class ProvincesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProvinceRequest $request)
     {
-        //
+        $province       = Province::where('id',$request['provinceID'])->first();
+        $province->name = $request['name'];
+        $province->updated_by = \Auth::user()->id;
+        $province->save();
+        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
