@@ -86,7 +86,7 @@ class UserController extends Controller
 
         $role                = UserRole::where('slug','=',$request['role'])->first();
         $user->role          = $role->id;
-        $title               = Title::where('slug','=',$request['province'])->first();
+        $title               = Title::where('slug','=',$request['title'])->first();
         $user->title         = $title->id;
         $user->name          = $request['name'];
         $user->surname       = $request['surname'];
@@ -102,7 +102,7 @@ class UserController extends Controller
         $user->municipality  = $municipality->id;
         $ward                = Ward::where('slug','=',$request['ward'])->first();
         $user->ward          = $ward->id;
-        $department          = Department::where('slug','=',$request['Department'])->first();
+        $department          = Department::where('slug','=',$request['department'])->first();
         $user->department    = $department->id;
         $position            = Position::where('slug','=',$request['position'])->first();
         $user->position      = $position->id;
@@ -160,8 +160,9 @@ class UserController extends Controller
             ->join('provinces', 'users.province', '=', 'provinces.id')
             ->join('districts', 'users.district', '=', 'districts.id')
             ->join('departments', 'users.department', '=', 'departments.id')
+            ->join('positions', 'users.position', '=', 'positions.id')
             ->where('users.id','=',$id)
-            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department"))
+            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department,positions.slug as position"))
             ->first();
 
         return [$user];
@@ -177,6 +178,7 @@ class UserController extends Controller
     public function update(UserRequest $request)
     {
         $user       = User::where('id',$request['userID'])->first();
+        dd($user);
         $user->name = $request['name'];
         $user->updated_by = \Auth::user()->id;
         $user->save();
