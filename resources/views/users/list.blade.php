@@ -91,6 +91,7 @@
                $("#modalEditUser #role").val(data[0].role);
                $("#modalEditUser #title").val(data[0].title);
                $("#modalEditUser #name").val(data[0].name);
+               $("#modalEditUser #area").val(data[0].area);
                $("#modalEditUser #surname").val(data[0].surname);
                $("#modalEditUser #email").val(data[0].email);
                $("#modalEditUser #alt_email").val(data[0].alt_email);
@@ -105,6 +106,7 @@
                $("#modalEditUser #district").val(data[0].district);
                $("#modalEditUser #municipality").val(data[0].municipality);
                $("#modalEditUser #ward").val(data[0].ward);
+
 
 
 

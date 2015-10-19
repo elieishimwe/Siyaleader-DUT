@@ -124,7 +124,7 @@
             <div class="form-group">
                 {!! Form::label('Area', 'Area', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                  {!! Form::text('area',NULL,['class' => 'form-control input-sm','area']) !!}
+                  {!! Form::text('area',NULL,['class' => 'form-control input-sm','id' => 'area']) !!}
                   @if ($errors->has('area')) <p class="help-block red">*{{ $errors->first('area') }}</p> @endif
               </div>
             </div>
