@@ -16,6 +16,7 @@ use App\Municipality;
 use App\Ward;
 use App\Department;
 use App\Title;
+use App\Language;
 
 
 class UserController extends Controller
@@ -88,6 +89,8 @@ class UserController extends Controller
         $user->role          = $role->id;
         $title               = Title::where('slug','=',$request['title'])->first();
         $user->title         = $title->id;
+        $language            = Language::where('slug','=',$request['language'])->first();
+        $user->language      = $language->id;
         $user->name          = $request['name'];
         $user->surname       = $request['surname'];
         $user->cellphone     = $request['cellphone'];
@@ -112,9 +115,9 @@ class UserController extends Controller
         $user->created_by    = \Auth::user()->id;
         $user->save();
 
-         \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
+         \Session::flash('success', $request['name'].' '.$request['surname'].' has been added successfully!');
 
-        $data = array(
+      /*  $data = array(
             'name'     =>$user->name,
             'username' =>$user->email,
             'password' =>$user->password,
@@ -125,7 +128,7 @@ class UserController extends Controller
             $message->from('info@siyaleader.net', 'Siyaleader');
             $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
-        });
+        });*/
 
         return redirect('list-users');
 

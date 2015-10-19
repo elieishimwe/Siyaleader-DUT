@@ -18,6 +18,7 @@ use App\addressbook;
 use App\Message;
 use App\UserRole;
 use App\Title;
+use App\Language;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -56,6 +57,21 @@ class AppServiceProvider extends ServiceProvider
              \View::share('selectTitles',$selectTitles);
 
         }
+
+         if (\Schema::hasTable('languages'))
+        {
+            $languages          = Language::all();
+            $selectLanguages    = array();
+            $selectLanguages[0] = "Select / All";
+
+            foreach ($languages as $language) {
+               $selectLanguages[$language->slug] = $language->name;
+            }
+
+             \View::share('selectLanguages',$selectLanguages);
+
+        }
+
 
 
          if (\Schema::hasTable('departments'))

@@ -11,6 +11,7 @@ use App\Municipality;
 use App\UserRole;
 use App\Ward;
 use App\Title;
+use App\Language;
 
 
 class DatabaseSeeder extends Seeder
@@ -63,6 +64,25 @@ class DatabaseSeeder extends Seeder
         foreach ($titles as $title) {
             Title::create($title);
         }
+
+
+    # =========================================================================
+    # LANGUAGES SEEDS
+    # =========================================================================
+
+
+        DB::table('languages')->delete();
+
+        $languages = [
+                ['name' => 'English','slug' => 'EN'],
+                ['name' => 'IsiZulu','slug'=>'Zulu'],
+                ['name' => 'IsiXhosa','slug' => 'Xhosa']
+        ];
+
+        foreach ($languages as $language) {
+            Language::create($language);
+        }
+
 
 
 
