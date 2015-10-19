@@ -36,7 +36,7 @@
             <div class="form-group">
                 {!! Form::label('Preferred Language', 'Preferred Language', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                {!! Form::select('title',$selectLanguages,0,['class' => 'form-control' ,'id' => 'language']) !!}
+                {!! Form::select('language',$selectLanguages,0,['class' => 'form-control' ,'id' => 'language']) !!}
                 @if ($errors->has('language')) <p class="help-block red">*{{ $errors->first('language') }}</p> @endif
               </div>
             </div>
@@ -71,7 +71,7 @@
                 {!! Form::label('Cell Number', 'Cell Number', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
                   {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
-                  @if ($errors->has('Cellphone')) <p class="help-block red">*{{ $errors->first('Cellphone') }}</p> @endif
+                  @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
               </div>
             </div>
 
