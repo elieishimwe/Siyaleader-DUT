@@ -154,12 +154,9 @@ class UserController extends Controller
 
          $user = \DB::table('users')
             ->join('users_roles', 'users.role', '=', 'users_roles.id')
-            ->join('provinces', 'users.province', '=', 'provinces.id')
             ->where('users.id','=',$id)
             ->select(\DB::raw("users.id,users.name,users_roles.slug as role"))
             ->first();
-
-            dd($user);
 
         return [$user];
     }
