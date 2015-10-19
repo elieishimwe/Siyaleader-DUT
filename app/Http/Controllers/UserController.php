@@ -184,6 +184,9 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request)
     {
         $user       = User::where('id',$request['userID'])->first();
+        $role       = UserRole::where('slug','=',$request['role'])->first();
+        $user->role = $role->id;
+        $user->name = $request['name'];
         $user->name = $request['name'];
         $user->updated_by = \Auth::user()->id;
         $user->updated_at =  \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
