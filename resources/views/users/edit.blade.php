@@ -72,7 +72,7 @@
             <div class="form-group">
                 {!! Form::label('Email', 'Email', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                  {!! Form::text('email',NULL,['class' => 'form-control input-sm','email']) !!}
+                  {!! Form::text('email',NULL,['class' => 'form-control input-sm','id' => 'email']) !!}
                   @if ($errors->has('email')) <p class="help-block red">*{{ $errors->first('email') }}</p> @endif
               </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="form-group">
                 {!! Form::label('Alternative Email', 'Alternative Email', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
-                  {!! Form::text('alt_email',NULL,['class' => 'form-control input-sm','alt_email']) !!}
+                  {!! Form::text('alt_email',NULL,['class' => 'form-control input-sm','id' => 'alt_email']) !!}
                   @if ($errors->has('alt_email')) <p class="help-block red">*{{ $errors->first('alt_email') }}</p> @endif
               </div>
             </div>

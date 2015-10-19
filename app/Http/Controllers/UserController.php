@@ -162,10 +162,12 @@ class UserController extends Controller
             ->join('titles', 'users.title', '=', 'titles.id')
             ->join('provinces', 'users.province', '=', 'provinces.id')
             ->join('districts', 'users.district', '=', 'districts.id')
+            ->join('municipalities', 'users.municipality', '=', 'municipalities.id')
+            ->join('wards', 'users.ward', '=', 'wards.id')
             ->join('departments', 'users.department', '=', 'departments.id')
             ->join('positions', 'users.position', '=', 'positions.id')
             ->where('users.id','=',$id)
-            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users.cellphone,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department,positions.slug as position"))
+            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users.cellphone,users.email,users.alt_email,users.alt_cellphone,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department,positions.slug as position,municipalities.slug as municipality"))
             ->first();
 
         return [$user];
