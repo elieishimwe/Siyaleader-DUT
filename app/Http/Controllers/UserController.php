@@ -152,7 +152,15 @@ class UserController extends Controller
     public function edit($id,User $user)
     {
 
-        $user    = User::where('id',$id)->first();
+         $user = \DB::table('users')
+            ->join('users_roles', 'users.role', '=', 'users_roles.id')
+            ->join('provinces', 'users.province', '=', 'provinces.id')
+            ->where('users.id','=',$id)
+            ->select(\DB::raw("users.id,users.name,users_roles.slug as role"))
+            ->first();
+
+            dd($user);
+
         return [$user];
     }
 
