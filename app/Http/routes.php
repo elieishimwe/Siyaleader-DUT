@@ -102,6 +102,8 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('users/{id}', ['middleware' => 'auth', 'uses' => 'UserController@edit']);
+
 
 /*
 |--------------------------------------------------------------------------

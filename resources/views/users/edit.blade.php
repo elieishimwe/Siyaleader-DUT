@@ -1,21 +1,15 @@
-@extends('master')
-
-@section('content')
-
-<!-- Breadcrumb -->
-<ol class="breadcrumb hidden-xs">
-    <li><a href="#">Administration</a></li>
-    <li><a href="{{ url('list-users') }}">Users</a></li>
-    <li class="active">Registration Form</li>
-</ol>
-<h4 class="page-title">USERS</h4>
-
-<!-- Basic with panel-->
-<div class="block-area" id="basic">
-    <h3 class="block-title">Registration Form</h3>
-    <div class="tile p-15">
-        {!! Form::open(['url' => 'users', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
-
+<!-- Modal Default -->
+<div class="modal fade modalEditUser" id="modalEditUser" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id='depTitle'>User</h4>
+            </div>
+            <div class="modal-body">
+            {!! Form::open(['url' => 'updateUser', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateUserForm" ]) !!}
+            {!! Form::hidden('userID',NULL,['id' => 'userID']) !!}
+            {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('User Type', 'User Type', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
@@ -155,67 +149,16 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-6">
-                    <button type="submit" id='submitMemberForm' class="btn btn-info btn-sm m-t-10">SUBMIT FORM</button>
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" id='submitUpdateUserForm' type="button" class="btn btn-sm">Save Changes</button>
                 </div>
             </div>
+            </div>
+            <div class="modal-footer">
 
-        {!! Form::close() !!}
+            </div>
+
+            {!! Form::close() !!}
+        </div>
     </div>
 </div>
-
-@endsection
-
-@section('footer')
-<script>
-   $(document).ready(function() {
-
-      $("#province").change(function(){
-
-        $.get("{{ url('/api/dropdown/districts/province')}}",
-        { option: $(this).val()},
-        function(data) {
-        $('#district').empty();
-        $('#municipality').empty();
-        $('#ward').empty();
-        $('#district').removeAttr('disabled');
-        $('#district').append("<option value='0'>Select one</option>");
-        $('#municipality').append("<option value='0'>Select one</option>");
-        $('#ward').append("<option value='0'>Select one</option>");
-        $.each(data, function(key, element) {
-        $('#district').append("<option value="+ key +">" + element + "</option>");
-        });
-        });
-
-   })
-
-    $("#district").change(function(){
-        $.get("{{ url('/api/dropdown/municipalities/district')}}",
-        { option: $(this).val() },
-        function(data) {
-        $('#municipality').empty();
-        $('#municipality').removeAttr('disabled');
-        $('#municipality').append("<option value='0'>Select one</option>");
-        $.each(data, function(key, element) {
-        $('#municipality').append("<option value="+ key +">" + element + "</option>");
-        });
-        });
-    });
-
-    $("#municipality").change(function(){
-        $.get("{{ url('/api/dropdown/wards/municipality')}}",
-        { option: $(this).val() },
-        function(data) {
-        $('#ward').empty();
-        $('#ward').removeAttr('disabled');
-        $('#ward').append("<option value='0'>Select one</option>");
-        $.each(data, function(key, element) {
-        $('#ward').append("<option value="+ key +">" + element + "</option>");
-        });
-        });
-    });
-
-  })
-
-</script>
-@endsection

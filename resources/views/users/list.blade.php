@@ -40,8 +40,8 @@
         </table>
     </div>
 </div>
+@include('users.edit')
 @endsection
-
 @section('footer')
 
  <script>
@@ -72,5 +72,47 @@
          });
 
   });
+
+    function launchUpdateUserModal(id)
+    {
+
+       $(".modal-body #userID").val(id);
+       $.ajax({
+        type    :"GET",
+        dataType:"json",
+        url     :"{!! url('/users/"+ id + "')!!}",
+        success :function(data) {
+
+            if(data[0] !== null)
+            {
+
+               $("#modalEditUser #role").val(data[0].role);
+               $("#modalEditUser #name").val(data[0].name);
+               $("#modalEditUser #surname").val(data[0].surname);
+               $("#modalEditUser #email").val(data[0].email);
+               $("#modalEditUser #alt_email").val(data[0].alt_email);
+               $("#modalEditUser #cellphone").val(data[0].cellphone);
+               $("#modalEditUser #alt_cellphone").val(data[0].alt_cellphone);
+               $("#modalEditUser #position").val(data[0].position);
+               $("#modalEditUser #role").val(data[0].role);
+               $("#modalEditUser #language").val(data[0].language);
+               $("#modalEditUser #id_number").val(data[0].id_number);
+               $("#modalEditUser #department").val(data[0].department);
+               $("#modalEditUser #province").val(data[0].province);
+               $("#modalEditUser #district").val(data[0].district);
+               $("#modalEditUser #municipality").val(data[0].municipality);
+               $("#modalEditUser #ward").val(data[0].ward);
+
+
+
+            }
+            else {
+               $("#modalEditUser #name").val('');
+            }
+
+        }
+    });
+
+    }
 </script>
 @endsection

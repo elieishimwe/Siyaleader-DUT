@@ -39,7 +39,7 @@ class UserController extends Controller
         $users = User::select(array('id','created_at','name','surname','email','username','cellphone'));
 
         return \Datatables::of($users)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" href="{{ url("resend_password/$id") }}" >Edit</a>
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateUserModal({{$id}});" data-target=".modalEditUser" >Edit</a>
 
 
                                         '
@@ -149,9 +149,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($id,User $user)
     {
-        //
+
+        $user    = User::where('id',$id)->first();
+        return [$user];
     }
 
     /**
