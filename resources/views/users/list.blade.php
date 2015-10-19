@@ -87,6 +87,7 @@
             {
 
                $("#modalEditUser #role").val(data[0].role);
+               $("#modalEditUser #title").val(data[0].title);
                $("#modalEditUser #name").val(data[0].name);
                $("#modalEditUser #surname").val(data[0].surname);
                $("#modalEditUser #email").val(data[0].email);

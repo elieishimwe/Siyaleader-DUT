@@ -10,6 +10,7 @@ use App\District;
 use App\Municipality;
 use App\UserRole;
 use App\Ward;
+use App\Title;
 
 
 class DatabaseSeeder extends Seeder
@@ -43,6 +44,26 @@ class DatabaseSeeder extends Seeder
         foreach ($roles as $role) {
             UserRole::create($role);
         }
+
+
+    # =========================================================================
+    # TITLES SEEDS
+    # =========================================================================
+
+
+        DB::table('titles')->delete();
+
+        $titles = [
+                ['name' => 'Mr','slug' => 'Mr'],
+                ['name' => 'Mrs','slug'=>'Mrs'],
+                ['name' => 'Miss','slug' => 'Miss'],
+                ['name' => 'Ms','slug' => 'Ms']
+        ];
+
+        foreach ($titles as $title) {
+            Title::create($title);
+        }
+
 
 
     # =========================================================================

@@ -17,6 +17,7 @@ use App\Relationship;
 use App\addressbook;
 use App\Message;
 use App\UserRole;
+use App\Title;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -41,6 +42,21 @@ class AppServiceProvider extends ServiceProvider
              \View::share('selectPositions',$selectPositions);
 
         }
+
+        if (\Schema::hasTable('titles'))
+        {
+            $titles          = Title::all();
+            $selectTitles    = array();
+            $selectTitles[0] = "Select / All";
+
+            foreach ($titles as $title) {
+               $selectTitles[$title->slug] = $title->name;
+            }
+
+             \View::share('selectTitles',$selectTitles);
+
+        }
+
 
          if (\Schema::hasTable('departments'))
         {

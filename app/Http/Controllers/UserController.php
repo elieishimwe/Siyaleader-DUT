@@ -15,6 +15,7 @@ use App\District;
 use App\Municipality;
 use App\Ward;
 use App\Department;
+use App\Title;
 
 
 class UserController extends Controller
@@ -85,7 +86,8 @@ class UserController extends Controller
 
         $role                = UserRole::where('slug','=',$request['role'])->first();
         $user->role          = $role->id;
-        $user->title         = $request['title'];
+        $title               = Title::where('slug','=',$request['province'])->first();
+        $user->title         = $title->id;
         $user->name          = $request['name'];
         $user->surname       = $request['surname'];
         $user->cellphone     = $request['cellphone'];
@@ -154,8 +156,10 @@ class UserController extends Controller
 
          $user = \DB::table('users')
             ->join('users_roles', 'users.role', '=', 'users_roles.id')
+            ->join('titles', 'users.title', '=', 'titles.id')
+            ->join('provinces', 'users.province', '=', 'provinces.id')
             ->where('users.id','=',$id)
-            ->select(\DB::raw("users.id,users.name,users_roles.slug as role"))
+            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users_roles.slug as role,titles.slug as title,provinces.slug as province"))
             ->first();
 
         return [$user];
@@ -168,9 +172,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request)
     {
-        //
+        $user       = User::where('id',$request['userID'])->first();
+        $user->name = $request['name'];
+        $user->updated_by = \Auth::user()->id;
+        $user->save();
+        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**

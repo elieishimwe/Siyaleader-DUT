@@ -104,6 +104,8 @@ Route::controllers([
 
 Route::get('users/{id}', ['middleware' => 'auth', 'uses' => 'UserController@edit']);
 
+Route::post('updateUser', ['middleware' => 'auth', 'uses' => 'UserController@update']);
+
 
 /*
 |--------------------------------------------------------------------------
