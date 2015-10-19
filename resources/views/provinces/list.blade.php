@@ -76,24 +76,24 @@
 
   });
 
-   function launchUpdateDepartmentModal(id)
+   function launchUpdateProvinceModal(id)
     {
 
        $(".modal-body #deptID").val(id);
        $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/departments/"+ id + "')!!}",
+        url     :"{!! url('/provinces/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalDepartment #name").val(data[0].name);
+               $("#modalEditProvince #name").val(data[0].name);
 
             }
             else {
-               $("#modalDepartment #name").val('');
+               $("#modalEditProvince #name").val('');
             }
 
         }

@@ -18,7 +18,7 @@ class ProvincesController extends Controller
     {
         $provinces = Province::select(array('id','name','created_at'));
         return \Datatables::of($provinces)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateProvinceModal({{$id}});" data-target=".modalEditProvince">Edit</a>')
                             ->make(true);
     }
 
@@ -60,10 +60,13 @@ class ProvincesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,Province $province)
     {
-        //
+
+        $province    = Province::where('id',$id)->first();
+        return [$province];
     }
+
 
     /**
      * Update the specified resource in storage.
