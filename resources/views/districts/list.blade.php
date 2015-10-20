@@ -1,18 +1,20 @@
 @extends('master')
 
 @section('content')
+
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-districts') }}">Districts</a></li>
+    <li><a href="#">{{ $provinceObj->name }}</a></li>
     <li class="active">Districts Listing</li>
 </ol>
 
-<h4 class="page-title">DISTRICTS</h4>
+<h4 class="page-title">{{ $provinceObj->name }} DISTRICTS</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Districts Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddDistrictModal();" data-target=".modalAddDistrict">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddCategory">
      Add District
     </a>
 </div>
@@ -26,9 +28,8 @@
           <i class="icon">&#61845;</i>
       </div>
     @endif
-
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="districtsTable">
+        <table class="table tile table-striped" id="categoriesTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -40,8 +41,8 @@
         </table>
     </div>
 </div>
-@include('districts.edit')
-@include('districts.add')
+@include('categories.edit')
+@include('categories.add')
 @endsection
 
 @section('footer')
@@ -49,18 +50,19 @@
  <script>
   $(document).ready(function() {
 
-  var oTable     = $('#districtsTable').DataTable({
+  var department = {!! $provinceObj->id !!};
+  var oTable     = $('#categoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/districts-list/')!!}",
+                "ajax": "{!! url('/categories-list/" + department +"')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-categories/" + d.id + "') !!}' class='btn btn-sm'>" + d.name + "</a>";
+                 return "<a href='{!! url('list-sub-categories/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 
@@ -76,24 +78,26 @@
 
   });
 
-   function launchUpdateDepartmentModal(id)
+   function launchUpdateCategoryModal(id)
     {
 
-       $(".modal-body #deptID").val(id);
-       $.ajax({
+      $(".modal-body #categoryID").val(id);
+
+        var cell = $("#case_" + id ).data('mmcell');
+        $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/departments/"+ id + "')!!}",
+        url     :"{!! url('/categories/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalDepartment #name").val(data[0].name);
+               $("#modalEditCategory #name").val(data[0].name);
 
             }
             else {
-               $("#modalDepartment #name").val('');
+               $("#modalEditCategory #name").val('');
             }
 
         }
@@ -103,10 +107,8 @@
 
     @if (count($errors) > 0)
 
-      $('#modalDepartment').modal('show');
+      $('#modalAddCategory').modal('show');
 
     @endif
-
-
 </script>
 @endsection
