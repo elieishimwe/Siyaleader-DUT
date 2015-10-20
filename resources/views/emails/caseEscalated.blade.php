@@ -98,7 +98,7 @@
 
                                                      <tr>
                                                         <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
-                                                        <a href="http://ports.siyaleader.net/registration/public"><strong>Click here to login</strong></a>
+                                                        <a href="{{ env('LIVE_URL') }}"><strong>Click here to login</strong></a>
 
                                                         </td>
                                                     </tr>

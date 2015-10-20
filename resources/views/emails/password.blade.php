@@ -48,7 +48,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        Click here to reset your password: http://ports.siyaleader.net/registration/public/password/reset/{{ $token }}
+                                                        Click here to reset your password: {{ env('LIVE_URL') }}/password/reset/{{ $token }}
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
