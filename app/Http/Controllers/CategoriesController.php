@@ -51,7 +51,7 @@ class CategoriesController extends Controller
          $category->slug       = $slug;
          $category->department = $request['deptID'];
          $category->save();
-        \Session::flash('success', $request['name'].' has been successfully added!');
+        \Session::flash('success', $request['name'].' category has been successfully added!');
         return redirect()->back();
     }
 

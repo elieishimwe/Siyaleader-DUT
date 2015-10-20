@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" id='submitUpdateCategoryForm' type="button" class="btn btn-sm">Save Changes</button>
+                    <button type="submit" id='submitUpdateCategoryForm' type="button" class="btn btn-sm">Add Category</button>
                 </div>
             </div>
             </div>
