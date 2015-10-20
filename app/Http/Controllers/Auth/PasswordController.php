@@ -38,9 +38,9 @@ class PasswordController extends Controller
     {
 
 
-        $this->validate($request, ['username' => 'required|email']);
+        $this->validate($request, ['email' => 'required|email']);
 
-        $response = Password::sendResetLink($request->only('username'), function (Message $message) {
+        $response = Password::sendResetLink($request->only('email'), function (Message $message) {
 
             $message->from('info@siyaleader.net', 'Siyaleader');
             $message->subject("Siyaleader Notification - Your Password Reset Link: ");
@@ -51,7 +51,7 @@ class PasswordController extends Controller
                 return redirect()->back()->with('status', trans($response));
 
             case Password::INVALID_USER:
-                return redirect()->back()->withErrors(['username' => trans($response)]);
+                return redirect()->back()->withErrors(['email' => trans($response)]);
         }
     }
 
@@ -69,12 +69,12 @@ class PasswordController extends Controller
     {
         $this->validate($request, [
             'token' => 'required',
-            'username' => 'required|email',
+            'email' => 'required|email',
             'password' => 'required|confirmed',
         ]);
 
         $credentials = $request->only(
-            'username', 'password', 'password_confirmation', 'token'
+            'email', 'password', 'password_confirmation', 'token'
         );
 
         $response = Password::reset($credentials, function ($user, $password) {
@@ -88,13 +88,13 @@ class PasswordController extends Controller
             default:
                 return redirect()->back()
                             ->withInput($request->only('email'))
-                            ->withErrors(['username' => trans($response)]);
+                            ->withErrors(['email' => trans($response)]);
         }
     }
 
      public function getEmailForPasswordReset()
     {
-        return $this->username;
+        return $this->email;
     }
 
 }

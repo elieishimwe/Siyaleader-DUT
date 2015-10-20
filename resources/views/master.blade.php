@@ -45,8 +45,8 @@
 
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
-            <a class="logo pull-left" href="index.html">
-                <img scr="{{ asset('/images/transnet_1.png') }}"/>
+            <a class="logo pull-left" href="#">
+                <img scr="{{ asset('/images/dashboard_logo.png') }}" height="20px" width="20px" />
             </a>
 
             <div class="media-body">

@@ -45,7 +45,7 @@
                 <h2 class="m-t-0 m-b-15">Password Reset</h2>
                  {!! csrf_field() !!}
                 <input type="hidden" name="token" value="{{ $token }}">
-                <input type="text" class="login-control m-b-10" placeholder="email" name="username">
+                <input type="text" class="login-control m-b-10" placeholder="email" name="email">
                 <input type="password" class="login-control m-b-10" placeholder="Password" name="password">
                 <input type="password" class="login-control m-b-20" placeholder="Password Confirmation" name="password_confirmation">
                 <button class="btn btn-sm m-r-5" type="submit">Reset Password</button>
