@@ -19,6 +19,7 @@ use App\Message;
 use App\UserRole;
 use App\Title;
 use App\Language;
+use App\CaseStatus;
 
 
 
@@ -287,6 +288,10 @@ class AppServiceProvider extends ServiceProvider
             $noProvinces = Province::all();
 
             $view->with('noProvinces',$noProvinces);
+
+            $noCaseStatuses = CaseStatus::all();
+
+            $view->with('noCaseStatuses',$noCaseStatuses);
 
           }
 
