@@ -19,7 +19,7 @@
         <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('css/generics.css') }}" rel="stylesheet">
     </head>
-    <body id="skin-blur-sunset">
+    <body id="skin-blur-blue">
 
     @if (count($errors) > 0)
     <div class="alert alert-danger">
