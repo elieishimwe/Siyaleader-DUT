@@ -116,18 +116,18 @@ class UserController extends Controller
         $user->created_by    = \Auth::user()->id;
         $user->save();
 
-         \Session::flash('success', $request['name'].' '.$request['surname'].' has been added successfully!');
+         \Session::flash('success', $request['name'].' '.$request['surname'].' user has been added successfully!');
 
         $data = array(
             'name'     =>$user->name,
             'username' =>$user->email,
-            'password' =>$user->password,
+            'password' =>$password,
         );
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
             $message->from('info@siyaleader.net', 'Siyaleader');
-            $message->to($user->email)->subject("Siyaleader User Registration Confirmation: " .$user->name);
+            $message->to($user->email)->subject("Siyaleader Notification - User Registration Confirmation: " .$user->name);
 
         });
 

@@ -47,7 +47,7 @@ class PositionsController extends Controller
         $slug           = preg_replace('/\s+/','-',$request['name']);
         $position->slug = $slug;
         $position->save();
-        \Session::flash('success', $request['name'].' has been successfully added!');
+        \Session::flash('success', $request['name'].' position has been successfully added!');
         return redirect()->back();
     }
 
