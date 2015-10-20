@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\CaseStatusRequest;
 use App\Http\Controllers\Controller;
 use App\CaseStatus;
 
@@ -38,9 +39,16 @@ class CasesStatusesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CaseStatusRequest $request)
     {
-        //
+        $department       = new Department();
+        $department->name = $request['name'];
+        $slug             = preg_replace('/\s+/','-',$request['name']);
+        $department->slug = $slug;
+        $department->created_by = \Auth::user()->id;
+        $department->save();
+        \Session::flash('success', 'well done! Department '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
