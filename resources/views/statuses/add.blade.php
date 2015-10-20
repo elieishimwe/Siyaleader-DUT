@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id='depTitle'>Case Status</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'addDepartment', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateDepartmentForm" ]) !!}
+            {!! Form::open(['url' => 'addCaseStatus', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addCaseStatusForm" ]) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}
