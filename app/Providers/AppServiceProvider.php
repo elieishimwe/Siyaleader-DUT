@@ -171,7 +171,7 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
-        if (\Schema::hasTable('sub-categories'))
+        if (\Schema::hasTable('sub_categories'))
         {
             $subCategories       = SubCategory::all();
             $selectSubCategories    = array();
@@ -184,7 +184,7 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
-        if (\Schema::hasTable('sub-sub-categories'))
+        if (\Schema::hasTable('sub_sub_categories'))
         {
             $subSubCategories          = SubSubCategory::all();
             $selectSubSubCategories    = array();

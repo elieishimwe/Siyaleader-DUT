@@ -735,7 +735,7 @@ class CasesController extends Controller
             $case = \DB::table('cases')
             ->join('municipalities', 'cases.precinct', '=', 'municipalities.id')
             ->join('categories', 'cases.category', '=', 'categories.id')
-            ->join('sub-categories', 'cases.sub_category', '=', 'sub-categories.id')
+            ->join('sub_categories', 'cases.sub_category', '=', 'sub_categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
             ->where('cases.id','=',$id)
             ->select(\DB::raw( "
@@ -749,7 +749,7 @@ class CasesController extends Controller
                                     users.email as reporterCell,
                                     municipalities.name as department,
                                     categories.name as category,
-                                    `sub-categories`.name as sub_category,
+                                    `sub_categories`.name as sub_category,
                                     `cases`.sub_sub_category as sub_sub_category "
                             )
                     )
@@ -763,8 +763,8 @@ class CasesController extends Controller
             $case = \DB::table('cases')
             ->join('municipalities', 'cases.precinct', '=', 'municipalities.id')
             ->join('categories', 'cases.category', '=', 'categories.id')
-            ->join('sub-categories', 'cases.sub_category', '=', 'sub-categories.id')
-            ->join('sub-sub-categories', 'cases.sub_sub_category', '=', 'sub-sub-categories.id')
+            ->join('sub_categories', 'cases.sub_category', '=', 'sub_categories.id')
+            ->join('sub_sub_categories', 'cases.sub_sub_category', '=', 'sub_sub_categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
             ->where('cases.id','=',$id)
             ->select(\DB::raw("
@@ -778,8 +778,8 @@ class CasesController extends Controller
                                 users.email as reporterCell,
                                 municipalities.name as department,
                                 categories.name as category,
-                                `sub-categories`.name as sub_category,
-                                `sub-sub-categories`.name as sub_sub_category
+                                `sub_categories`.name as sub_category,
+                                `sub_sub_categories`.name as sub_sub_category
 
                             "))
             ->get();
