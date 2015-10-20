@@ -58,7 +58,7 @@ class UserController extends Controller
     {
         $searchString = \Input::get('q');
         $contacts     = \DB::table('users')
-            ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `username`) LIKE '%{$searchString}%'")
+            ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `email`) LIKE '%{$searchString}%'")
             ->select(\DB::raw('*'))
             ->get();
 
@@ -68,7 +68,7 @@ class UserController extends Controller
         {
 
            foreach ($contacts as $contact) {
-           $data[]= array("name"=>"{$contact->name} {$contact->surname} <{$contact->username}","id" =>"{$contact->id}");
+           $data[]= array("name"=>"{$contact->name} {$contact->surname} <{$contact->email}","id" =>"{$contact->id}");
            }
 
 

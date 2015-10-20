@@ -55,9 +55,9 @@ class RespondersController extends Controller
 
         if($result)
         {
-            $result->firstResponder   = $request['firstResponder'];
-            $result->secondResponder  = $request['secondResponder'];
-            $result->thirdResponder   = $request['thirdResponder'];
+            $result->first_responder   = $request['firstResponder'];
+            $result->second_responder  = $request['secondResponder'];
+            $result->third_responder   = $request['thirdResponder'];
             $result->save();
             \Session::flash('success','Responders have been successfully added!');
             return redirect()->back();
@@ -72,9 +72,9 @@ class RespondersController extends Controller
             $responder->category         = $request['catID'];
             $responder->sub_category     = $request['subCatID'];
             $responder->sub_sub_category = $request['subsubCategoryID'];
-            $responder->firstResponder   = $request['firstResponder'];
-            $responder->secondResponder  = $request['secondResponder'];
-            $responder->thirdResponder   = $request['thirdResponder'];
+            $responder->first_responder   = $request['firstResponder'];
+            $responder->second_responder  = $request['secondResponder'];
+            $responder->third_responder   = $request['thirdResponder'];
             $responder->active           = 1;
             $responder->save();
 
@@ -100,9 +100,9 @@ class RespondersController extends Controller
 
         if($result)
         {
-            $result->firstResponder   = $request['firstResponder'];
-            $result->secondResponder  = $request['secondResponder'];
-            $result->thirdResponder   = $request['thirdResponder'];
+            $result->first_responder   = $request['firstResponder'];
+            $result->second_responder  = $request['secondResponder'];
+            $result->third_responder   = $request['thirdResponder'];
             $result->save();
             \Session::flash('success','Responders have been successfully added!');
             return redirect()->back();
@@ -116,9 +116,9 @@ class RespondersController extends Controller
             $responder->department       = $request['deptID'];
             $responder->category         = $request['catID'];
             $responder->sub_category     = $request['subCatID'];
-            $responder->firstResponder   = $request['firstResponder'];
-            $responder->secondResponder  = $request['secondResponder'];
-            $responder->thirdResponder   = $request['thirdResponder'];
+            $responder->first_responder   = $request['firstResponder'];
+            $responder->second_responder  = $request['secondResponder'];
+            $responder->third_responder   = $request['thirdResponder'];
             $responder->active           = 1;
             $responder->save();
 
@@ -147,21 +147,23 @@ class RespondersController extends Controller
     {
 
         $firstRespondersObj  = CaseResponder::where("sub_category",'=',$id)
-                                                ->select('firstResponder')->first();
+                                                ->select('first_responder')->first();
+
+        \Log::info($firstRespondersObj);
 
         $secondRespondersObj = CaseResponder::where("sub_category",'=',$id)
-                                                ->select('secondResponder')->first();
+                                                ->select('second_responder')->first();
 
         $thirdRespondersObj  = CaseResponder::where("sub_category",'=',$id)
-                                                ->select('thirdResponder')->first();
+                                                ->select('third_responder')->first();
 
         $response            = array();
 
         if (sizeof($firstRespondersObj) > 0) {
 
-            $firstResponders = explode(",",$firstRespondersObj->firstResponder);
+            $firstResponders = explode(",",$firstRespondersObj->first_responder);
 
-                if ($firstRespondersObj->firstResponder > 0) {
+                if ($firstRespondersObj->first_responder > 0) {
 
                            foreach ($firstResponders as $firstResponder) {
 
@@ -186,9 +188,9 @@ class RespondersController extends Controller
 
         if (sizeof($secondRespondersObj) > 0) {
 
-            $secondResponders = explode(",",$secondRespondersObj->secondResponder);
+            $secondResponders = explode(",",$secondRespondersObj->second_responder);
 
-            if ($secondRespondersObj->secondResponder > 0) {
+            if ($secondRespondersObj->second_responder > 0) {
 
                 foreach ($secondResponders as $secondResponder) {
 
@@ -213,9 +215,9 @@ class RespondersController extends Controller
 
         if (sizeof($thirdRespondersObj) > 0) {
 
-            $thirdResponders  = explode(",",$thirdRespondersObj->thirdResponder);
+            $thirdResponders  = explode(",",$thirdRespondersObj->third_responder);
 
-            if ($thirdRespondersObj->thirdResponder > 0) {
+            if ($thirdRespondersObj->third_responder > 0) {
 
                  foreach ($thirdResponders as $thirdResponder) {
 
@@ -251,20 +253,20 @@ class RespondersController extends Controller
     {
 
        $firstRespondersObj  = CaseResponder::where("sub_sub_category",'=',$id)
-                                                ->select('firstResponder')->first();
+                                                ->select('first_responder')->first();
 
         $secondRespondersObj = CaseResponder::where("sub_sub_category",'=',$id)
-                                                ->select('secondResponder')->first();
+                                                ->select('second_responder')->first();
 
         $thirdRespondersObj  = CaseResponder::where("sub_sub_category",'=',$id)
-                                                ->select('thirdResponder')->first();
+                                                ->select('third_responder')->first();
 
         $response            = array();
 
         if (sizeof($firstRespondersObj) > 0) {
-            $firstResponders  = explode(",",$firstRespondersObj->firstResponder);
+            $firstResponders  = explode(",",$firstRespondersObj->first_responder);
 
-                if ($firstRespondersObj->firstResponder > 0) {
+                if ($firstRespondersObj->first_responder > 0) {
 
                            foreach ($firstResponders as $firstResponder) {
 
@@ -289,9 +291,9 @@ class RespondersController extends Controller
 
         if (sizeof($secondRespondersObj) > 0) {
 
-            $secondResponders = explode(",",$secondRespondersObj->secondResponder);
+            $secondResponders = explode(",",$secondRespondersObj->second_responder);
 
-            if ($secondRespondersObj->secondResponder > 0) {
+            if ($secondRespondersObj->second_responder > 0) {
 
                 foreach ($secondResponders as $secondResponder) {
 
@@ -316,9 +318,9 @@ class RespondersController extends Controller
 
         if (sizeof($thirdRespondersObj) > 0) {
 
-            $thirdResponders  = explode(",",$thirdRespondersObj->thirdResponder);
+            $thirdResponders  = explode(",",$thirdRespondersObj->third_responder);
 
-            if ($thirdRespondersObj->thirdResponder > 0) {
+            if ($thirdRespondersObj->third_responder > 0) {
 
                  foreach ($thirdResponders as $thirdResponder) {
 
