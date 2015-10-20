@@ -81,7 +81,7 @@
                 {!! csrf_field() !!}
                 <h2 class="m-t-0 m-b-15">Reset Password</h2>
                 <p></p>
-                <input type="email" class="login-control m-b-20" name="username" placeholder="Email Address">
+                <input type="email" class="login-control m-b-20" name="email" placeholder="Email Address">
 
                 <button class="btn btn-sm m-r-5" type="submit">Send Password Reset Link</button>
 
