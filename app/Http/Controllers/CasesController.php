@@ -739,18 +739,20 @@ class CasesController extends Controller
             ->join('categories', 'cases.category', '=', 'categories.id')
             ->join('sub_categories', 'cases.sub_category', '=', 'sub_categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
+            ->join('cases_statuses', 'cases.status', '=', 'cases_statuses.id')
             ->where('cases.id','=',$id)
             ->select(\DB::raw( "
                                     cases.id,
                                     cases.description,
                                     cases.created_at,
-                                    cases.status,cases.img_url,
+                                    cases.img_url,
                                     CONCAT(users.`name`, ' ', users.`surname`) as capturer,
                                      IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`first_name`, ' ', `surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
                                     (select `created_at` from `cases_activities` where `case_id` = `cases`.`id` order by `created_at` desc limit 1) as last_at,
                                     users.cellphone as reporterCell,
                                     municipalities.name as municipality,
                                     districts.name as district,
+                                    cases_statuses.name as status,
                                     wards.name as ward,
                                     categories.name as category,
                                     `sub_categories`.name as sub_category,
