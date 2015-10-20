@@ -141,6 +141,31 @@ Route::post('addDepartment', ['middleware' => 'auth', 'uses' => 'DepartmentContr
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| STATUSES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('list-statuses', ['middleware' => 'auth', function()
+{
+    return view('statuses.list');
+}]);
+
+Route::get('statuses-list', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@index']);
+Route::get('statuses/{id}', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@edit']);
+Route::post('updateDepartment', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@update']);
+Route::post('addDepartment', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| END STATUSES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 /*
 |--------------------------------------------------------------------------
