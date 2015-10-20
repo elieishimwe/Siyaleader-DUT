@@ -154,7 +154,7 @@ Route::get('list-statuses', ['middleware' => 'auth', function()
 
 Route::get('statuses-list', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@index']);
 Route::get('statuses/{id}', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@edit']);
-Route::post('updateDepartment', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@update']);
+Route::post('updateCaseStatus', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@update']);
 Route::post('addCaseStatus', ['middleware' => 'auth', 'uses' => 'CasesStatusesController@store']);
 
 
