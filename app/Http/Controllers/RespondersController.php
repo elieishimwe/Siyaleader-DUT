@@ -58,6 +58,7 @@ class RespondersController extends Controller
             $result->first_responder   = $request['firstResponder'];
             $result->second_responder  = $request['secondResponder'];
             $result->third_responder   = $request['thirdResponder'];
+            $result->created_by        = \Auth::user()->id;
             $result->save();
             \Session::flash('success','Responders have been successfully added!');
             return redirect()->back();
@@ -72,9 +73,10 @@ class RespondersController extends Controller
             $responder->category         = $request['catID'];
             $responder->sub_category     = $request['subCatID'];
             $responder->sub_sub_category = $request['subsubCategoryID'];
-            $responder->first_responder   = $request['firstResponder'];
-            $responder->second_responder  = $request['secondResponder'];
-            $responder->third_responder   = $request['thirdResponder'];
+            $responder->first_responder  = $request['firstResponder'];
+            $responder->second_responder = $request['secondResponder'];
+            $responder->third_responder  = $request['thirdResponder'];
+            $responder->created_by       = \Auth::user()->id;
             $responder->active           = 1;
             $responder->save();
 
@@ -103,6 +105,7 @@ class RespondersController extends Controller
             $result->first_responder   = $request['firstResponder'];
             $result->second_responder  = $request['secondResponder'];
             $result->third_responder   = $request['thirdResponder'];
+            $result->created_by        = \Auth::user()->id;
             $result->save();
             \Session::flash('success','Responders have been successfully added!');
             return redirect()->back();
@@ -116,9 +119,10 @@ class RespondersController extends Controller
             $responder->department       = $request['deptID'];
             $responder->category         = $request['catID'];
             $responder->sub_category     = $request['subCatID'];
-            $responder->first_responder   = $request['firstResponder'];
-            $responder->second_responder  = $request['secondResponder'];
-            $responder->third_responder   = $request['thirdResponder'];
+            $responder->first_responder  = $request['firstResponder'];
+            $responder->second_responder = $request['secondResponder'];
+            $responder->third_responder  = $request['thirdResponder'];
+            $responder->created_by       = \Auth::user()->id;
             $responder->active           = 1;
             $responder->save();
 
