@@ -149,8 +149,6 @@ class RespondersController extends Controller
         $firstRespondersObj  = CaseResponder::where("sub_category",'=',$id)
                                                 ->select('first_responder')->first();
 
-        \Log::info($firstRespondersObj);
-
         $secondRespondersObj = CaseResponder::where("sub_category",'=',$id)
                                                 ->select('second_responder')->first();
 
