@@ -733,7 +733,7 @@ class CasesController extends Controller
         {
 
             $case = \DB::table('cases')
-            ->join('municipalities', 'cases.precinct', '=', 'municipalities.id')
+            ->join('municipalities', 'cases.municipality', '=', 'municipalities.id')
             ->join('categories', 'cases.category', '=', 'categories.id')
             ->join('sub_categories', 'cases.sub_category', '=', 'sub_categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
@@ -744,8 +744,8 @@ class CasesController extends Controller
                                     cases.created_at,
                                     cases.status,cases.img_url,
                                     CONCAT(users.`name`, ' ', users.`surname`) as capturer,
-                                     IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
-                                    (select `created_at` from `caseActivities` where `caseId` = `cases`.`id` order by `created_at` desc limit 1) as last_at,
+                                     IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`first_name`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
+                                    (select `created_at` from `cases_activities` where `case_id` = `cases`.`id` order by `created_at` desc limit 1) as last_at,
                                     users.email as reporterCell,
                                     municipalities.name as department,
                                     categories.name as category,

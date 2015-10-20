@@ -19,7 +19,7 @@ class RespondersController extends Controller
     {
 
         $caseResponders = \DB::table('cases_owners')
-                        ->where('caseId','=',$id)
+                        ->where('case_id','=',$id)
                         ->where('type','>',0)
                         ->join('users','users.id','=','cases_owners.user')
                         ->join('positions','users.position','=','positions.id')

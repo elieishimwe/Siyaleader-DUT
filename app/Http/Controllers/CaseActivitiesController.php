@@ -18,7 +18,7 @@ class CaseActivitiesController extends Controller
     public function index($id)
     {
 
-        $caseActivities = CaseActivity::where('caseId','=',$id);
+        $caseActivities = CaseActivity::where('case_id','=',$id);
         return \Datatables::of($caseActivities)
                             ->addColumn('actions',''
                                        )
