@@ -60,7 +60,7 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-categories/" + d.id + "') !!}' class='btn btn-sm'>" + d.name + "</a>";
+                 return "<a href='{!! url('list-provinces/" + d.id + "') !!}' class='btn btn-sm'>" + d.name + "</a>";
 
                 },"name" : 'name'},
 

@@ -191,6 +191,31 @@ Route::post('addProvince', ['middleware' => 'auth', 'uses' => 'ProvincesControll
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| DISTRICS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('list-districts', ['middleware' => 'auth', function()
+{
+    return view('districts.list');
+}]);
+
+Route::get('districts-list', ['middleware' => 'auth', 'uses' => 'DistricsController@index']);
+Route::get('districts/{id}', ['middleware' => 'auth', 'uses' => 'DistricsController@edit']);
+Route::post('updateDistrict', ['middleware' => 'auth', 'uses' => 'DistricsController@update']);
+Route::post('addDistrict', ['middleware' => 'auth', 'uses' => 'DistricsController@store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| END DISTRICS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 
 
