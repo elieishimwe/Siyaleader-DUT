@@ -45,7 +45,7 @@ class HomeController extends Controller
                                         ->get();
 
                 $numberPendingCases = \DB::table('cases')
-                                        ->where('cases.status','=','Pending')
+                                        ->where('cases.status','=',1)
                                         ->get();
 
             }

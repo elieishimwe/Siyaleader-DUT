@@ -128,7 +128,7 @@ class CasesController extends Controller
     public function pendingReferralCasesList()
     {
 
-        $cases = CaseReport::where('status','=','Pending');
+        $cases = CaseReport::where('status','=',1);
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
                             ->make(true);
