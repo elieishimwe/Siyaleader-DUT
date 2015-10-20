@@ -49,7 +49,7 @@ To login Click http://ports.siyaleader.net/registration/public/
                                                 </tr>
                                                 <tr><!-- title -->
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#F07057;">
-                                                        <strong>NEW CASE</strong> CLOSURE REQUEST!
+                                                        <strong>USER</strong> REGISTRATION CONFIRMATION!
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
@@ -66,7 +66,6 @@ To login Click http://ports.siyaleader.net/registration/public/
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
                                                         Thank you! for you registration. Please take note of your login credentials:
-Username
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
