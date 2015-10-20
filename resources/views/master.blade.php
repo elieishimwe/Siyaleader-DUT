@@ -5,9 +5,9 @@
         <meta name="format-detection" content="telephone=no">
         <meta charset="UTF-8">
 
-        <meta name="description" content="Siyaleader Ports Case Console Management">
-        <meta name="keywords" content="Siyaleader, Ports, Transnet,Port Management System,Incidents Management System">
-        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
+        <meta name="description" content="Siyaleader Ethekwini Case Console Management">
+        <meta name="keywords" content="Siyaleader, Ethekwini, Ethekwini,Ethekwini Management System,Incidents Management System">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('/img/favicon.ico?v1') }}">
 
         <title>Siyaleader D.U.T</title>
 
