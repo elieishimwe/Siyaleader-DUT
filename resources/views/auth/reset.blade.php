@@ -8,9 +8,9 @@
         <meta charset="UTF-8">
         <meta name="description" content="Siyaleader Ports Case Console Management">
         <meta name="keywords" content="Siyaleader, Ports, Trasnet,">
-        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('/img/favicon.ico?v1') }}">
 
-        <title>Siyaleader</title>
+        <title>Siyaleader Ethekwin</title>
 
         <!-- CSS -->
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">

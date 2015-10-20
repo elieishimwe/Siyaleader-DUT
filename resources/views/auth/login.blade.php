@@ -6,9 +6,9 @@
         <meta charset="UTF-8">
         <meta name="description" content="Siyaleader Durban University of Technology">
         <meta name="keywords" content="Siyaleader,Durban University of Technology, HIV/AIDS">
-        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('/img/favicon.ico?v1') }}">
 
-        <title>Siyaleader</title>
+        <title>Siyaleader Ethekwini</title>
 
         <!-- CSS -->
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">

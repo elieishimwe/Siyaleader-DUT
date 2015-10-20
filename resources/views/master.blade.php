@@ -9,7 +9,7 @@
         <meta name="keywords" content="Siyaleader, Ethekwini, Ethekwini,Ethekwini Management System,Incidents Management System">
         <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('/img/favicon.ico?v1') }}">
 
-        <title>Siyaleader D.U.T</title>
+        <title>Siyaleader Ethekwini</title>
 
         <!-- CSS -->
         <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
