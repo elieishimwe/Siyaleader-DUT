@@ -74,6 +74,22 @@
                                       </div>
                                   </div>
 
+                                   <div class="form-group">
+                                      {!! Form::label('District', 'District', array('class' => 'col-md-3 control-label')) !!}
+                                      <div class="col-md-6">
+                                        {!! Form::text('district',NULL,['class' => 'form-control input-sm','id' => 'district','disabled' => 'disabled']) !!}
+
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      {!! Form::label('Municipality', 'Municipality', array('class' => 'col-md-3 control-label')) !!}
+                                      <div class="col-md-6">
+                                        {!! Form::text('municipality',NULL,['class' => 'form-control input-sm','id' => 'municipality','disabled' => 'disabled']) !!}
+
+                                      </div>
+                                  </div>
+
                                   <div class="form-group">
                                       {!! Form::label('Department', 'Department', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
