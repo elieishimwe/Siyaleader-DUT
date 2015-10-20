@@ -13,7 +13,7 @@ class CaseStatusRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class CaseStatusRequest extends Request
     public function rules()
     {
         return [
-            //
+
+            'name'     =>'required|unique:cases_status',
+
         ];
     }
 }
