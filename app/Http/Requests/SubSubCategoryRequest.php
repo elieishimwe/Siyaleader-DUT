@@ -25,7 +25,7 @@ class SubSubCategoryRequest extends Request
     {
          return [
 
-            'name'     =>'required|unique:sub-sub-categories',
+            'name'     =>'required|unique:sub_sub_categories',
 
         ];
     }
