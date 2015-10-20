@@ -82,9 +82,15 @@ class CasesStatusesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CaseStatusRequest $request)
     {
-        //
+
+        $case       = CaseStatus::where('id',$request['caseStatusId'])->first();
+        $case->name = $request['name'];
+        $case->updated_by = \Auth::user()->id;
+        $case->save();
+        \Session::flash('success', 'well done! Case '.$request['name'].' has been successfully updated!');
+        return redirect()->back();
     }
 
     /**
