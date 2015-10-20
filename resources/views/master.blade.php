@@ -46,7 +46,7 @@
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
             <a class="logo pull-left" href="#">
-                <img class="" src="{{ asset('/images/dashboard_logo.png') }}" alt="">
+                <img class="" src="{{ asset('/images/dashboard_logo.png') }}" width="60%" alt="">
             </a>
 
             <div class="media-body">
