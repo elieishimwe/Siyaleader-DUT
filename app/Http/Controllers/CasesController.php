@@ -735,6 +735,7 @@ class CasesController extends Controller
             $case = \DB::table('cases')
             ->join('municipalities', 'cases.municipality', '=', 'municipalities.id')
             ->join('districts', 'cases.district', '=', 'districts.id')
+            ->join('wards', 'cases.ward', '=', 'wards.id')
             ->join('categories', 'cases.category', '=', 'categories.id')
             ->join('sub_categories', 'cases.sub_category', '=', 'sub_categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
@@ -748,8 +749,9 @@ class CasesController extends Controller
                                      IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`first_name`, ' ', `surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
                                     (select `created_at` from `cases_activities` where `case_id` = `cases`.`id` order by `created_at` desc limit 1) as last_at,
                                     users.cellphone as reporterCell,
-                                    municipalities.name as department,
+                                    municipalities.name as municipality,
                                     districts.name as district,
+                                    wards.name as ward,
                                     categories.name as category,
                                     `sub_categories`.name as sub_category,
                                     `cases`.sub_sub_category as sub_sub_category "

@@ -91,9 +91,9 @@
                                   </div>
 
                                   <div class="form-group">
-                                      {!! Form::label('Department', 'Department', array('class' => 'col-md-3 control-label')) !!}
+                                      {!! Form::label('Ward', 'Ward', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('department',NULL,['class' => 'form-control input-sm','id' => 'department','disabled' => 'disabled']) !!}
+                                        {!! Form::text('ward',NULL,['class' => 'form-control input-sm','id' => 'ward','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>

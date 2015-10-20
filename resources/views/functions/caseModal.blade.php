@@ -817,6 +817,7 @@
                      $("#modalCase #department").val(data[0].department);
                      $("#modalCase #district").val(data[0].district);
                      $("#modalCase #municipality").val(data[0].municipality);
+                     $("#modalCase #ward").val(data[0].ward);
 
                      if (data[0].img_url) {
 
