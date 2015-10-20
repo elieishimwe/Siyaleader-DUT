@@ -197,9 +197,10 @@ Route::post('addProvince', ['middleware' => 'auth', 'uses' => 'ProvincesControll
 |--------------------------------------------------------------------------
 |
 */
-Route::get('list-districts', ['middleware' => 'auth', function()
+Route::get('list-districts/{province}', ['middleware' => 'auth', function($province)
 {
-    return view('districts.list');
+    $provinceObj = District::find($province);
+    return view('districts.list',compact('provinceObj'));
 }]);
 
 Route::get('districts-list', ['middleware' => 'auth', 'uses' => 'DistricsController@index']);
