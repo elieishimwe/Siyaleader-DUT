@@ -183,12 +183,25 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request)
     {
-        $user       = User::where('id',$request['userID'])->first();
-        $role       = UserRole::where('slug','=',$request['role'])->first();
-        $user->role = $role->id;
+        $user                = User::where('id',$request['userID'])->first();
+        $role                = UserRole::where('slug','=',$request['role'])->first();
+        $user->role          = $role->id;
         $title               = Title::where('slug','=',$request['title'])->first();
         $user->title         = $title->id;
-        $user->name = $request['name'];
+        $user->name          = $request['name'];
+        $user->surname       = $request['area'];
+        $user->id_number     = $request['id_number'];
+        $user->alt_cellphone = $request['alt_cellphone'];
+        $user->alt_email     = $request['alt_email'];
+        $province            = Province::where('slug','=',$request['province'])->first();
+        $user->province      = $province->id;
+        $district            = District::where('slug','=',$request['district'])->first();
+        $user->district      = $district->id;
+        $municipality        = Municipality::where('slug','=',$request['municipality'])->first();
+        $user->municipality  = $municipality->id;
+        $ward                = Ward::where('slug','=',$request['ward'])->first();
+        $user->ward          = $ward->id;
+        $user->area       = $request['area'];
         $user->updated_by = \Auth::user()->id;
         $user->updated_at =  \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         $user->save();
