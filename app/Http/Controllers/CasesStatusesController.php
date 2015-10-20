@@ -41,13 +41,13 @@ class CasesStatusesController extends Controller
      */
     public function store(CaseStatusRequest $request)
     {
-        $department       = new Department();
-        $department->name = $request['name'];
+        $caseStatus       = new CaseStatus();
+        $caseStatus->name = $request['name'];
         $slug             = preg_replace('/\s+/','-',$request['name']);
-        $department->slug = $slug;
-        $department->created_by = \Auth::user()->id;
-        $department->save();
-        \Session::flash('success', 'well done! Department '.$request['name'].' has been successfully added!');
+        $caseStatus->slug = $slug;
+        $caseStatus->created_by = \Auth::user()->id;
+        $caseStatus->save();
+        \Session::flash('success', 'well done! Status '.$request['name'].' has been successfully added!');
         return redirect()->back();
     }
 

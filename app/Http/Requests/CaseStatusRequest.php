@@ -25,7 +25,7 @@ class CaseStatusRequest extends Request
     {
         return [
 
-            'name'     =>'required|unique:cases_status',
+            'name'     =>'required|unique:cases_statuses',
 
         ];
     }
