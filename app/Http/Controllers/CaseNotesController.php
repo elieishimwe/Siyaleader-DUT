@@ -21,9 +21,9 @@ class CaseNotesController extends Controller
     public function index($id)
     {
 
-        $caseNotes = \DB::table('caseNotes')->where('caseId','=',$id)
-                        ->join('users','users.id','=','caseNotes.user')
-                        ->select(array('caseNotes.id','caseNotes.caseId','users.name as user','caseNotes.note as note','caseNotes.active','caseNotes.created_at as created_at'));
+        $caseNotes = \DB::table('cases_notes')->where('case_id','=',$id)
+                        ->join('users','users.id','=','cases_notes.user')
+                        ->select(array('cases_notes.id','cases_notes.case_id','users.name as user','cases_notes.note as note','cases_notes.active','cases_notes.created_at as created_at'));
 
         return \Datatables::of($caseNotes)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
@@ -51,17 +51,17 @@ class CaseNotesController extends Controller
     {
 
 
-        $caseOwners = CaseOwner::where('caseId','=',$request['caseID'])->get();
+        $caseOwners = CaseOwner::where('case_id','=',$request['caseID'])->get();
         $author     = User::find($request['uid']);
 
         $caseNote         = new CaseNote();
         $caseNote->note   = $request['caseNote'];
         $caseNote->user   = $request['uid'];
-        $caseNote->caseId = $request['caseID'];
+        $caseNote->case_id = $request['caseID'];
         $caseNote->save();
 
         $caseActivity              = New CaseActivity();
-        $caseActivity->caseId      = $request['caseID'];
+        $caseActivity->case_id     = $request['caseID'];
         $caseActivity->user        = $request['uid'];
         $caseActivity->addressbook = 0;
         $caseActivity->note        = "New Case Noted Added by ".$author->name ." ".$author->surname;

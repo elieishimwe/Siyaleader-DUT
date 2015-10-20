@@ -17,7 +17,7 @@ class CaseOwnerController extends Controller
      */
     public function index($id,$user)
     {
-        $caseOwner = CaseOwner::where('caseId','=', $id)
+        $caseOwner = CaseOwner::where('case_id','=', $id)
                                 ->where('user','=',$user)
                                 ->first();
 
