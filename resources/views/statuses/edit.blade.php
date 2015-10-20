@@ -4,11 +4,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id='depTitle'>Department</h4>
+                <h4 class="modal-title" id='depTitle'>Case Status</h4>
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'updateCaseStatus', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateCaseStatusForm" ]) !!}
-            {!! Form::hidden('deptID',NULL,['id' => 'deptID']) !!}
+            {!! Form::hidden('caseStatusId',NULL,['id' => 'caseStatusId']) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}

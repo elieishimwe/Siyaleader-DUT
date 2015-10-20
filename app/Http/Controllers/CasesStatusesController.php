@@ -19,7 +19,7 @@ class CasesStatusesController extends Controller
     {
         $statuses = CaseStatus::select(array('id','name','created_at'));
         return \Datatables::of($statuses)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateCaseStatusModal({{$id}});" data-target=".modalEditCaseStatus">Edit</a>')
                             ->make(true);
     }
 
