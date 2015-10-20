@@ -28,7 +28,6 @@ class UpdateUserRequest extends Request
             'title'         =>'required|not_in:0',
             'name'          =>'required',
             'surname'       =>'required',
-            'alt_cellphone' =>'required|not_in:0|digits:10',
             'alt_email'     =>'email',
             'province'      =>'required|not_in:0',
             'district'      =>'required|not_in:0',
