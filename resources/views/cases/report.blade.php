@@ -3,6 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close"  id="closeCaseReportModal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id='depTitle'>Edit Case details</h4>
             </div>
             <div class="row">
@@ -20,7 +21,7 @@
 
 
                 <div class="form-group">
-                    {!! Form::label('Cell Number', 'Cell Number', array('class' => 'col-md-3 control-label')) !!}
+                    {!! Form::label('Search Cell Number', 'Search Cell Number', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
                       @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif

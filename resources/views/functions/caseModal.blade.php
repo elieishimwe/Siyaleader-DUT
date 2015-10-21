@@ -14,15 +14,7 @@
       minChars: 3,
       tokenLimit: 1,
       onResult: function (results) {
-                 //results = results["data"];
-                 /*$.each(results, function (index, value) {
-                        value.originalName = value.name;
-                        value.id = value.key;
-                        value.name = value.name + " " + value.subtext;
-                 });*/
 
-                console.log(results.length);
-                return results;
 
                 if(results.length == 1)
                 {
@@ -30,16 +22,23 @@
                   $("#caseReportCaseForm #name").val(results[0].hseName);
                   $("#caseReportCaseForm #surname").val(results[0].hseSurname);
                   $("#caseReportCaseForm #id_number").val(results[0].hseIdNumber);
-                  //$("#caseReportCaseForm #name").removeAttr("disabled");
-                  //$("#caseReportCaseForm #surname").removeAttr("disabled");
+
 
                 }
                 else {
 
-                  $("#caseReportCaseForm #name").attr("disabled","disabled");
-                  $("#caseReportCaseForm #surname").attr("disabled","disabled");
+                  $("#caseReportCaseForm #name").val();
+                  $("#caseReportCaseForm #surname").val();
+                  $("#caseReportCaseForm #id_number").val();
+                  $("#caseReportCaseForm #name").removeAttr("disabled");
+                  $("#caseReportCaseForm #surname").removeAttr("disabled");
+                 /* $("#caseReportCaseForm #name").attr("disabled","disabled");
+                  $("#caseReportCaseForm #surname").attr("disabled","disabled");*/
 
                 }
+
+                return results;
+
 
     }
   });
@@ -611,6 +610,14 @@
           var tabId = $active[0].id;
           localStorage.setItem('activeTab', tabId);
           location.reload();
+
+      });
+
+      $("#closeCaseReportModal").on("click",function(){
+
+
+          $('#modalCaseReport').modal('toggle');
+
 
       });
 
@@ -1255,6 +1262,11 @@
       $("#chatForm #to").val($(d).attr("data-userid"))
       $(d).closest('.chat').find('.chat-list').toggleClass('toggled');
 
+    }
+
+    function launchCaseReportModal()
+    {
+      $('#caseReportCaseForm')[0].reset();
     }
 
 

@@ -228,7 +228,7 @@ class UserController extends Controller
 
        foreach ($users as $user) {
 
-            $data[] = array("name"=>"{$user->name} {$user->surname} <{$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}");
+            $data[] = array("name"=>"{$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}");
        }
 
         return $data;
