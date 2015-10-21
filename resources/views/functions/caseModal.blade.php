@@ -10,6 +10,8 @@
 
   $("#addresses").tokenInput("getContacts");
 
+  $("#caseReportCaseForm #cellphone").tokenInput("getHouseHolder");
+
   $("#acceptCaseClass").on("click",function(){
 
     $( "#acceptCaseClass" ).addClass( "hidden" );

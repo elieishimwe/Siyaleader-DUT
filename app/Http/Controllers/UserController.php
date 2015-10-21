@@ -215,8 +215,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function getHouseHolder()
     {
-        //
+        $searchString = \Input::get('q');
+
+
+            $users     = \DB::table('users')
+            ->join('positions','users.position','=','positions.id')
+            ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`email`,`positions`.`name`) LIKE '%{$searchString}%'")
+            ->select(array('users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','positions.name as position'))
+            ->get();
+
+           foreach ($users as $user) {
+
+                $data[] = array("name"=>"{$user->name} {$user->surname} <{$user->username} < {$user->position}","id" =>"{$user->username}");
+           }
+
+
+
+        return $data;
     }
 }

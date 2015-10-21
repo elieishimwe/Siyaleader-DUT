@@ -106,6 +106,8 @@ Route::get('users/{id}', ['middleware' => 'auth', 'uses' => 'UserController@edit
 
 Route::post('updateUser', ['middleware' => 'auth', 'uses' => 'UserController@update']);
 
+Route::get('getHouseHolder', ['middleware' => 'auth', 'uses' => 'UserController@getHouseHolder']);
+
 
 /*
 |--------------------------------------------------------------------------
