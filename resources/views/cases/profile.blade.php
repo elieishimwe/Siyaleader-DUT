@@ -7,19 +7,15 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close"  id="closeProfileCase" aria-hidden="true">&times;</button>
-                            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+
                             <h4 class="modal-title" id='depTitle'>Case details</h4>
 
                         </div>
                         <div class="row">
                           <div class="col-md-6">
 
-                                @if(Session::has('successReferral'))
-                                <div class="alert alert-info alert-dismissable fade in">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    {{ Session::get('successReferral') }}
-                                </div>
-                                @endif
+                            <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseReportModal();" data-target=".modalCaseReport">Edit Case</a>
+
 
                           </div>
                            <div class="col-md-6">

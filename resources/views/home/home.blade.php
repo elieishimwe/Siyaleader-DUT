@@ -189,6 +189,7 @@
 
 @include('cases.profile')
 @include('cases.refer')
+@include('cases.report')
 @include('cases.closeRequest')
 @include('addressbook.list')
 @include('addressbook.add')
