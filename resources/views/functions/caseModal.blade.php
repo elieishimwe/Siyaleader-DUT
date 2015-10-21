@@ -10,7 +10,39 @@
 
   $("#addresses").tokenInput("getContacts");
 
-  $("#caseReportCaseForm #cellphone").tokenInput("getHouseHolder");
+  $("#caseReportCaseForm #cellphone").tokenInput("getHouseHolder", {
+      minChars: 3,
+      tokenLimit: 1,
+      onResult: function (results) {
+                 //results = results["data"];
+                 /*$.each(results, function (index, value) {
+                        value.originalName = value.name;
+                        value.id = value.key;
+                        value.name = value.name + " " + value.subtext;
+                 });*/
+
+                console.log(results.length);
+                return results;
+
+                if(results.length == 1)
+                {
+
+                  $("#caseReportCaseForm #name").val(results[0].hseName);
+                  $("#caseReportCaseForm #surname").val(results[0].hseSurname);
+                  $("#caseReportCaseForm #id_number").val(results[0].hseIdNumber);
+                  //$("#caseReportCaseForm #name").removeAttr("disabled");
+                  //$("#caseReportCaseForm #surname").removeAttr("disabled");
+
+                }
+                else {
+
+                  $("#caseReportCaseForm #name").attr("disabled","disabled");
+                  $("#caseReportCaseForm #surname").attr("disabled","disabled");
+
+                }
+
+    }
+  });
 
   $("#acceptCaseClass").on("click",function(){
 

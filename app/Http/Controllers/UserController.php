@@ -218,20 +218,18 @@ class UserController extends Controller
     public function getHouseHolder()
     {
         $searchString = \Input::get('q');
+        $users     = \DB::table('users')
 
+        ->whereRaw("`users`.`cellphone` LIKE '%{$searchString}%'")
+        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone'))
+        ->get();
 
-            $users     = \DB::table('users')
-            ->join('positions','users.position','=','positions.id')
-            ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`email`,`positions`.`name`) LIKE '%{$searchString}%'")
-            ->select(array('users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','positions.name as position'))
-            ->get();
+        $data = array();
 
-           foreach ($users as $user) {
+       foreach ($users as $user) {
 
-                $data[] = array("name"=>"{$user->name} {$user->surname} <{$user->username} < {$user->position}","id" =>"{$user->username}");
-           }
-
-
+            $data[] = array("name"=>"{$user->name} {$user->surname} <{$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}");
+       }
 
         return $data;
     }

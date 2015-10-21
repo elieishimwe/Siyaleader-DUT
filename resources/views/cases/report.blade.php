@@ -31,7 +31,7 @@
                 <div class="form-group">
                     {!! Form::label('Hse Holder Name', 'Hse Holder Name', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                      {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name']) !!}
+                      {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','disabled']) !!}
                       @if ($errors->has('name')) <p class="help-block red">*{{ $errors->first('name') }}</p> @endif
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     {!! Form::label('Hse Holder Surname', 'Hse Holder Surname', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                      {!! Form::text('surname',NULL,['class' => 'form-control input-sm','id' => 'surname']) !!}
+                      {!! Form::text('surname',NULL,['class' => 'form-control input-sm','id' => 'surname','disabled']) !!}
                       @if ($errors->has('surname')) <p class="help-block red">*{{ $errors->first('surname') }}</p> @endif
                     </div>
                 </div>
