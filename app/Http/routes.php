@@ -203,7 +203,7 @@ Route::get('list-districts/{province}', ['middleware' => 'auth', function($provi
     return view('districts.list',compact('provinceObj'));
 }]);
 
-Route::get('districts-list', ['middleware' => 'auth', 'uses' => 'DistricsController@index']);
+Route::get('districts-list/{id}', ['middleware' => 'auth', 'uses' => 'DistricsController@index']);
 Route::get('districts/{id}', ['middleware' => 'auth', 'uses' => 'DistricsController@edit']);
 Route::post('updateDistrict', ['middleware' => 'auth', 'uses' => 'DistricsController@update']);
 Route::post('addDistrict', ['middleware' => 'auth', 'uses' => 'DistricsController@store']);

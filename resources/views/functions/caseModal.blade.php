@@ -131,7 +131,7 @@
                     return d.description;
 
                 },"name" : 'cases.description'},
-                {data: 'status', name: 'cases.status'},
+                {data: 'name', name: 'cases_statutes.name'},
                 {data: 'actions',  name: 'actions'},
                ],
 

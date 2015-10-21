@@ -5,7 +5,7 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="{{ url('list-districts') }}">Districts</a></li>
+    <li><a href="{{ url('list-districts/$provinceObj->id') }}">Districts</a></li>
     <li><a href="#">{{ $provinceObj->name }}</a></li>
     <li class="active">Districts Listing</li>
 </ol>
@@ -29,7 +29,7 @@
       </div>
     @endif
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="categoriesTable">
+        <table class="table tile table-striped" id="districtsTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -41,8 +41,8 @@
         </table>
     </div>
 </div>
-@include('categories.edit')
-@include('categories.add')
+@include('districts.edit')
+@include('districts.add')
 @endsection
 
 @section('footer')
@@ -51,12 +51,12 @@
   $(document).ready(function() {
 
   var department = {!! $provinceObj->id !!};
-  var oTable     = $('#categoriesTable').DataTable({
+  var oTable     = $('#districtsTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/categories-list/" + department +"')!!}",
+                "ajax": "{!! url('/districts-list/" + department +"')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
