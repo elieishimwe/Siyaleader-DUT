@@ -77,7 +77,7 @@
                  <div class="form-group">
                   {!! Form::label('Province', 'Province', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                    {!! Form::select('province',$selectProvinces,0,['class' => 'form-control' ,'id' => 'province']) !!}
+                    {!! Form::select('province',$selectProvinces,0,['class' => 'form-control' ,'id' => 'province','disabled']) !!}
                     @if ($errors->has('province')) <p class="help-block red">*{{ $errors->first('province') }}</p> @endif
                   </div>
                 </div>
@@ -85,7 +85,7 @@
                  <div class="form-group">
                     {!! Form::label('Hse Number', 'Hse Number', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                      {!! Form::text('hsenumber',NULL,['class' => 'form-control input-sm','id' => 'hsenumber']) !!}
+                      {!! Form::text('hsenumber',NULL,['class' => 'form-control input-sm','id' => 'hsenumber','disabled']) !!}
                       @if ($errors->has('hsenumber')) <p class="help-block red">*{{ $errors->first('hsenumber') }}</p> @endif
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="form-group">
                   {!! Form::label('District', 'District', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                    {!! Form::select('district',$selectDistricts,0,['class' => 'form-control input-sm' ,'id' => 'district']) !!}
+                    {!! Form::select('district',$selectDistricts,0,['class' => 'form-control input-sm' ,'id' => 'district','disabled']) !!}
                     @if ($errors->has('district')) <p class="help-block red">*{{ $errors->first('district') }}</p> @endif
                   </div>
                </div>
@@ -101,7 +101,7 @@
                 <div class="form-group">
                     {!! Form::label('Municipality', 'Municipality', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                    {!! Form::select('municipality',$selectMunicipalities,0,['class' => 'form-control input-sm' ,'name' => 'municipality','id' => 'municipality']) !!}
+                    {!! Form::select('municipality',$selectMunicipalities,0,['class' => 'form-control input-sm' ,'name' => 'municipality','id' => 'municipality','disabled']) !!}
                     @if ($errors->has('municipality')) <p class="help-block red">*{{ $errors->first('municipality') }}</p> @endif
                   </div>
                 </div>
@@ -109,7 +109,7 @@
                 <div class="form-group">
                     {!! Form::label('Ward', 'Ward', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                    {!! Form::select('ward',$selectWards,0,['class' => 'form-control input-sm' ,'name' => 'ward','id' => 'ward']) !!}
+                    {!! Form::select('ward',$selectWards,0,['class' => 'form-control input-sm' ,'name' => 'ward','id' => 'ward','disabled']) !!}
                     @if ($errors->has('ward')) <p class="help-block red">*{{ $errors->first('ward') }}</p> @endif
                   </div>
                 </div>
@@ -117,7 +117,7 @@
                 <div class="form-group">
                     {!! Form::label('Area', 'Area', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                      {!! Form::text('area',NULL,['class' => 'form-control input-sm','area']) !!}
+                      {!! Form::text('area',NULL,['class' => 'form-control input-sm','area','disabled']) !!}
                       @if ($errors->has('area')) <p class="help-block red">*{{ $errors->first('area') }}</p> @endif
                   </div>
                 </div>

@@ -221,15 +221,17 @@ class UserController extends Controller
         $searchString = \Input::get('q');
         $users     = \DB::table('users')
         ->join('languages','users.language','=','languages.id')
+        ->join('provinces','users.province','=','provinces.id')
+        ->join('districts','users.district','=','districts.id')
         ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
-        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language'))
+        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language','provinces.slug as province','districs.slug as district'))
         ->get();
 
         $data = array();
 
        foreach ($users as $user) {
 
-            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}");
+            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}","hseProvince" => "{$user->province}","hseDistrict" => "{$user->district}");
        }
 
         return $data;
