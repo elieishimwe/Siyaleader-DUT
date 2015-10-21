@@ -167,8 +167,9 @@ class UserController extends Controller
             ->join('wards', 'users.ward', '=', 'wards.id')
             ->join('departments', 'users.department', '=', 'departments.id')
             ->join('positions', 'users.position', '=', 'positions.id')
+            ->join('languages', 'users.language', '=', 'languages.id')
             ->where('users.id','=',$id)
-            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users.cellphone,users.email,users.area,users.alt_email,users.alt_cellphone,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department,positions.slug as position,municipalities.slug as municipality,wards.slug as ward"))
+            ->select(\DB::raw("users.id,users.name,users.surname,users.id_number,users.cellphone,users.email,users.area,users.alt_email,users.alt_cellphone,users_roles.slug as role,titles.slug as title,provinces.slug as province,districts.slug as district,departments.slug as department,positions.slug as position,municipalities.slug as municipality,wards.slug as ward,languages.slug as language"))
             ->first();
 
         return [$user];
@@ -219,15 +220,16 @@ class UserController extends Controller
     {
         $searchString = \Input::get('q');
         $users     = \DB::table('users')
-        ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `cellphone`) LIKE '%{$searchString}%'")
-        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone'))
+        ->join('languages','users.language','=','languages.id')
+        ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
+        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.name as language'))
         ->get();
 
         $data = array();
 
        foreach ($users as $user) {
 
-            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}");
+            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}");
        }
 
         return $data;

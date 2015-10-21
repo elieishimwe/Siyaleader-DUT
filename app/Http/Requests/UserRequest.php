@@ -28,6 +28,7 @@ class UserRequest extends Request
             'title'         =>'required|not_in:0',
             'name'          =>'required',
             'surname'       =>'required',
+            'language'      =>'required|not_in:0',
             'cellphone'     =>'required|not_in:0|digits:10|unique:users,cellphone',
             'email'         =>'email|unique:users,email',
             'alt_email'     =>'email',

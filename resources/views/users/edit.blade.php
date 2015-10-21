@@ -27,6 +27,14 @@
                 </div>
             </div>
 
+             <div class="form-group">
+                {!! Form::label('Preferred Language', 'Preferred Language', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-6">
+                {!! Form::select('language',$selectLanguages,0,['class' => 'form-control' ,'id' => 'language']) !!}
+                @if ($errors->has('language')) <p class="help-block red">*{{ $errors->first('language') }}</p> @endif
+              </div>
+            </div>
+
             <div class="form-group">
                 {!! Form::label('First Name', 'First Name', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
