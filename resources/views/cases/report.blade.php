@@ -64,7 +64,7 @@
                 <div class="form-group">
                     {!! Form::label('Preferred Language', 'Preferred Language', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                    {!! Form::select('language',$selectLanguages,0,['class' => 'form-control' ,'id' => 'language']) !!}
+                    {!! Form::select('language',$selectLanguages,0,['class' => 'form-control' ,'id' => 'language','disabled']) !!}
                     @if ($errors->has('language')) <p class="help-block red">*{{ $errors->first('language') }}</p> @endif
                   </div>
                 </div>

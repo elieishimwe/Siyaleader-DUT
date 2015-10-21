@@ -222,7 +222,7 @@ class UserController extends Controller
         $users     = \DB::table('users')
         ->join('languages','users.language','=','languages.id')
         ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
-        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.name as language'))
+        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language'))
         ->get();
 
         $data = array();

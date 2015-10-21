@@ -23,10 +23,12 @@
                   $("#caseReportCaseForm #name").attr("disabled","disabled");
                   $("#caseReportCaseForm #surname").attr("disabled","disabled");
                   $("#caseReportCaseForm #id_number").attr("disabled","disabled");
+                  $("#caseReportCaseForm #language").attr("disabled","disabled");
                   $("#caseReportCaseForm #cellphone").val(results[0].hseCellphone);
                   $("#caseReportCaseForm #name").val(results[0].hseName);
                   $("#caseReportCaseForm #surname").val(results[0].hseSurname);
                   $("#caseReportCaseForm #id_number").val(results[0].hseIdNumber);
+                  $("#caseReportCaseForm #language").val(results[0].hseLanguage);
 
 
                 }
