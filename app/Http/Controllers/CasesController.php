@@ -63,11 +63,12 @@ class CasesController extends Controller
 
               $cases = \DB::table('cases')
                 ->join('cases_owners', 'cases.id', '=', 'cases_owners.case_id')
+                ->join('cases_statuses', 'cases.status', '=', 'cases_statuses.id')
                 ->whereIn('cases.id',$caseIds)
                 ->where('cases_owners.user','=',\Auth::user()->id)
-                ->where('cases.status','<>','Pending Closure')
-                ->where('cases.status','<>','Resolved')
-                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,cases_owners.accept,cases_owners.type"))
+                ->where('cases_statuses.name','<>','Pending Closure')
+                ->where('cases_statuses.name','<>','Resolved')
+                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases_statuses.name as status,cases_owners.accept,cases_owners.type"))
                 ->groupBy('cases.id');
 
         }
