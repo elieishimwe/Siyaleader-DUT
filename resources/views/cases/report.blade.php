@@ -20,6 +20,15 @@
 
 
                 <div class="form-group">
+                    {!! Form::label('Cell Number', 'Cell Number', array('class' => 'col-md-3 control-label')) !!}
+                    <div class="col-md-6">
+                      {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
+                      @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
+                  </div>
+                </div>
+
+
+                <div class="form-group">
                     {!! Form::label('Hse Holder Name', 'Hse Holder Name', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name']) !!}
@@ -51,13 +60,7 @@
                   </div>
                 </div>
 
-                 <div class="form-group">
-                    {!! Form::label('Cell Number', 'Cell Number', array('class' => 'col-md-3 control-label')) !!}
-                    <div class="col-md-6">
-                      {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
-                      @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
-                  </div>
-                </div>
+
 
                 <hr class="whiter m-t-20">
                 <hr class="whiter m-b-20">
@@ -115,15 +118,18 @@
 
 
                 <div class="form-group">
-                    {!! Form::label('Message', 'Message', array('class' => 'col-md-3 control-label')) !!}
-                    <div class="col-md-8">
-                        <textarea rows="5" id="message" name="message" class="form-control" maxlength="500"></textarea>
+                    {!! Form::label('Problem Description', 'Problem Description', array('class' => 'col-md-3 control-label')) !!}
+                    <div class="col-md-6">
+                        <textarea rows="5" id="description" name="description" class="form-control" maxlength="500"></textarea>
                     </div>
                 </div>
 
+                <hr class="whiter m-t-20">
+                <hr class="whiter m-b-20">
+
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                       <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Refer Case</a>
+                       <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Save Changes</a>
                     </div>
                 </div>
 
