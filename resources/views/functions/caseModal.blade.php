@@ -38,10 +38,12 @@
                   $("#caseReportCaseForm #name").val('');
                   $("#caseReportCaseForm #surname").val('');
                   $("#caseReportCaseForm #id_number").val('');
+                  $("#caseReportCaseForm #language").val('');
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
                   $("#caseReportCaseForm #name").removeAttr("disabled");
                   $("#caseReportCaseForm #surname").removeAttr("disabled");
                   $("#caseReportCaseForm #id_number").removeAttr("disabled");
+                  $("#caseReportCaseForm #language").removeAttr("disabled");
 
 
                 }
@@ -56,10 +58,12 @@
                   $("#caseReportCaseForm #name").val('');
                   $("#caseReportCaseForm #surname").val('');
                   $("#caseReportCaseForm #id_number").val('');
+                  $("#caseReportCaseForm #language").val('');
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
                   $("#caseReportCaseForm #name").removeAttr("disabled");
                   $("#caseReportCaseForm #surname").removeAttr("disabled");
                   $("#caseReportCaseForm #id_number").removeAttr("disabled");
+                  $("#caseReportCaseForm #language").removeAttr("disabled");
 
     }
   });
