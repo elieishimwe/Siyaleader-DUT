@@ -21,11 +21,19 @@
 
 
                 <div class="form-group">
-                    {!! Form::label('Search Cell Number', 'Search Cell Number', array('class' => 'col-md-3 control-label')) !!}
+                    {!! Form::label('Search Field', 'Search Field', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                      {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone']) !!}
-                      @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
+                      {!! Form::text('hsecellphone',NULL,['class' => 'form-control input-sm','id' => 'hsecellphone']) !!}
+
                   </div>
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('Hse Cell Number', 'Hse Cell Number', array('class' => 'col-md-3 control-label')) !!}
+                    <div class="col-md-6">
+                      {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone','disabled']) !!}
+                      @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
+                    </div>
                 </div>
 
 

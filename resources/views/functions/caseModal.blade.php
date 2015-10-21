@@ -10,8 +10,7 @@
 
   $("#addresses").tokenInput("getContacts");
 
-  $("#caseReportCaseForm #cellphone").tokenInput("getHouseHolder", {
-      minChars: 3,
+  $("#caseReportCaseForm #hsecellphone").tokenInput("getHouseHolder", {
       tokenLimit: 1,
       onResult: function (results) {
 
@@ -19,6 +18,12 @@
                 if(results.length == 1)
                 {
 
+
+                  $("#caseReportCaseForm #cellphone").attr("disabled","disabled");
+                  $("#caseReportCaseForm #name").attr("disabled","disabled");
+                  $("#caseReportCaseForm #surname").attr("disabled","disabled");
+                  $("#caseReportCaseForm #id_number").attr("disabled","disabled");
+                  $("#caseReportCaseForm #cellphone").val(results[0].hseCellphone);
                   $("#caseReportCaseForm #name").val(results[0].hseName);
                   $("#caseReportCaseForm #surname").val(results[0].hseSurname);
                   $("#caseReportCaseForm #id_number").val(results[0].hseIdNumber);
@@ -27,18 +32,32 @@
                 }
                 else {
 
-                  $("#caseReportCaseForm #name").val();
-                  $("#caseReportCaseForm #surname").val();
-                  $("#caseReportCaseForm #id_number").val();
+                  $("#caseReportCaseForm #cellphone").val('');
+                  $("#caseReportCaseForm #name").val('');
+                  $("#caseReportCaseForm #surname").val('');
+                  $("#caseReportCaseForm #id_number").val('');
+                  $("#caseReportCaseForm #cellphone").removeAttr("disabled");
                   $("#caseReportCaseForm #name").removeAttr("disabled");
                   $("#caseReportCaseForm #surname").removeAttr("disabled");
-                 /* $("#caseReportCaseForm #name").attr("disabled","disabled");
-                  $("#caseReportCaseForm #surname").attr("disabled","disabled");*/
+                  $("#caseReportCaseForm #id_number").removeAttr("disabled");
+
 
                 }
 
                 return results;
 
+
+    },
+     onDelete: function (item) {
+
+                  $("#caseReportCaseForm #cellphone").val('');
+                  $("#caseReportCaseForm #name").val('');
+                  $("#caseReportCaseForm #surname").val('');
+                  $("#caseReportCaseForm #id_number").val('');
+                  $("#caseReportCaseForm #cellphone").removeAttr("disabled");
+                  $("#caseReportCaseForm #name").removeAttr("disabled");
+                  $("#caseReportCaseForm #surname").removeAttr("disabled");
+                  $("#caseReportCaseForm #id_number").removeAttr("disabled");
 
     }
   });

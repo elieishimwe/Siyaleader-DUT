@@ -219,8 +219,7 @@ class UserController extends Controller
     {
         $searchString = \Input::get('q');
         $users     = \DB::table('users')
-
-        ->whereRaw("`users`.`cellphone` LIKE '%{$searchString}%'")
+        ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `cellphone`) LIKE '%{$searchString}%'")
         ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone'))
         ->get();
 
@@ -228,7 +227,7 @@ class UserController extends Controller
 
        foreach ($users as $user) {
 
-            $data[] = array("name"=>"{$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}");
+            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}");
        }
 
         return $data;
