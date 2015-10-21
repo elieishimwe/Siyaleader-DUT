@@ -33,6 +33,8 @@
                     $("#caseReportCaseForm #surname").val(results.hseSurname);
                     $("#caseReportCaseForm #id_number").val(results.hseIdNumber);
                     $("#caseReportCaseForm #language").val(results.hseLanguage);
+                    $("#caseReportCaseForm #province").val(results.hseProvince);
+                    $("#caseReportCaseForm #district").val(results.hseDistrict);
 
                 }
                 else {

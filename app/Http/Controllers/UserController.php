@@ -224,7 +224,7 @@ class UserController extends Controller
         ->join('provinces','users.province','=','provinces.id')
         ->join('districts','users.district','=','districts.id')
         ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
-        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language','provinces.slug as province','districs.slug as district'))
+        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language','provinces.slug as province','districts.slug as district'))
         ->get();
 
         $data = array();
