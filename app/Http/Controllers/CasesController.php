@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CaseRequest;
 use App\Http\Controllers\Controller;
 use App\CaseReport;
 use App\CaseOwner;
@@ -20,6 +21,7 @@ use App\SubCategory;
 use App\SubSubCategory;
 use App\CaseResponder;
 use App\CriticalTeam;
+use App\Language;
 
 class CasesController extends Controller
 {
@@ -808,21 +810,33 @@ class CasesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function captureCaseUpdate(Request $request)
+    public function captureCaseUpdate(CaseRequest $request)
     {
 
         $houseHolderId = $request['hseHolderId'];
         $userRole      = UserRole::where('name','=','House Holder')->first();
 
 
-        if ( $houseHolderId > 0 ) {
+        if ( $houseHolderId < 1 ) {
 
-            $user           = New User();
-            $user->role     = $userRole->id;
-            $user->name     = $request['name'];
-            $user->surname  = $request['surname'];
-            $user->email    =
-
+            $user               = New User();
+            $user->role         = $userRole->id;
+            $user->name         = $request['name'];
+            $user->surname      = $request['surname'];
+            $user->cellphone    = $request['cellphone'];
+            $user->id_number    = $request['id_number'];
+            $user->house_number = $request['house_number'];
+            $language           = Language::where('slug','=',$request['language'])->first();
+            $user->language     = $language->id;
+            $province           = Province::where('slug','=',$request['province'])->first();
+            $user->province     = $province->id;
+            $district           = District::where('slug','=',$request['district'])->first();
+            $user->district     = $district->id;
+            $municipality       = Municipality::where('slug','=',$request['municipality'])->first();
+            $user->municipality = $municipality->id;
+            $ward               = Ward::where('slug','=',$request['ward'])->first();
+            $user->ward         = $ward->id;
+            $user->save();
 
         }
 

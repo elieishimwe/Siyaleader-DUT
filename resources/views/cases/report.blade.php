@@ -87,8 +87,8 @@
                  <div class="form-group">
                     {!! Form::label('Hse Number', 'Hse Number', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
-                      {!! Form::text('hsenumber',NULL,['class' => 'form-control input-sm','id' => 'hsenumber','disabled']) !!}
-                      @if ($errors->has('hsenumber')) <p class="help-block red">*{{ $errors->first('hsenumber') }}</p> @endif
+                      {!! Form::text('house_number',NULL,['class' => 'form-control input-sm','id' => 'house_number','disabled']) !!}
+                      @if ($errors->has('house_number')) <p class="help-block red">*{{ $errors->first('house_number') }}</p> @endif
                     </div>
                 </div>
 

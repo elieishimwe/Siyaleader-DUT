@@ -15,7 +15,7 @@ class AddColumnsUsersTable extends Migration
         Schema::table('users', function($table)
         {
 
-            $table->string('houseNumber');
+            $table->string('house_number');
 
         });
     }

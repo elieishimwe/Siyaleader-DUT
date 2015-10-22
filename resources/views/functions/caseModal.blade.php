@@ -22,7 +22,7 @@
                     $("#caseReportCaseForm #id_number").attr("disabled","disabled");
                     $("#caseReportCaseForm #language").attr("disabled","disabled");
                     $("#caseReportCaseForm #province").attr("disabled","disabled");
-                    $("#caseReportCaseForm #hsenumber").attr("disabled","disabled");
+                    $("#caseReportCaseForm #house_number").attr("disabled","disabled");
                     $("#caseReportCaseForm #province").attr("disabled","disabled");
                     $("#caseReportCaseForm #district").attr("disabled","disabled");
                     $("#caseReportCaseForm #municipality").attr("disabled","disabled");
@@ -67,7 +67,7 @@
                   $("#caseReportCaseForm #id_number").removeAttr("disabled");
                   $("#caseReportCaseForm #language").removeAttr("disabled");
                   $("#caseReportCaseForm #province").removeAttr("disabled");
-                  $("#caseReportCaseForm #hsenumber").removeAttr("disabled");
+                  $("#caseReportCaseForm #house_number").removeAttr("disabled");
                   $("#caseReportCaseForm #district").removeAttr("disabled");
                   $("#caseReportCaseForm #municipality").removeAttr("disabled");
                   $("#caseReportCaseForm #ward").removeAttr("disabled");
@@ -90,7 +90,7 @@
                   $("#caseReportCaseForm #province").val('');
                   $("#caseReportCaseForm #district").val('');
                   $("#caseReportCaseForm #municipality").val('');
-                  $("#caseReportCaseForm #hsenumber").val('');
+                  $("#caseReportCaseForm #house_number").val('');
                   $("#caseReportCaseForm #ward").val('');
                   $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #hseHolderId").val('');
@@ -102,7 +102,7 @@
                   $("#caseReportCaseForm #province").removeAttr("disabled");
                   $("#caseReportCaseForm #district").removeAttr("disabled");
                   $("#caseReportCaseForm #municipality").removeAttr("disabled");
-                  $("#caseReportCaseForm #hsenumber").removeAttr("disabled");
+                  $("#caseReportCaseForm #house_number").removeAttr("disabled");
                   $("#caseReportCaseForm #ward").removeAttr("disabled");
                   $("#caseReportCaseForm #area").removeAttr("disabled");
 
