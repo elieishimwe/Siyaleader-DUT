@@ -16,7 +16,7 @@
               </div>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => 'escalateCase', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"caseReportCaseForm" ]) !!}
+                {!! Form::open(['url' => 'captureCaseUpdate', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"caseReportCaseForm" ]) !!}
                 {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
 
 

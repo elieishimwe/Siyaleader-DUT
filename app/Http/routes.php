@@ -323,6 +323,7 @@ Route::post('requestCaseClosure', ['middleware' => 'auth', 'uses' => 'CasesContr
 Route::get('request-cases-closure-list', ['middleware' => 'auth', 'uses' => 'CasesController@requestCaseClosureList']);
 Route::get('resolved-cases-list', ['middleware' => 'auth', 'uses' => 'CasesController@resolvedCasesList']);
 Route::get('pending-referral-cases-list', ['middleware' => 'auth', 'uses' => 'CasesController@pendingReferralCasesList']);
+Route::post('captureCaseUpdate', ['middleware' => 'auth', 'uses' => 'CasesController@captureCaseUpdate']);
 
 
 /*
