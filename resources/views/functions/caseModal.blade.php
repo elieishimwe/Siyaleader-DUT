@@ -697,7 +697,7 @@
           if (data == 'ok') {
             $(".token-input-token").remove();
             $('#caseReportCaseForm')[0].reset();
-            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escalated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully updated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             launchCaseModal(caseID);
             $('#modalCase').modal('toggle');
             HoldOn.close();
@@ -1374,6 +1374,8 @@
 
     function launchCaseReportModal()
     {
+
+      $('#modalCase').modal('toggle');
       $('#caseReportCaseForm')[0].reset();
       $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
       $("#caseReportCaseForm #caseID").val($("#registrationForm #caseID").val());
