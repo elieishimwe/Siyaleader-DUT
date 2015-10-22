@@ -811,8 +811,8 @@ class CasesController extends Controller
     {
         $case = CaseReport::find($request['caseID']);
         $case->description = $request['description'];
+        $case->updated_by = \Auth::user()->id;
         $case->save();
-
         return "ok";
 
     }
