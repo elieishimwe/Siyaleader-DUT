@@ -224,15 +224,16 @@ class UserController extends Controller
         ->join('provinces','users.province','=','provinces.id')
         ->join('districts','users.district','=','districts.id')
         ->join('municipalities','users.municipality','=','municipalities.id')
+        ->join('wards','users.ward','=','wards.id')
         ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
-        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language','provinces.slug as province','districts.slug as district','municipalities.slug as municipality'))
+        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language','provinces.slug as province','districts.slug as district','municipalities.slug as municipality','wards.slug as ward'))
         ->get();
 
         $data = array();
 
        foreach ($users as $user) {
 
-            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}","hseProvince" => "{$user->province}","hseDistrict" => "{$user->district}");
+            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}","hseProvince" => "{$user->province}","hseDistrict" => "{$user->district}","hseMunicipality" => "{$user->municipality}","hseWard" => "{$user->ward}");
        }
 
         return $data;
