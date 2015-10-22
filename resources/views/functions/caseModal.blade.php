@@ -1332,6 +1332,7 @@
     {
       $('#caseReportCaseForm')[0].reset();
       $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
+      $("#caseReportCaseForm #caseID").val($("#registrationForm #caseID").val());
     }
 
 

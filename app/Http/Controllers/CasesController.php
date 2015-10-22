@@ -807,9 +807,14 @@ class CasesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function captureCaseUpdate()
+    public function captureCaseUpdate(Request $request)
     {
-        //
+        $case = CaseReport::find($request['caseID']);
+        $case->description = $request['description'];
+        $case->save();
+
+        return "ok";
+
     }
 
     /**
