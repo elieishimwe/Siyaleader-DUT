@@ -809,9 +809,10 @@ class CasesController extends Controller
      */
     public function captureCaseUpdate(Request $request)
     {
-        $case = CaseReport::find($request['caseID']);
-        $case->description = $request['description'];
-        $case->updated_by = \Auth::user()->id;
+        $case               = CaseReport::find($request['caseID']);
+        $case->description  = $request['description'];
+        $case->updated_by   = \Auth::user()->id;
+        $case->updated_at   = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         $case->save();
         return "ok";
 
