@@ -293,6 +293,10 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('noCaseStatuses',$noCaseStatuses);
 
+            $userRole = UserRole::where('id','=',\Auth::user()->role)->first();
+
+            $view->with('systemRole',$userRole);
+
           }
 
 

@@ -105,6 +105,7 @@
                             <h4 class="m-0">
                                 {{ Auth::user()->name }}  {{ Auth::user()->surname }}
                             </h4>
+                            {{ $systemRole->name }}<br>
                             {{ Auth::user()->email }}
                         @endif
 
