@@ -41,6 +41,8 @@
                     $("#caseReportCaseForm #municipality").val(results.hseMunicipality);
                     $("#caseReportCaseForm #ward").val(results.hseWard);
                     $("#caseReportCaseForm #area").val(results.hseArea);
+                    $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
+
 
                 }
                 else {
