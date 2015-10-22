@@ -1331,6 +1331,7 @@
     function launchCaseReportModal()
     {
       $('#caseReportCaseForm')[0].reset();
+      $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
     }
 
 

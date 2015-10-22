@@ -807,7 +807,7 @@ class CasesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function captureCaseUpdate()
     {
         //
     }
