@@ -52,7 +52,12 @@
                   $("#caseReportCaseForm #surname").val('');
                   $("#caseReportCaseForm #id_number").val('');
                   $("#caseReportCaseForm #language").val('');
-
+                  $("#caseReportCaseForm #province").val('');
+                  $("#caseReportCaseForm #district").val('');
+                  $("#caseReportCaseForm #municipality").val('');
+                  $("#caseReportCaseForm #hsenumber").val('');
+                  $("#caseReportCaseForm #ward").val('');
+                  $("#caseReportCaseForm #area").val('');
 
 
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
@@ -81,11 +86,23 @@
                   $("#caseReportCaseForm #surname").val('');
                   $("#caseReportCaseForm #id_number").val('');
                   $("#caseReportCaseForm #language").val('');
+                  $("#caseReportCaseForm #province").val('');
+                  $("#caseReportCaseForm #district").val('');
+                  $("#caseReportCaseForm #municipality").val('');
+                  $("#caseReportCaseForm #hsenumber").val('');
+                  $("#caseReportCaseForm #ward").val('');
+                  $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
                   $("#caseReportCaseForm #name").removeAttr("disabled");
                   $("#caseReportCaseForm #surname").removeAttr("disabled");
                   $("#caseReportCaseForm #id_number").removeAttr("disabled");
                   $("#caseReportCaseForm #language").removeAttr("disabled");
+                  $("#caseReportCaseForm #province").removeAttr("disabled");
+                  $("#caseReportCaseForm #district").removeAttr("disabled");
+                  $("#caseReportCaseForm #municipality").removeAttr("disabled");
+                  $("#caseReportCaseForm #hsenumber").removeAttr("disabled");
+                  $("#caseReportCaseForm #ward").removeAttr("disabled");
+                  $("#caseReportCaseForm #area").removeAttr("disabled");
 
     }
   });
