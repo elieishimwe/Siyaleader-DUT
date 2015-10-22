@@ -666,6 +666,50 @@
 
      });
 
+
+     $("#submitCaseReportCaseForm").on("click",function(){
+
+        var caseID        = $("#modalCaseReport #caseID").val();
+        var description   = $("#modalCaseReport #description").val();
+        var token         = $('input[name="_token"]').val();
+        var formData      = {caseID:caseID,description:description};
+
+        $('#modalCaseReport').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/captureCaseUpdate')!!}",
+        beforeSend : function() {
+          HoldOn.open({
+          theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+          message: "<h4> loading please wait... ! </h4>",
+          content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                       // this will replace the theme by something customized.
+          backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                     // Keep in mind is necessary the .css file too.
+          textColor:"white" // Change the font color of the message
+            });
+        },
+        success : function(data){
+
+          if (data == 'ok') {
+            $(".token-input-token").remove();
+            $('#caseReportCaseForm')[0].reset();
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escalated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            launchCaseModal(caseID);
+            $('#modalCase').modal('toggle');
+            HoldOn.close();
+
+          }
+
+        }
+
+    })
+
+     });
+
       $("#closeProfileCase").on("click",function(){
 
          var $tab = $('.tab-container'), $active = $tab.find('.tab-pane.active');
