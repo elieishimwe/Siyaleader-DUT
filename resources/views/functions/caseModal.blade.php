@@ -723,9 +723,10 @@
 
       $("#closeCaseReportModal").on("click",function(){
 
-
           $('#modalCaseReport').modal('toggle');
-
+          var caseId       = $("#modalCaseReport #caseID").val();
+          launchCaseModal(caseId);
+          $('#modalCase').modal('toggle');
 
       });
 
