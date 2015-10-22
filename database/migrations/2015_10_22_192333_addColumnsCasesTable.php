@@ -14,9 +14,8 @@ class AddColumnsCasesTable extends Migration
     {
         Schema::table('cases', function($table)
         {
-
             $table->integer('house_holder_id');
-
+            $table->integer('updated_by');
         });
     }
 
@@ -29,9 +28,8 @@ class AddColumnsCasesTable extends Migration
     {
         Schema::table('cases', function($table)
         {
-
             $table->dropColumn('house_holder_id');
-
+            $table->dropColumn('updated_by');
         });
     }
 }

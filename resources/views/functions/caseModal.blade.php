@@ -29,7 +29,7 @@
                     $("#caseReportCaseForm #ward").attr("disabled","disabled");
                     $("#caseReportCaseForm #area").attr("disabled","disabled");
 
-
+                    $("#caseReportCaseForm #hseHolderId").val(results.id);
                     $("#caseReportCaseForm #cellphone").val(results.hseCellphone);
                     $("#caseReportCaseForm #name").val(results.hseName);
                     $("#caseReportCaseForm #surname").val(results.hseSurname);

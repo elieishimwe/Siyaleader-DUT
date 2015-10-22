@@ -18,6 +18,8 @@
             <div class="modal-body">
                 {!! Form::open(['url' => 'captureCaseUpdate', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"caseReportCaseForm" ]) !!}
                 {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
+                {!! Form::hidden('hseHolderId',NULL,['id' => 'hseHolderId']) !!}
+
 
 
                 <div class="form-group">
