@@ -76,6 +76,15 @@
                 <hr class="whiter m-t-20">
                 <hr class="whiter m-b-20">
 
+                <div class="form-group">
+                    {!! Form::label('Hse Number', 'Hse Number', array('class' => 'col-md-3 control-label')) !!}
+                    <div class="col-md-6">
+                      {!! Form::text('house_number',NULL,['class' => 'form-control input-sm','id' => 'house_number','disabled']) !!}
+                      @if ($errors->has('house_number')) <p class="help-block red">*{{ $errors->first('house_number') }}</p> @endif
+                    </div>
+                </div>
+
+
                  <div class="form-group">
                   {!! Form::label('Province', 'Province', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
@@ -84,13 +93,7 @@
                   </div>
                 </div>
 
-                 <div class="form-group">
-                    {!! Form::label('Hse Number', 'Hse Number', array('class' => 'col-md-3 control-label')) !!}
-                    <div class="col-md-6">
-                      {!! Form::text('house_number',NULL,['class' => 'form-control input-sm','id' => 'house_number','disabled']) !!}
-                      @if ($errors->has('house_number')) <p class="help-block red">*{{ $errors->first('house_number') }}</p> @endif
-                    </div>
-                </div>
+
 
                 <div class="form-group">
                   {!! Form::label('District', 'District', array('class' => 'col-md-3 control-label')) !!}

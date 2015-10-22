@@ -30,7 +30,7 @@ class AddColumnsUsersTable extends Migration
         Schema::table('users', function($table)
         {
 
-            $table->dropColumn('houseNumber');
+            $table->dropColumn('house_number');
 
         });
     }

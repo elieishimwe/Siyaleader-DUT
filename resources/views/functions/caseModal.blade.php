@@ -673,8 +673,39 @@
 
         var caseID        = $("#modalCaseReport #caseID").val();
         var description   = $("#modalCaseReport #description").val();
+        var hseHolderId   = $("#modalCaseReport #hseHolderId").val();
+        var cellphone     = $("#modalCaseReport #cellphone").val();
+        var name          = $("#modalCaseReport #name").val();
+        var surname       = $("#modalCaseReport #surname").val();
+        var id_number     = $("#modalCaseReport #id_number").val();
+        var language      = $("#modalCaseReport #langage").val();
+        var house_number  = $("#modalCaseReport #house_number").val();
+        var province      = $("#modalCaseReport #province").val();
+        var district      = $("#modalCaseReport #district").val();
+        var municipality  = $("#modalCaseReport #municipality").val();
+        var ward          = $("#modalCaseReport #ward").val();
+        var area          = $("#modalCaseReport #area").val();
+
+
+
+
         var token         = $('input[name="_token"]').val();
-        var formData      = {caseID:caseID,description:description};
+        var formData      = {
+                                caseID:caseID,
+                                description:description,
+                                hseHolderId:hseHolderId,
+                                cellphone:cellphone,
+                                name:name,
+                                surname:surname,
+                                id_number:id_number,
+                                language:language,
+                                house_number:house_number,
+                                province:province,
+                                district:district,
+                                municipality:municipality,
+                                ward:ward,
+                                area:area
+                            };
 
         $('#modalCaseReport').modal('toggle');
 

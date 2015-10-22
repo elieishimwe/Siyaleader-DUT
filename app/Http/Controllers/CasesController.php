@@ -815,6 +815,7 @@ class CasesController extends Controller
 
         $houseHolderId = $request['hseHolderId'];
         $userRole      = UserRole::where('name','=','House Holder')->first();
+        \Log::info($request['language']);
 
 
         if ( $houseHolderId < 1 ) {
