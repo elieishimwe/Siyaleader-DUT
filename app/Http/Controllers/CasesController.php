@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\CaseReport;
 use App\CaseOwner;
 use App\User;
+use App\UserRole;
 use App\addressbook;
 use App\CaseEscalator;
 use App\CaseActivity;
@@ -809,6 +810,25 @@ class CasesController extends Controller
      */
     public function captureCaseUpdate(Request $request)
     {
+
+        $houseHolderId = $request['hseHolderId'];
+        $userRole      = UserRole::where('name','=','House Holder')->first();
+
+
+        if ( $houseHolderId > 0 ) {
+
+            $user           = New User();
+            $user->role     = $userRole->id;
+            $user->name     = $request['name'];
+            $user->surname  = $request['surname'];
+            $user->email    =
+
+
+        }
+
+
+
+
         $case               = CaseReport::find($request['caseID']);
         $case->description  = $request['description'];
         $case->updated_by   = \Auth::user()->id;
