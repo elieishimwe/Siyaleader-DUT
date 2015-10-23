@@ -43,6 +43,7 @@
                     $("#caseReportCaseForm #ward").val(results.hseWard);
                     $("#caseReportCaseForm #area").val(results.hseArea);
                     $("#caseReportCaseForm #title").val(results.hseTitle);
+                    $("#caseReportCaseForm #position").val(results.hsePosition);
                     $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
 
 
