@@ -15,13 +15,16 @@ use App\addressbook;
 use App\CaseEscalator;
 use App\CaseActivity;
 use App\Department;
-use App\Municipality;
 use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
 use App\CaseResponder;
 use App\CriticalTeam;
 use App\Language;
+use App\Province;
+use App\District;
+use App\Municipality;
+use App\Ward;
 
 class CasesController extends Controller
 {
