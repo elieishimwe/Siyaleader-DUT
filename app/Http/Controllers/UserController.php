@@ -255,7 +255,7 @@ class UserController extends Controller
 
        foreach ($users as $user) {
 
-            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}","hseProvince" => "{$user->province}","hseDistrict" => "{$user->district}","hseMunicipality" => "{$user->municipality}","hseWard" => "{$user->ward}","hseArea" =>"{$user->area}","hseNumber" =>"{$user->house_number}");
+            $data[] = array("name"=>"{$user->name} > {$user->surname} > {$user->cellphone}","id" =>"{$user->id}","hseName" => "{$user->name}","hseSurname" => "{$user->surname}","hseIdNumber" => "{$user->id_number}","hseCellphone" => "{$user->cellphone}","hseLanguage" => "{$user->language}","hseProvince" => "{$user->province}","hseDistrict" => "{$user->district}","hseMunicipality" => "{$user->municipality}","hseWard" => "{$user->ward}","hseArea" =>"{$user->area}","hseNumber" =>"{$user->house_number}","hseTitle" => "{$user->title}");
        }
 
         return $data;
