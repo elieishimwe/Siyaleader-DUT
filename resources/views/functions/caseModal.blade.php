@@ -63,6 +63,7 @@
                   $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #hseHolderId").val('');
                   $("#caseReportCaseForm #title").val('');
+                  $("#caseReportCaseForm #position").val('');
 
 
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
@@ -99,6 +100,7 @@
                   $("#caseReportCaseForm #ward").val('');
                   $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #title").val('');
+                  $("#caseReportCaseForm #position").val('');
                   $("#caseReportCaseForm #hseHolderId").val('');
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
                   $("#caseReportCaseForm #name").removeAttr("disabled");
