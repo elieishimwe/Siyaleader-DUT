@@ -218,16 +218,38 @@ class UserController extends Controller
      */
     public function getHouseHolder()
     {
-        $searchString = \Input::get('q');
-        $users     = \DB::table('users')
-        ->join('languages','users.language','=','languages.id')
-        ->join('provinces','users.province','=','provinces.id')
-        ->join('districts','users.district','=','districts.id')
-        ->join('municipalities','users.municipality','=','municipalities.id')
-        ->join('wards','users.ward','=','wards.id')
-        ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
-        ->select(array('users.id as id','users.id_number as id_number','users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','languages.slug as language','provinces.slug as province','districts.slug as district','municipalities.slug as municipality','wards.slug as ward','users.area','users.house_number'))
-        ->get();
+        $searchString   = \Input::get('q');
+        $users          = \DB::table('users')
+            ->join('languages','users.language','=','languages.id')
+            ->join('provinces','users.province','=','provinces.id')
+            ->join('districts','users.district','=','districts.id')
+            ->join('titles','users.title','=','titles.id')
+            ->join('positions','users.position','=','positions.id')
+            ->join('municipalities','users.municipality','=','municipalities.id')
+            ->join('wards','users.ward','=','wards.id')
+            ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`cellphone`) LIKE '%{$searchString}%'")
+            ->select(
+                        array
+
+                            (
+                                'users.id as id',
+                                'users.id_number as id_number',
+                                'users.name as name',
+                                'users.surname as surname',
+                                'users.username as username',
+                                'users.cellphone as cellphone',
+                                'languages.slug as language',
+                                'provinces.slug as province',
+                                'districts.slug as district',
+                                'municipalities.slug as municipality',
+                                'wards.slug as ward',
+                                'positions.slug as position',
+                                'titles.slug as title',
+                                'users.area',
+                                'users.house_number'
+                            )
+                    )
+            ->get();
 
         $data = array();
 

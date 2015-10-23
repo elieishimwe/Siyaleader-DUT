@@ -553,10 +553,10 @@ class CasesController extends Controller
             $user =  User::find($caseOwner->user);
             $data = array(
 
-                'name'    => $user->name,
-                'caseID'  => $request['caseID'],
-                'content' => $request['message'],
-                'executor'  => \Auth::user()->name.' '.\Auth::user()->surname,
+                'name'          => $user->name,
+                'caseID'        => $request['caseID'],
+                'content'       => $request['message'],
+                'executor'      => \Auth::user()->name.' '.\Auth::user()->surname,
             );
 
 
@@ -817,9 +817,8 @@ class CasesController extends Controller
     {
 
         $houseHolderId = $request['hseHolderId'];
-        \Log::info($request['hseHolderId']);
         $userRole      = UserRole::where('name','=','House Holder')->first();
-        \Log::info($request['language']);
+
 
 
         if ( $houseHolderId < 1 ) {
@@ -831,6 +830,8 @@ class CasesController extends Controller
             $user->cellphone    = $request['cellphone'];
             $user->id_number    = $request['id_number'];
             $user->house_number = $request['house_number'];
+            $user->email        = $request['cellphone']."@siyaleader.net";
+            $user->created_by   = \Auth::user()->id;
             $language           = Language::where('slug','=',$request['language'])->first();
             $user->language     = $language->id;
             $province           = Province::where('slug','=',$request['province'])->first();

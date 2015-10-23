@@ -28,6 +28,7 @@
                     $("#caseReportCaseForm #municipality").attr("disabled","disabled");
                     $("#caseReportCaseForm #ward").attr("disabled","disabled");
                     $("#caseReportCaseForm #area").attr("disabled","disabled");
+                    $("#caseReportCaseForm #title").attr("disabled","disabled");
 
                     $("#caseReportCaseForm #hseHolderId").val(results.id);
                     $("#caseReportCaseForm #cellphone").val(results.hseCellphone);
@@ -59,6 +60,7 @@
                   $("#caseReportCaseForm #ward").val('');
                   $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #hseHolderId").val('');
+                  $("#caseReportCaseForm #title").val('');
 
 
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
@@ -72,6 +74,7 @@
                   $("#caseReportCaseForm #municipality").removeAttr("disabled");
                   $("#caseReportCaseForm #ward").removeAttr("disabled");
                   $("#caseReportCaseForm #area").removeAttr("disabled");
+                  $("#caseReportCaseForm #title").removeAttr("disabled");
 
 
                 }
@@ -105,6 +108,7 @@
                   $("#caseReportCaseForm #house_number").removeAttr("disabled");
                   $("#caseReportCaseForm #ward").removeAttr("disabled");
                   $("#caseReportCaseForm #area").removeAttr("disabled");
+                  $("#caseReportCaseForm #title").removeAttr("disabled");
 
     }
   });

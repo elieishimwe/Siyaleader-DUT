@@ -31,6 +31,15 @@
                 </div>
 
                 <div class="form-group">
+                  {!! Form::label('Title', 'Title', array('class' => 'col-md-3 control-label')) !!}
+                  <div class="col-md-6">
+                  {!! Form::select('title',$selectTitles,0,['class' => 'form-control' ,'id' => 'title','disabled']) !!}
+                  @if ($errors->has('title')) <p class="help-block red">*{{ $errors->first('title') }}</p> @endif
+                  </div>
+                </div>
+
+
+                <div class="form-group">
                     {!! Form::label('Hse Cell Number', 'Hse Cell Number', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone','disabled']) !!}
@@ -71,7 +80,13 @@
                   </div>
                 </div>
 
-
+                <div class="form-group">
+                  {!! Form::label('Position', 'Position', array('class' => 'col-md-3 control-label')) !!}
+                  <div class="col-md-6">
+                    {!! Form::select('position',$selectPositions,0,['class' => 'form-control input-sm' ,'id' => 'position','disabled']) !!}
+                    @if ($errors->has('position')) <p class="help-block red">*{{ $errors->first('position') }}</p> @endif
+                  </div>
+                </div>
 
                 <hr class="whiter m-t-20">
                 <hr class="whiter m-b-20">
