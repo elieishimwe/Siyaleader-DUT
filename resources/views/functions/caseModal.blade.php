@@ -37,7 +37,7 @@
                     $("#caseReportCaseForm #id_number").val(results.hseIdNumber);
                     $("#caseReportCaseForm #language").val(results.hseLanguage);
                     $("#caseReportCaseForm #province").val(results.hseProvince);
-                    $("#caseReportCaseForm #hsenumber").val(results.hseNumber);
+                    $("#caseReportCaseForm #house_number").val(results.hseNumber);
                     $("#caseReportCaseForm #district").val(results.hseDistrict);
                     $("#caseReportCaseForm #municipality").val(results.hseMunicipality);
                     $("#caseReportCaseForm #ward").val(results.hseWard);
@@ -57,7 +57,7 @@
                   $("#caseReportCaseForm #province").val('');
                   $("#caseReportCaseForm #district").val('');
                   $("#caseReportCaseForm #municipality").val('');
-                  $("#caseReportCaseForm #hsenumber").val('');
+                  $("#caseReportCaseForm #house_number").val('');
                   $("#caseReportCaseForm #ward").val('');
                   $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #hseHolderId").val('');
@@ -110,6 +110,7 @@
                   $("#caseReportCaseForm #ward").removeAttr("disabled");
                   $("#caseReportCaseForm #area").removeAttr("disabled");
                   $("#caseReportCaseForm #title").removeAttr("disabled");
+                  $("#caseReportCaseForm #position").removeAttr("disabled");
 
     }
   });
