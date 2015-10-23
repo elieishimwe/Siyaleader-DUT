@@ -810,10 +810,11 @@ class CasesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function captureCaseUpdate(CaseRequest $request)
+    public function captureCaseUpdate(Request $request)
     {
 
         $houseHolderId = $request['hseHolderId'];
+        \Log::info($request['hseHolderId']);
         $userRole      = UserRole::where('name','=','House Holder')->first();
         \Log::info($request['language']);
 
