@@ -678,7 +678,7 @@
         var name          = $("#modalCaseReport #name").val();
         var surname       = $("#modalCaseReport #surname").val();
         var id_number     = $("#modalCaseReport #id_number").val();
-        var language      = $("#modalCaseReport #langage").val();
+        var language      = $("#modalCaseReport #language").val();
         var house_number  = $("#modalCaseReport #house_number").val();
         var province      = $("#modalCaseReport #province").val();
         var district      = $("#modalCaseReport #district").val();
