@@ -12,8 +12,30 @@
 
   $("#caseReportCaseForm #hsecellphone").tokenInput("getHouseHolder", {
       tokenLimit: 1,
-      onAdd: function (results) {
+      animateDropdown: false,
+      onResult: function (results) {
+              console.log(results);
+              if (results.length == 0)
+              {
+                  $("#caseReportCaseForm #cellphone").removeAttr("disabled");
+                  $("#caseReportCaseForm #name").removeAttr("disabled");
+                  $("#caseReportCaseForm #surname").removeAttr("disabled");
+                  $("#caseReportCaseForm #id_number").removeAttr("disabled");
+                  $("#caseReportCaseForm #language").removeAttr("disabled");
+                  $("#caseReportCaseForm #province").removeAttr("disabled");
+                  $("#caseReportCaseForm #district").removeAttr("disabled");
+                  $("#caseReportCaseForm #municipality").removeAttr("disabled");
+                  $("#caseReportCaseForm #house_number").removeAttr("disabled");
+                  $("#caseReportCaseForm #ward").removeAttr("disabled");
+                  $("#caseReportCaseForm #area").removeAttr("disabled");
+                  $("#caseReportCaseForm #title").removeAttr("disabled");
+                  $("#caseReportCaseForm #position").removeAttr("disabled");
 
+              }
+              return results;
+      },
+      onAdd: function (results) {
+                console.log(results);
                 if(results.name)
                 {
                     $("#caseReportCaseForm #cellphone").attr("disabled","disabled");
