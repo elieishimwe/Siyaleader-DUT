@@ -24,18 +24,19 @@ class CaseRequest extends Request
     public function rules()
     {
         return [
-            /*'role'          =>'required|not_in:0',
+
             'title'         =>'required|not_in:0',
             'name'          =>'required',
             'surname'       =>'required',
             'language'      =>'required|not_in:0',
             'cellphone'     =>'required|not_in:0|digits:10|unique:users,cellphone',
             'email'         =>'email|unique:users,email',
-            'alt_email'     =>'email',
             'province'      =>'required|not_in:0',
             'district'      =>'required|not_in:0',
             'position'      =>'required|not_in:0',
-            'department'    =>'required|not_in:0',*/
+            'municipality'  =>'required|not_in:0',
+            'ward'          =>'required|not_in:0',
+            'position'      =>'required|not_in:0',
         ];
     }
 }

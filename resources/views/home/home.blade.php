@@ -209,7 +209,8 @@
 
   @if (count($errors) > 0)
 
-      $('#modalAddContactModal').modal('show');
+    $('#modalAddContactModal').modal('show');
+
 
   @endif
 

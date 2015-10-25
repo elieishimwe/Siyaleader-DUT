@@ -813,7 +813,7 @@ class CasesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function captureCaseUpdate(Request $request)
+    public function captureCaseUpdate(CaseRequest $request)
     {
 
         $houseHolderId = $request['hseHolderId'];
@@ -854,7 +854,9 @@ class CasesController extends Controller
         $case->updated_by   = \Auth::user()->id;
         $case->updated_at   = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         $case->save();
-        return "ok";
+
+
+        return 'ok';
 
     }
 

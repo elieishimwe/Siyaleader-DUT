@@ -33,8 +33,8 @@
                 <div class="form-group">
                   {!! Form::label('Title', 'Title', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                  {!! Form::select('title',$selectTitles,0,['class' => 'form-control' ,'id' => 'title','disabled']) !!}
-                  @if ($errors->has('title')) <p class="help-block red">*{{ $errors->first('title') }}</p> @endif
+                  {!! Form::select('title',$selectTitles,0,['class' => 'form-control' ,'id' => 'title']) !!}
+                  <div id = "error_title"></div>
                   </div>
                 </div>
 
@@ -43,7 +43,8 @@
                     {!! Form::label('Hse Cell Number', 'Hse Cell Number', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('cellphone',NULL,['class' => 'form-control input-sm','id' => 'cellphone','disabled']) !!}
-                      @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
+                      <div id = "error_cellphone"></div>
+
                     </div>
                 </div>
 
@@ -52,7 +53,7 @@
                     {!! Form::label('Hse Holder Name', 'Hse Holder Name', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','disabled']) !!}
-                      @if ($errors->has('name')) <p class="help-block red">*{{ $errors->first('name') }}</p> @endif
+                      <div id = "error_name"></div>
                     </div>
                 </div>
 
@@ -60,7 +61,7 @@
                     {!! Form::label('Hse Holder Surname', 'Hse Holder Surname', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('surname',NULL,['class' => 'form-control input-sm','id' => 'surname','disabled']) !!}
-                      @if ($errors->has('surname')) <p class="help-block red">*{{ $errors->first('surname') }}</p> @endif
+                     <div id = "error_surname"></div>
                     </div>
                 </div>
 
@@ -68,7 +69,7 @@
                     {!! Form::label('Hse Holder ID Number', 'Hse Holder ID Number', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                       {!! Form::text('id_number',NULL,['class' => 'form-control input-sm','id' => 'id_number']) !!}
-                      @if ($errors->has('id_number')) <p class="help-block red">*{{ $errors->first('id_number') }}</p> @endif
+                      <div id = "error_id_number"></div>
                     </div>
                 </div>
 
@@ -76,7 +77,7 @@
                     {!! Form::label('Preferred Language', 'Preferred Language', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                     {!! Form::select('language',$selectLanguages,0,['class' => 'form-control' ,'id' => 'language','disabled']) !!}
-                    @if ($errors->has('language')) <p class="help-block red">*{{ $errors->first('language') }}</p> @endif
+                    <div id = "error_language"></div>
                   </div>
                 </div>
 
@@ -84,7 +85,7 @@
                   {!! Form::label('Position', 'Position', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
                     {!! Form::select('position',$selectPositions,0,['class' => 'form-control input-sm' ,'id' => 'position','disabled']) !!}
-                    @if ($errors->has('position')) <p class="help-block red">*{{ $errors->first('position') }}</p> @endif
+                    <div id = "error_position"></div>
                   </div>
                 </div>
 
@@ -104,7 +105,7 @@
                   {!! Form::label('Province', 'Province', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
                     {!! Form::select('province',$selectProvinces,0,['class' => 'form-control' ,'id' => 'province','disabled']) !!}
-                    @if ($errors->has('province')) <p class="help-block red">*{{ $errors->first('province') }}</p> @endif
+                    <div id = "error_province"></div>
                   </div>
                 </div>
 
@@ -114,7 +115,7 @@
                   {!! Form::label('District', 'District', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
                     {!! Form::select('district',$selectDistricts,0,['class' => 'form-control input-sm' ,'id' => 'district','disabled']) !!}
-                    @if ($errors->has('district')) <p class="help-block red">*{{ $errors->first('district') }}</p> @endif
+                   <div id = "error_district"></div>
                   </div>
                </div>
 
@@ -122,7 +123,7 @@
                     {!! Form::label('Municipality', 'Municipality', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
                     {!! Form::select('municipality',$selectMunicipalities,0,['class' => 'form-control input-sm' ,'name' => 'municipality','id' => 'municipality','disabled']) !!}
-                    @if ($errors->has('municipality')) <p class="help-block red">*{{ $errors->first('municipality') }}</p> @endif
+                    <div id = "error_municipality"></div>
                   </div>
                 </div>
 
@@ -130,7 +131,7 @@
                     {!! Form::label('Ward', 'Ward', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
                     {!! Form::select('ward',$selectWards,0,['class' => 'form-control input-sm' ,'name' => 'ward','id' => 'ward','disabled']) !!}
-                    @if ($errors->has('ward')) <p class="help-block red">*{{ $errors->first('ward') }}</p> @endif
+                    <div id = "error_ward"></div>
                   </div>
                 </div>
 
@@ -171,8 +172,6 @@
                 {!! Form::close() !!}
 
             </div>
-
-
 
         </div>
     </div>

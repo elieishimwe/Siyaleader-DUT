@@ -14,7 +14,7 @@
       tokenLimit: 1,
       animateDropdown: false,
       onResult: function (results) {
-              console.log(results);
+
               if (results.length == 0)
               {
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
@@ -770,6 +770,68 @@
 
           }
 
+        },
+
+        error: function(data) {
+
+          HoldOn.close();
+
+          if (data.responseJSON.cellphone)
+          {
+            $("#error_cellphone").html("<p class='help-block red'>*"+data.responseJSON.cellphone+"</p>")
+          }
+
+          if (data.responseJSON.title)
+          {
+            $("#error_title").html("<p class='help-block red'>*"+data.responseJSON.title+"</p>")
+          }
+
+          if (data.responseJSON.language)
+          {
+            $("#error_language").html("<p class='help-block red'>*"+data.responseJSON.language+"</p>")
+          }
+
+          if (data.responseJSON.province)
+          {
+            $("#error_province").html("<p class='help-block red'>*"+data.responseJSON.province+"</p>")
+          }
+
+          if (data.responseJSON.district)
+          {
+            $("#error_district").html("<p class='help-block red'>*"+data.responseJSON.district+"</p>")
+          }
+
+          if (data.responseJSON.municipality)
+          {
+            $("#error_municipality").html("<p class='help-block red'>*"+data.responseJSON.municipality+"</p>")
+          }
+
+          if (data.responseJSON.ward)
+          {
+            $("#error_ward").html("<p class='help-block red'>*"+data.responseJSON.ward+"</p>")
+          }
+
+          if (data.responseJSON.name)
+          {
+            $("#error_name").html("<p class='help-block red'>*"+data.responseJSON.name+"</p>")
+          }
+
+          if (data.responseJSON.surname)
+          {
+            $("#error_surname").html("<p class='help-block red'>*"+data.responseJSON.surname+"</p>")
+          }
+
+          if (data.responseJSON.position)
+          {
+            $("#error_position").html("<p class='help-block red'>*"+data.responseJSON.position+"</p>")
+          }
+
+
+
+
+
+          $('#modalCaseReport').modal('show');
+
         }
 
     })
@@ -1441,6 +1503,16 @@
 
     function launchCaseReportModal()
     {
+
+
+      $("#error_cellphone").html("");
+      $("#error_title").html("");
+      $("#error_language").html("");
+      $("#error_province").html("");
+      $("#error_district").html("");
+      $("#error_municipality").html("");
+      $("#error_ward").html("");
+
 
       $('#modalCase').modal('toggle');
       $('#caseReportCaseForm')[0].reset();
