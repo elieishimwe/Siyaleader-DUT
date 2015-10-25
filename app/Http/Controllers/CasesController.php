@@ -829,6 +829,8 @@ class CasesController extends Controller
             $user->surname      = $request['surname'];
             $user->cellphone    = $request['cellphone'];
             $user->id_number    = $request['id_number'];
+            $user->position     = $request['position'];
+            $user->title        = $request['title'];
             $user->house_number = $request['house_number'];
             $user->email        = $request['cellphone']."@siyaleader.net";
             $user->created_by   = \Auth::user()->id;

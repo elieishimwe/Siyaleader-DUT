@@ -33,7 +33,7 @@
                 <div class="form-group">
                   {!! Form::label('Title', 'Title', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                  {!! Form::select('title',$selectTitles,0,['class' => 'form-control' ,'id' => 'title']) !!}
+                  {!! Form::select('title',$selectTitles,0,['class' => 'form-control' ,'id' => 'title','disabled']) !!}
                   <div id = "error_title"></div>
                   </div>
                 </div>

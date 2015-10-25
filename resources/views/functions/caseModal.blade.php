@@ -718,9 +718,8 @@
         var municipality  = $("#modalCaseReport #municipality").val();
         var ward          = $("#modalCaseReport #ward").val();
         var area          = $("#modalCaseReport #area").val();
-
-
-
+        var title         = $("#modalCaseReport #title").val();
+        var position      = $("#modalCaseReport #position").val();
 
         var token         = $('input[name="_token"]').val();
         var formData      = {
@@ -737,7 +736,9 @@
                                 district:district,
                                 municipality:municipality,
                                 ward:ward,
-                                area:area
+                                area:area,
+                                title:title,
+                                position:position
                             };
 
         $('#modalCaseReport').modal('toggle');
@@ -786,6 +787,7 @@
           $("#error_name").html("");
           $("#error_surname").html("");
           $("#error_id_number").html("");
+          $("#error_position").html("");
 
           if (data.responseJSON.cellphone)
           {
@@ -1527,6 +1529,7 @@
       $("#error_name").html("");
       $("#error_surname").html("");
       $("#error_id_number").html("");
+      $("#error_position").html("");
       $('#modalCase').modal('toggle');
       $('#caseReportCaseForm')[0].reset();
       $("#caseReportCaseForm #cellphone").attr("disabled","disabled");
