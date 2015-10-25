@@ -1885,6 +1885,10 @@ a.list-group-item.active > .badge,
         background-image: url(../img/body/blue.jpg);
     }
 
+    #skin-blur-blue-Ethekweni {
+        background-image: url(../img/body/blueEthekwini.jpg);
+    }
+
     #skin-blur-chrome {
         background-image: url(../img/body/chrome.jpg);
     }
@@ -2058,6 +2062,11 @@ a.list-group-item.active > .badge,
     #skin-blur-blue {
         background: #2B6474;
     }
+
+    #skin-blur-blue-Ethekweni {
+        background: #2B6474;
+    }
+
 
     #skin-blur-chrome {
         background: #40404E;
