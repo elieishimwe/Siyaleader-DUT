@@ -776,6 +776,17 @@
 
           HoldOn.close();
 
+          $("#error_cellphone").html("");
+          $("#error_title").html("");
+          $("#error_language").html("");
+          $("#error_province").html("");
+          $("#error_district").html("");
+          $("#error_municipality").html("");
+          $("#error_ward").html("");
+          $("#error_name").html("");
+          $("#error_surname").html("");
+          $("#error_id_number").html("");
+
           if (data.responseJSON.cellphone)
           {
             $("#error_cellphone").html("<p class='help-block red'>*"+data.responseJSON.cellphone+"</p>")
@@ -826,9 +837,10 @@
             $("#error_position").html("<p class='help-block red'>*"+data.responseJSON.position+"</p>")
           }
 
-
-
-
+          if (data.responseJSON.id_number)
+          {
+            $("#error_id_number").html("<p class='help-block red'>*"+data.responseJSON.id_number+"</p>")
+          }
 
           $('#modalCaseReport').modal('show');
 
@@ -1512,8 +1524,9 @@
       $("#error_district").html("");
       $("#error_municipality").html("");
       $("#error_ward").html("");
-
-
+      $("#error_name").html("");
+      $("#error_surname").html("");
+      $("#error_id_number").html("");
       $('#modalCase').modal('toggle');
       $('#caseReportCaseForm')[0].reset();
       $("#caseReportCaseForm #cellphone").attr("disabled","disabled");

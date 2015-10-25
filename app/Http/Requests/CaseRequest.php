@@ -37,6 +37,7 @@ class CaseRequest extends Request
             'municipality'  =>'required|not_in:0',
             'ward'          =>'required|not_in:0',
             'position'      =>'required|not_in:0',
+            'id_number'     =>'digits:13',
         ];
     }
 }
