@@ -219,6 +219,32 @@ Route::post('addDistrict', ['middleware' => 'auth', 'uses' => 'DistricsControlle
 */
 
 
+/*
+|--------------------------------------------------------------------------
+| MUNICIPALITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('list-municipalities/{district}', ['middleware' => 'auth', function($district)
+{
+  $districtObj   = District::find($district);
+  $provinceName  = Province::find($districtObj->province);
+  return view('subcategories.list',compact('catObj','deptName'));
+}]);
+
+Route::get('subcategories/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@edit']);
+Route::get('sub-categories-list/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@index']);
+Route::post('updateSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@update']);
+Route::post('addSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@store']);
+
+/*
+|--------------------------------------------------------------------------
+| END MUNICIPALITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 
 

@@ -50,19 +50,19 @@
  <script>
   $(document).ready(function() {
 
-  var department = {!! $provinceObj->id !!};
+  var province = {!! $provinceObj->id !!};
   var oTable     = $('#districtsTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/districts-list/" + department +"')!!}",
+                "ajax": "{!! url('/districts-list/" + province +"')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-sub-categories/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
+                 return "<a href='{!! url('list-municipalities/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 

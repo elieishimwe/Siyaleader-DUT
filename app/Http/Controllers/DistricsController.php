@@ -85,7 +85,7 @@ class DistricsController extends Controller
         $district->name = $request['name'];
         $district->updated_by = \Auth::user()->id;
         $district->save();
-        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
+        \Session::flash('success', 'well done! District '.$request['name'].' has been successfully added!');
         return redirect()->back();
     }
 
