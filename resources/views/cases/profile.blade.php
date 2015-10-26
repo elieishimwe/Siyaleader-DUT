@@ -125,14 +125,14 @@
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      {!! Form::label('Report Name', 'Report Name', array('class' => 'col-md-3 control-label')) !!}
+                                      {!! Form::label('Field Worker Name', 'Field Worker Name', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
                                         {!! Form::text('reporter',NULL,['class' => 'form-control input-sm','id' => 'reporter','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      {!! Form::label('Report Cellphone', 'Report Cellphone', array('class' => 'col-md-3 control-label')) !!}
+                                      {!! Form::label('Field Worker Cellphone', 'Field Worker Cellphone', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
                                       {!! Form::text('reporterCell',NULL,['class' => 'form-control input-sm','id' => 'reporterCell','disabled' => 'disabled']) !!}
 
