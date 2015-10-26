@@ -228,8 +228,8 @@ Route::post('addDistrict', ['middleware' => 'auth', 'uses' => 'DistricsControlle
 Route::get('list-municipalities/{district}', ['middleware' => 'auth', function($district)
 {
   $districtObj   = District::find($district);
-  $provinceName  = Province::find($districtObj->province);
-  return view('municipalities.list',compact('districtObj','provinceName'));
+  $provinceObj  = Province::find($districtObj->province);
+  return view('municipalities.list',compact('districtObj','provinceObj'));
 }]);
 
 
