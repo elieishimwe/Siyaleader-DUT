@@ -6,15 +6,18 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-provinces') }}">Provinces</a></li>
+    <li><a href="{{ url('list-categories/'.$provinceObj->id.'') }}">{{ $provinceObj->name }}</a></li>
     <li><a href="#">{{ $districtObj->name }}</a></li>
     <li class="active">Municipalities Listing</li>
 </ol>
+
+
 
 <h4 class="page-title">{{ $districtObj->name }} MUNICIPALITIES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Municipalities Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddDistrict">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddMunicipalitiy">
      Add Municipality
     </a>
 </div>
