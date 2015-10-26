@@ -1909,6 +1909,11 @@ a.list-group-item.active > .badge,
         background-image: url(../img/body/kiwi.jpg);
     }
 
+    #skin-blur-kiwi-login {
+        background-image: url(../img/body/kiwi_login.jpg);
+    }
+
+
     #skin-blur-nexus {
         background-image: url(../img/body/nexus.jpg);
     }
@@ -2085,6 +2090,10 @@ a.list-group-item.active > .badge,
     }
 
     #skin-blur-kiwi {
+        background: #0f4731;
+    }
+
+    #skin-blur-kiwi-login {
         background: #0f4731;
     }
 
