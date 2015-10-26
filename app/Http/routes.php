@@ -257,15 +257,16 @@ Route::get('list-wards/{municipality}', ['middleware' => 'auth', function($munic
 {
   $municipalityObj  = Municipality::find($municipality);
   $districtObj      = District::find($municipalityObj->district);
-  return view('wards.list',compact('districtObj','municipalityObj'));
+  $provinceObj      = Province::find($districtObj->province);
+  return view('wards.list',compact('districtObj','municipalityObj','provinceObj'));
 }]);
 
 
-Route::get('municipalities-list/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@index']);
-Route::get('municipalities/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@edit']);
+Route::get('wards-list/{id}', ['middleware' => 'auth', 'uses' => 'WardsController@index']);
+Route::get('wards/{id}', ['middleware' => 'auth', 'uses' => 'WardsController@edit']);
 
-Route::post('updateMunicipality', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@update']);
-Route::post('addMunicipality', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@store']);
+Route::post('updateWard', ['middleware' => 'auth', 'uses' => 'WardsController@update']);
+Route::post('addMunicipality', ['middleware' => 'auth', 'uses' => 'WardsController@store']);
 
 /*
 |--------------------------------------------------------------------------
