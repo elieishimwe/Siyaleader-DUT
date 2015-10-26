@@ -229,11 +229,13 @@ Route::get('list-municipalities/{district}', ['middleware' => 'auth', function($
 {
   $districtObj   = District::find($district);
   $provinceName  = Province::find($districtObj->province);
-  return view('subcategories.list',compact('catObj','deptName'));
+  return view('municipalities.list',compact('districtObj','provinceName'));
 }]);
 
+
+Route::get('municipalities-list/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@index']);
 Route::get('subcategories/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@edit']);
-Route::get('sub-categories-list/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@index']);
+
 Route::post('updateSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@update']);
 Route::post('addSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@store']);
 
