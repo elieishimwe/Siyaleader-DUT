@@ -81,25 +81,25 @@
 
   });
 
-   function launchUpdateDistrictModal(id)
+   function launchUpdateMunicipalityModal(id)
     {
 
-      $(".modal-body #districtID").val(id);
+      $(".modal-body #municipalityID").val(id);
 
         $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/districts/"+ id + "')!!}",
+        url     :"{!! url('/municipalities/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalEditDistrict #name").val(data[0].name);
+               $("#modalEditMunicipality #name").val(data[0].name);
 
             }
             else {
-               $("#modalEditDistrict #name").val('');
+               $("#modalEditMunicipality #name").val('');
             }
 
         }

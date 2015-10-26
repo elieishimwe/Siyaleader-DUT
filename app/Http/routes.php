@@ -234,7 +234,7 @@ Route::get('list-municipalities/{district}', ['middleware' => 'auth', function($
 
 
 Route::get('municipalities-list/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@index']);
-Route::get('subcategories/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@edit']);
+Route::get('municipalities/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@edit']);
 
 Route::post('updateSubCategory', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@update']);
 Route::post('addSubCategory', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@store']);

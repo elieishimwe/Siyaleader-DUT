@@ -60,10 +60,13 @@ class MunicipalitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,Municipality $municipality)
     {
-        //
+
+        $municipality    = Municipality::where('id',$id)->first();
+        return [$municipality];
     }
+
 
     /**
      * Update the specified resource in storage.
