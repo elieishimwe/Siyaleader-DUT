@@ -247,6 +247,35 @@ Route::post('addMunicipality', ['middleware' => 'auth', 'uses' => 'Municipalitie
 */
 
 
+/*
+|--------------------------------------------------------------------------
+| WARDS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('list-wards/{municipality}', ['middleware' => 'auth', function($municipality)
+{
+  $municipalityObj  = Municipality::find($municipality);
+  $districtObj      = District::find($municipalityObj->district);
+  return view('wards.list',compact('districtObj','municipalityObj'));
+}]);
+
+
+Route::get('municipalities-list/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@index']);
+Route::get('municipalities/{id}', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@edit']);
+
+Route::post('updateMunicipality', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@update']);
+Route::post('addMunicipality', ['middleware' => 'auth', 'uses' => 'MunicipalitiesController@store']);
+
+/*
+|--------------------------------------------------------------------------
+| END WARDS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
 
 
 

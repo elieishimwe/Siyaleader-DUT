@@ -6,7 +6,7 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-provinces') }}">Provinces</a></li>
-    <li><a href="{{ url('list-categories/'.$provinceObj->id.'') }}">{{ $provinceObj->name }}</a></li>
+    <li><a href="{{ url('list-districts/'.$provinceObj->id.'') }}">{{ $provinceObj->name }}</a></li>
     <li><a href="#">{{ $districtObj->name }}</a></li>
     <li class="active">Municipalities Listing</li>
 </ol>
@@ -65,7 +65,7 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-municipalities/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
+                 return "<a href='{!! url('list-wards/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 
