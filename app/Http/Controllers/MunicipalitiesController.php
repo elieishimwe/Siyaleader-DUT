@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Municipality;
 
-class MunicipaliitesController extends Controller
+class MunicipalitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,10 @@ class MunicipaliitesController extends Controller
      */
     public function index()
     {
-        //
+        $municipalities = Municipality::select(array('id','name','created_at'));
+        return \Datatables::of($municipalities)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateMunicipalityModal({{$id}});" data-target=".modalEditMunicipality">Edit</a>')
+                            ->make(true);
     }
 
     /**
