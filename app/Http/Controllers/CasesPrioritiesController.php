@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CasePriorityRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CasePriority;
@@ -38,9 +39,16 @@ class CasesPrioritiesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CasePriorityRequest $request)
     {
-        //
+        $casePriority               = new CasePriority();
+        $casePriority->name         = $request['name'];
+        $slug                       = preg_replace('/\s+/','-',$request['name']);
+        $casePriority->slug         = $slug;
+        $casePriority->created_by   = \Auth::user()->id;
+        $casePriority->save();
+        \Session::flash('success', 'well done! priority '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
