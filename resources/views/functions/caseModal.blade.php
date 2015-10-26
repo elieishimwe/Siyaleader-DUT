@@ -5,7 +5,7 @@
 
       $("#allocationCaseForm #department").change(function(){
 
-          $.get("{{ url('/api/dropdown/categories/department')}}",
+          $.get("{{ url('/api/dropdownDepartment/categories/department')}}",
           { option: $(this).val()},
           function(data) {
 
@@ -17,7 +17,7 @@
           $('#caseReportCaseForm #municipality').append("<option value='0'>Select one</option>");
           $('#caseReportCaseForm #ward').append("<option value='0'>Select one</option>");*/
           $.each(data, function(key, element) {
-          $('#caseReportCaseForm #district').append("<option value="+ key +">" + element + "</option>");
+          $('#allocationCaseForm #category').append("<option value="+ key +">" + element + "</option>");
           });
           });
 

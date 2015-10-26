@@ -684,6 +684,34 @@ return $listing;
 
 });
 
+Route::get('/api/dropdownDepartment/{to}/{from}', function($to,$from){
+
+$name      = Input::get('option');
+
+if ($from == 'department')
+{
+  $object = Department::where('slug','=',$name)->first();
+  $listing = DB::table('categories')
+              ->where('department','=',$object->id)
+              ->lists('name', 'slug');
+}
+/*else{
+
+ $object = SubCategory::where('slug','=',$name)->first();
+
+}*/
+
+
+/*else {
+
+ $listing = DB::table('sub-sub-categories')
+              ->where('sub_category','=',$object->id)
+              ->lists('name', 'slug');
+}*/
+
+return $listing;
+});
+
 Route::get('/api/dropdownCategory/{to}/{from}', function($to,$from){
 
 $name      = Input::get('option');

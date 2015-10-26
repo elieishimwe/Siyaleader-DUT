@@ -41,7 +41,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                       <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Refer Case</a>
+                       <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Allocate Case</a>
                     </div>
                 </div>
 
