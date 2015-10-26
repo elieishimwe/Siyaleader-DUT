@@ -14,6 +14,7 @@
             {
 
               $("#categoryDiv").addClass("hidden");
+              $("#subCategoryDiv").addClass("hidden");
             }
             else {
 
@@ -40,20 +41,44 @@
             if ($.isArray(data))
             {
 
-              $("#categoryDiv").addClass("hidden");
+              $("#subCategoryDiv").addClass("hidden");
             }
             else {
 
-              $("#categoryDiv").removeClass("hidden");
-              $('#allocationCaseForm #category').empty();
+              $("#subCategoryDiv").removeClass("hidden");
+              $('#allocationCaseForm #sub_category').empty();
               $.each(data, function(key, element) {
-              $('#allocationCaseForm #category').append("<option value="+ key +">" + element + "</option>");
+              $('#allocationCaseForm #sub_category').append("<option value="+ key +">" + element + "</option>");
               });
 
             }
 
           });
+     });
 
+    $("#allocationCaseForm #sub_category").change(function(){
+
+          $.get("{{ url('/api/dropdownDepartment/sub_sub_categories/sub_category')}}",
+          { option: $(this).val()},
+          function(data) {
+
+
+            if ($.isArray(data))
+            {
+
+              $("#subSubCategoryDiv").addClass("hidden");
+            }
+            else {
+
+              $("#subSubCategoryDiv").removeClass("hidden");
+              $('#allocationCaseForm #sub_sub_category').empty();
+              $.each(data, function(key, element) {
+                $('#allocationCaseForm #sub_sub_category').append("<option value="+ key +">" + element + "</option>");
+              });
+
+            }
+
+          });
      });
 
 
