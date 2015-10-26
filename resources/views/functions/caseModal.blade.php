@@ -1176,6 +1176,7 @@
                      $("#modalCase #reporterPosition").val(data[0].reporterPosition);
                      $("#modalCase #household").val(data[0].household);
                      $("#modalCase #householdCell").val(data[0].householdCell);
+                     $("#modalCase #priority").val(data[0].priority);
 
 
 

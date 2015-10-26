@@ -749,6 +749,7 @@ class CasesController extends Controller
             ->join('sub_categories', 'cases.sub_category', '=', 'sub_categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
             ->join('cases_statuses', 'cases.status', '=', 'cases_statuses.id')
+            ->join('cases_priorities', 'cases.priority', '=', 'cases_priorities.id')
             ->where('cases.id','=',$id)
             ->select(\DB::raw( "
                                     cases.id,
@@ -765,6 +766,7 @@ class CasesController extends Controller
                                     districts.name as district,
                                     cases_statuses.name as status,
                                     wards.name as ward,
+                                    cases_priorities.name as priority,
                                     categories.name as category,
                                     `sub_categories`.name as sub_category,
                                     `cases`.sub_sub_category as sub_sub_category "
