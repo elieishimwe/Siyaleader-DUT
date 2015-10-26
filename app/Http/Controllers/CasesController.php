@@ -25,6 +25,7 @@ use App\Province;
 use App\District;
 use App\Municipality;
 use App\Ward;
+use App\CasePriority;
 
 class CasesController extends Controller
 {
@@ -853,10 +854,10 @@ class CasesController extends Controller
         }
 
 
-
-
+        $casePriority       = CasePriority::where('slug','=',$request['priority'])->first();
         $case               = CaseReport::find($request['caseID']);
         $case->description  = $request['description'];
+        $case->priority     = $casePriority->id;
         $case->updated_by   = \Auth::user()->id;
         $case->updated_at   = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         $case->save();
