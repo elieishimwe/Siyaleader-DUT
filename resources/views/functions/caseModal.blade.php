@@ -12,10 +12,10 @@
 
             if ($.isArray(data))
             {
-              alert("yes");
+
+              $("#categoryDiv").addClass("hidden");
             }
             else {
-              alert("no");
 
               $("#categoryDiv").removeClass("hidden");
               $('#allocationCaseForm #category').empty();
@@ -25,10 +25,37 @@
 
             }
 
+          });
+
+     });
+
+
+    $("#allocationCaseForm #category").change(function(){
+
+          $.get("{{ url('/api/dropdownDepartment/sub_categories/category')}}",
+          { option: $(this).val()},
+          function(data) {
+
+
+            if ($.isArray(data))
+            {
+
+              $("#categoryDiv").addClass("hidden");
+            }
+            else {
+
+              $("#categoryDiv").removeClass("hidden");
+              $('#allocationCaseForm #category').empty();
+              $.each(data, function(key, element) {
+              $('#allocationCaseForm #category').append("<option value="+ key +">" + element + "</option>");
+              });
+
+            }
 
           });
 
      });
+
 
 
      $("#caseReportCaseForm #province").change(function(){

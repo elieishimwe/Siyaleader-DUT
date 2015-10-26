@@ -32,6 +32,15 @@
                   </div>
                 </div>
 
+                <div class="form-group hidden" id="subCategoryDiv">
+                  {!! Form::label('Sub Category', 'Sub Category', array('class' => 'col-md-3 control-label')) !!}
+                  <div class="col-md-6">
+                  {!! Form::select('sub_category',$selectCategories,0,['class' => 'form-control' ,'id' => 'sub_category','hidden']) !!}
+                  <div id = "error_sub_category"></div>
+                  </div>
+                </div>
+
+
                 <div class="form-group">
                     {!! Form::label('Message', 'Message', array('class' => 'col-md-2 control-label')) !!}
                     <div class="col-md-8">
