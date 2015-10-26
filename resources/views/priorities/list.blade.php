@@ -76,24 +76,24 @@
 
   });
 
-   function launchUpdateCaseStatusModal(id)
+   function launchUpdateCasePriorityModal(id)
     {
 
-       $(".modal-body #caseStatusId").val(id);
+       $(".modal-body #casePriorityId").val(id);
        $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/statuses/"+ id + "')!!}",
+        url     :"{!! url('/priorities/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalEditCaseStatus #name").val(data[0].name);
+               $("#modalEditCasePriority #name").val(data[0].name);
 
             }
             else {
-               $("#modalEditCaseStatus #name").val('');
+               $("#modalEditCasePriority #name").val('');
             }
 
         }
@@ -103,7 +103,7 @@
 
     @if (count($errors) > 0)
 
-      $('#modalEditCaseStatus').modal('show');
+      $('#modalEditCasePriority').modal('show');
 
     @endif
 

@@ -68,9 +68,11 @@ class CasesPrioritiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,CasePriority $casePriority)
     {
-        //
+
+        $case    = CasePriority::where('id',$id)->first();
+        return [$case];
     }
 
     /**
