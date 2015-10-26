@@ -16,6 +16,8 @@
 
                             <a class="btn btn-xs btn-alt" data-toggle="modal" onclick="launchCaseReportModal()" data-target=".modalCaseReport">Edit Case</a>
 
+                            <a class="btn btn-xs btn-alt" data-toggle="modal" onclick="launchCaseReportModal()" data-target=".modalCaseReport">Allocate Case</a>
+
 
                           </div>
                            <div class="col-md-6">
