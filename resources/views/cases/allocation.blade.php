@@ -24,10 +24,10 @@
                   </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group hidden" id="categoryDiv">
                   {!! Form::label('Category', 'Category', array('class' => 'col-md-3 control-label')) !!}
                   <div class="col-md-6">
-                  {!! Form::select('category',$selectCategories,0,['class' => 'form-control' ,'id' => 'category']) !!}
+                  {!! Form::select('category',$selectCategories,0,['class' => 'form-control' ,'id' => 'category','hidden']) !!}
                   <div id = "error_category"></div>
                   </div>
                 </div>

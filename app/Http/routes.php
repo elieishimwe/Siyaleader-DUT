@@ -695,19 +695,6 @@ if ($from == 'department')
               ->where('department','=',$object->id)
               ->lists('name', 'slug');
 }
-/*else{
-
- $object = SubCategory::where('slug','=',$name)->first();
-
-}*/
-
-
-/*else {
-
- $listing = DB::table('sub-sub-categories')
-              ->where('sub_category','=',$object->id)
-              ->lists('name', 'slug');
-}*/
 
 return $listing;
 });
