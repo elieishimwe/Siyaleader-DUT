@@ -167,6 +167,34 @@ Route::post('addCaseStatus', ['middleware' => 'auth', 'uses' => 'CasesStatusesCo
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| PRIORITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('list-priorities', ['middleware' => 'auth', function()
+{
+    return view('priorities.list');
+}]);
+
+Route::get('priorities-list', ['middleware' => 'auth', 'uses' => 'CasesPrioritiesController@index']);
+Route::get('priorities/{id}', ['middleware' => 'auth', 'uses' => 'CasesPrioritiesController@edit']);
+Route::post('updateCasePriority', ['middleware' => 'auth', 'uses' => 'CasesPrioritiesController@update']);
+Route::post('addCasePriority', ['middleware' => 'auth', 'uses' => 'CasesPrioritiesController@store']);
+
+
+/*
+|--------------------------------------------------------------------------
+| END PRIORITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
+
+
 
 
 /*

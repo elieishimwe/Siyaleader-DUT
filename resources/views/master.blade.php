@@ -144,6 +144,7 @@
                         </a>
                         <ul class="list-unstyled menu-item">
                          @if ( Auth::user()->role == 1)
+                            <li><a href="{{ url('list-priorities') }}"><span class="badge badge-r">{{ count($noCasesPriorities,0) }}</span>Cases Priorities</a></li>
                             <li><a href="{{ url('list-statuses') }}"><span class="badge badge-r">{{ count($noCaseStatuses,0) }}</span>Cases Statuses</a></li>
                             <li><a href="{{ url('list-departments') }}"><span class="badge badge-r">{{ count($noDepartments,0) }}</span>Departments</a></li>
                             <li><a href="{{ url('list-positions') }}"><span class="badge badge-r">{{ count($noPositions,0) }}</span>Positions</a></li>

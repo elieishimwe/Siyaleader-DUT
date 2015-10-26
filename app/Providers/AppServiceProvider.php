@@ -314,6 +314,10 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('systemRole',$userRole);
 
+            $noCasesPriorities = CasePriority::all();
+
+            $view->with('noCasesPriorities',$noCasesPriorities);
+
           }
 
 
