@@ -9,13 +9,13 @@
           { option: $(this).val()},
           function(data) {
 
-          $('#caseReportCaseForm #district').empty();
-          $('#caseReportCaseForm #municipality').empty();
+          $('#allocationCaseForm #category').empty();
+        /*  $('#caseReportCaseForm #municipality').empty();
           $('#caseReportCaseForm #ward').empty();
           $('#caseReportCaseForm #district').removeAttr('disabled');
           $('#caseReportCaseForm #district').append("<option value='0'>Select one</option>");
           $('#caseReportCaseForm #municipality').append("<option value='0'>Select one</option>");
-          $('#caseReportCaseForm #ward').append("<option value='0'>Select one</option>");
+          $('#caseReportCaseForm #ward').append("<option value='0'>Select one</option>");*/
           $.each(data, function(key, element) {
           $('#caseReportCaseForm #district').append("<option value="+ key +">" + element + "</option>");
           });
