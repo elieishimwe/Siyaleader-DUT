@@ -20,6 +20,7 @@ use App\UserRole;
 use App\Title;
 use App\Language;
 use App\CaseStatus;
+use App\CasePriority;
 
 
 
@@ -43,6 +44,22 @@ class AppServiceProvider extends ServiceProvider
             }
 
              \View::share('selectPositions',$selectPositions);
+
+        }
+
+
+        if (\Schema::hasTable('cases_priorities'))
+        {
+            $priorities          = CasePriority::all();
+            $selectPriorities    = array();
+            $selectPriorities[0] = "Select / All";
+
+            foreach ($priorities as $priority) {
+
+               $selectPriorities[$priority->slug] = $priority->name;
+            }
+
+             \View::share('selectPriorities',$selectPriorities);
 
         }
 

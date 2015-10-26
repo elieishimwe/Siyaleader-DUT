@@ -148,6 +148,18 @@
 
 
                 <div class="form-group">
+                    {!! Form::label('Case Priority', 'Case Priority', array('class' => 'col-md-3 control-label')) !!}
+                    <div class="col-md-6">
+                    {!! Form::select('priority',$selectPriorities,0,['class' => 'form-control input-sm' ,'name' => 'priority','id' => 'priority','disabled']) !!}
+                    <div id = "error_priority"></div>
+                  </div>
+                </div>
+
+                <hr class="whiter m-t-20">
+                <hr class="whiter m-b-20">
+
+
+                <div class="form-group">
                     {!! Form::label('Problem Description', 'Problem Description', array('class' => 'col-md-3 control-label')) !!}
                     <div class="col-md-6">
                         <textarea rows="5" id="description" name="description" class="form-control" maxlength="500"></textarea>

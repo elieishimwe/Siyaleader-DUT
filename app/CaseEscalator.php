@@ -7,6 +7,6 @@ class CaseEscalator extends Eloquent
 
 
     protected $table    = 'cases_escalations';
-    protected $fillable = ['case_is','user','type','active','message'];
+    protected $fillable = ['case_id','user','type','active','message'];
 
 }

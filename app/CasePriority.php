@@ -2,13 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class CaseStatus extends Eloquent
+class CasePriority extends Eloquent
 {
 
 
-    protected $table    = 'cases_statuses';
+    protected $table    = 'cases_priorities';
     protected $fillable = ['name','slug','active'];
-
-
 
 }
