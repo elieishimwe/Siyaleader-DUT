@@ -136,6 +136,7 @@
                   $("#caseReportCaseForm #hseHolderId").val('');
                   $("#caseReportCaseForm #title").val('');
                   $("#caseReportCaseForm #position").val('');
+                  $("#caseReportCaseForm #priority").val('');
 
 
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
@@ -150,6 +151,8 @@
                   $("#caseReportCaseForm #ward").removeAttr("disabled");
                   $("#caseReportCaseForm #area").removeAttr("disabled");
                   $("#caseReportCaseForm #title").removeAttr("disabled");
+                  $("#caseReportCaseForm #position").removeAttr("disabled");
+                  $("#caseReportCaseForm #priority").removeAttr("disabled");
 
 
                 }
@@ -841,6 +844,7 @@
           $("#error_surname").html("");
           $("#error_id_number").html("");
           $("#error_position").html("");
+          $("#error_priority").html("");
 
           if (data.responseJSON.cellphone)
           {
@@ -895,6 +899,11 @@
           if (data.responseJSON.id_number)
           {
             $("#error_id_number").html("<p class='help-block red'>*"+data.responseJSON.id_number+"</p>")
+          }
+
+          if (data.responseJSON.priority)
+          {
+            $("#error_priority").html("<p class='help-block red'>*"+data.responseJSON.priority+"</p>")
           }
 
           $('#modalCaseReport').modal('show');
@@ -1588,6 +1597,7 @@
       $("#error_surname").html("");
       $("#error_id_number").html("");
       $("#error_position").html("");
+      $("#error_priority").html("");
       $('#modalCase').modal('toggle');
       $('#caseReportCaseForm')[0].reset();
       $("#caseReportCaseForm #cellphone").attr("disabled","disabled");
@@ -1604,6 +1614,7 @@
       $("#caseReportCaseForm #area").attr("disabled","disabled");
       $("#caseReportCaseForm #title").attr("disabled","disabled");
       $("#caseReportCaseForm #position").attr("disabled","disabled");
+      $("#caseReportCaseForm #priority").attr("disabled","disabled");
       $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
       $("#caseReportCaseForm #caseID").val($("#registrationForm #caseID").val());
     }

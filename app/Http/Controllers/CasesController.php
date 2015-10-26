@@ -853,7 +853,6 @@ class CasesController extends Controller
 
         }
 
-
         $casePriority       = CasePriority::where('slug','=',$request['priority'])->first();
         $case               = CaseReport::find($request['caseID']);
         $case->description  = $request['description'];
