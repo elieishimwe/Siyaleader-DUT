@@ -77,12 +77,13 @@
                   $("#caseReportCaseForm #area").removeAttr("disabled");
                   $("#caseReportCaseForm #title").removeAttr("disabled");
                   $("#caseReportCaseForm #position").removeAttr("disabled");
+                  $("#caseReportCaseForm #priority").removeAttr("disabled");
 
               }
               return results;
       },
       onAdd: function (results) {
-                console.log(results);
+
                 if(results.name)
                 {
                     $("#caseReportCaseForm #cellphone").attr("disabled","disabled");
@@ -99,6 +100,7 @@
                     $("#caseReportCaseForm #area").attr("disabled","disabled");
                     $("#caseReportCaseForm #title").attr("disabled","disabled");
                     $("#caseReportCaseForm #position").attr("disabled","disabled");
+                    $("#caseReportCaseForm #priority").attr("disabled","disabled");
 
                     $("#caseReportCaseForm #hseHolderId").val(results.id);
                     $("#caseReportCaseForm #cellphone").val(results.hseCellphone);
