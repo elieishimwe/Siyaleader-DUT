@@ -128,13 +128,27 @@
                                       {!! Form::label('Field Worker Name', 'Field Worker Name', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
                                         {!! Form::text('reporter',NULL,['class' => 'form-control input-sm','id' => 'reporter','disabled' => 'disabled']) !!}
-
+                                        <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal();" data-target=".modalCase">View More</a>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       {!! Form::label('Field Worker Cellphone', 'Field Worker Cellphone', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
                                       {!! Form::text('reporterCell',NULL,['class' => 'form-control input-sm','id' => 'reporterCell','disabled' => 'disabled']) !!}
+
+                                      </div>
+                                  </div>
+                                   <div class="form-group">
+                                      {!! Form::label('Household Name', 'Household Name', array('class' => 'col-md-3 control-label')) !!}
+                                      <div class="col-md-6">
+                                        {!! Form::text('household',NULL,['class' => 'form-control input-sm','id' => 'household','disabled' => 'disabled']) !!}
+                                        <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal();" data-target=".modalCase">View More</a>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      {!! Form::label('Household Cellphone', 'Household Cellphone', array('class' => 'col-md-3 control-label')) !!}
+                                      <div class="col-md-6">
+                                      {!! Form::text('householdCell',NULL,['class' => 'form-control input-sm','id' => 'householdCell','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
