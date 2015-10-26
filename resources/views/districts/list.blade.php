@@ -5,7 +5,7 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="{{ url('list-districts/$provinceObj->id') }}">Districts</a></li>
+    <li><a href="{{ url('list-provinces') }}">Provinces</a></li>
     <li><a href="#">{{ $provinceObj->name }}</a></li>
     <li class="active">Districts Listing</li>
 </ol>
@@ -14,7 +14,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Districts Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddCategory">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddDistrict">
      Add District
     </a>
 </div>

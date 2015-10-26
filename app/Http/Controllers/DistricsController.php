@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\DistrictRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\District;
@@ -32,16 +33,20 @@ class DistricsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+   public function store(DistrictRequest $request)
     {
-        //
+         $district             = new District();
+         $district->name       = $request['name'];
+         $slug                 = preg_replace('/\s+/','-',$request['name']);
+         $district->slug       = $slug;
+         $district->province   = $request['provinceID'];
+         $district->save();
+        \Session::flash('success', $request['name'].' district has been successfully added!');
+        return redirect()->back();
     }
+
+
 
     /**
      * Display the specified resource.
@@ -74,9 +79,14 @@ class DistricsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DistrictRequest $request)
     {
-        //
+        $district       = District::where('id',$request['districtID'])->first();
+        $district->name = $request['name'];
+        $district->updated_by = \Auth::user()->id;
+        $district->save();
+        \Session::flash('success', 'well done! Role '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
