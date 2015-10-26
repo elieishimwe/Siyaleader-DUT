@@ -3,7 +3,7 @@
   $(document).ready(function() {
 
 
-     $("#province").change(function(){
+     $("#caseReportCaseForm #province").change(function(){
 
         $.get("{{ url('/api/dropdown/districts/province')}}",
         { option: $(this).val()},
@@ -15,42 +15,39 @@
         $('#caseReportCaseForm #district').removeAttr('disabled');
         $('#caseReportCaseForm #district').append("<option value='0'>Select one</option>");
         $('#caseReportCaseForm #municipality').append("<option value='0'>Select one</option>");
-        $('##caseReportCaseForm #ward').append("<option value='0'>Select one</option>");
+        $('#caseReportCaseForm #ward').append("<option value='0'>Select one</option>");
         $.each(data, function(key, element) {
-        $('#district').append("<option value="+ key +">" + element + "</option>");
+        $('#caseReportCaseForm #district').append("<option value="+ key +">" + element + "</option>");
         });
         });
 
    })
 
-    $("#district").change(function(){
+    $("#caseReportCaseForm #district").change(function(){
         $.get("{{ url('/api/dropdown/municipalities/district')}}",
         { option: $(this).val() },
         function(data) {
-        $('#municipality').empty();
-        $('#municipality').removeAttr('disabled');
-        $('#municipality').append("<option value='0'>Select one</option>");
+        $('#caseReportCaseForm #municipality').empty();
+        $('#caseReportCaseForm #municipality').removeAttr('disabled');
+        $('#caseReportCaseForm #municipality').append("<option value='0'>Select one</option>");
         $.each(data, function(key, element) {
-        $('#municipality').append("<option value="+ key +">" + element + "</option>");
+        $('#caseReportCaseForm #municipality').append("<option value="+ key +">" + element + "</option>");
         });
         });
     });
 
-    $("#municipality").change(function(){
+    $("#caseReportCaseForm #municipality").change(function(){
         $.get("{{ url('/api/dropdown/wards/municipality')}}",
         { option: $(this).val() },
         function(data) {
-        $('#ward').empty();
-        $('#ward').removeAttr('disabled');
-        $('#ward').append("<option value='0'>Select one</option>");
+        $('#caseReportCaseForm #ward').empty();
+        $('#caseReportCaseForm #ward').removeAttr('disabled');
+        $('#caseReportCaseForm #ward').append("<option value='0'>Select one</option>");
         $.each(data, function(key, element) {
-        $('#ward').append("<option value="+ key +">" + element + "</option>");
+        $('#caseReportCaseForm #ward').append("<option value="+ key +">" + element + "</option>");
         });
         });
     });
-
-
-
 
 
 
