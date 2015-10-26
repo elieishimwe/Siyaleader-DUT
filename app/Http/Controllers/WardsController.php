@@ -33,17 +33,19 @@ class WardsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
+
+    public function store(WardRequest $request)
+    {
+         $ward               = new Ward();
+         $ward->name         = $request['name'];
+         $slug               = preg_replace('/\s+/','-',$request['name']);
+         $ward->slug         = $slug;
+         $ward->municipality = $request['municipalityID'];
+         $ward->save();
+        \Session::flash('success', $request['name'].' ward has been successfully added!');
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      *

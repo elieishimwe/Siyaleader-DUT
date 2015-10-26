@@ -266,7 +266,7 @@ Route::get('wards-list/{id}', ['middleware' => 'auth', 'uses' => 'WardsControlle
 Route::get('wards/{id}', ['middleware' => 'auth', 'uses' => 'WardsController@edit']);
 
 Route::post('updateWard', ['middleware' => 'auth', 'uses' => 'WardsController@update']);
-Route::post('addMunicipality', ['middleware' => 'auth', 'uses' => 'WardsController@store']);
+Route::post('addWard', ['middleware' => 'auth', 'uses' => 'WardsController@store']);
 
 /*
 |--------------------------------------------------------------------------
