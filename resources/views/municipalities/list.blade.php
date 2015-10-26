@@ -17,7 +17,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Municipalities Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddMunicipalitiy">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddMunicipality">
      Add Municipality
     </a>
 </div>

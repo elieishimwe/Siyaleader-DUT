@@ -33,16 +33,20 @@ class MunicipalitiesController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+   public function store(MunicipalityRequest $request)
     {
-        //
+         $municipality           = new Municipality();
+         $municipality->name     = $request['name'];
+         $slug                   = preg_replace('/\s+/','-',$request['name']);
+         $municipality->slug     = $slug;
+         $municipality->district = $request['districtID'];
+         $municipality->save();
+        \Session::flash('success', $request['name'].' municipality has been successfully added!');
+        return redirect()->back();
     }
+
+
 
     /**
      * Display the specified resource.
@@ -78,11 +82,11 @@ class MunicipalitiesController extends Controller
      */
      public function update(MunicipalityRequest $request)
     {
-        $district       = District::where('id',$request['districtID'])->first();
-        $district->name = $request['name'];
-        $district->updated_by = \Auth::user()->id;
-        $district->save();
-        \Session::flash('success', 'well done! District '.$request['name'].' has been successfully added!');
+        $municipality       = Municipality::where('id',$request['municipalityID'])->first();
+        $municipality->name = $request['name'];
+        $municipality->updated_by = \Auth::user()->id;
+        $municipality->save();
+        \Session::flash('success', 'well done! Municipality '.$request['name'].' has been successfully added!');
         return redirect()->back();
     }
     /**
