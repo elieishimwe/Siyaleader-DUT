@@ -124,6 +124,15 @@
 
                                       </div>
                                   </div>
+
+                                  <div class="form-group">
+                                      {!! Form::label('Priority', 'Priority', array('class' => 'col-md-3 control-label')) !!}
+                                      <div class="col-md-6">
+                                        {!! Form::text('priority',NULL,['class' => 'form-control input-sm','id' => 'priority','disabled' => 'disabled']) !!}
+
+                                      </div>
+                                  </div>
+
                                   <div class="form-group">
                                       {!! Form::label('Field Worker Name', 'Field Worker Name', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
