@@ -706,7 +706,7 @@ if ($from == 'category')
 
 if ($from == 'sub_category')
 {
-  $object  = Category::where('slug','=',$name)->first();
+  $object  = SubCategory::where('slug','=',$name)->first();
   $listing = DB::table('sub_sub_categories')
               ->where('sub_category','=',$object->id)
               ->lists('name', 'slug');

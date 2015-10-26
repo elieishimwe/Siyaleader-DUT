@@ -17,10 +17,12 @@
               $("#subCategoryDiv").addClass("hidden");
               $("#subSubCategoryDiv").addClass("hidden");
             }
-            else {
+            if ($.isPlainObject(data)) {
 
               $("#categoryDiv").removeClass("hidden");
+              $("#subCategoryDiv").addClass("hidden");
               $('#allocationCaseForm #category').empty();
+              $('#allocationCaseForm #category').append("<option value='0'>Select Category</option>");
               $.each(data, function(key, element) {
               $('#allocationCaseForm #category').append("<option value="+ key +">" + element + "</option>");
               });
@@ -43,11 +45,13 @@
             {
 
               $("#subCategoryDiv").addClass("hidden");
+              $("#subSubCategoryDiv").addClass("hidden");
             }
-            else {
+             if ($.isPlainObject(data)) {
 
               $("#subCategoryDiv").removeClass("hidden");
               $('#allocationCaseForm #sub_category').empty();
+              $('#allocationCaseForm #sub_category').append("<option value='0'>Select Category</option>");
               $.each(data, function(key, element) {
               $('#allocationCaseForm #sub_category').append("<option value="+ key +">" + element + "</option>");
               });
@@ -69,10 +73,11 @@
 
               $("#subSubCategoryDiv").addClass("hidden");
             }
-            else {
+             if ($.isPlainObject(data)) {
 
               $("#subSubCategoryDiv").removeClass("hidden");
               $('#allocationCaseForm #sub_sub_category').empty();
+              $('#allocationCaseForm #sub_sub_category').append("<option value='0'>Select Category</option>");
               $.each(data, function(key, element) {
                 $('#allocationCaseForm #sub_sub_category').append("<option value="+ key +">" + element + "</option>");
               });
@@ -1713,37 +1718,9 @@
     {
 
 
-      $("#error_cellphone").html("");
-      $("#error_title").html("");
-      $("#error_language").html("");
-      $("#error_province").html("");
-      $("#error_district").html("");
-      $("#error_municipality").html("");
-      $("#error_ward").html("");
-      $("#error_name").html("");
-      $("#error_surname").html("");
-      $("#error_id_number").html("");
-      $("#error_position").html("");
-      $("#error_priority").html("");
-      $('#modalCase').modal('toggle');
-      $('#caseReportCaseForm')[0].reset();
-      $("#caseReportCaseForm #cellphone").attr("disabled","disabled");
-      $("#caseReportCaseForm #name").attr("disabled","disabled");
-      $("#caseReportCaseForm #surname").attr("disabled","disabled");
-      $("#caseReportCaseForm #id_number").attr("disabled","disabled");
-      $("#caseReportCaseForm #language").attr("disabled","disabled");
-      $("#caseReportCaseForm #province").attr("disabled","disabled");
-      $("#caseReportCaseForm #house_number").attr("disabled","disabled");
-      $("#caseReportCaseForm #province").attr("disabled","disabled");
-      $("#caseReportCaseForm #district").attr("disabled","disabled");
-      $("#caseReportCaseForm #municipality").attr("disabled","disabled");
-      $("#caseReportCaseForm #ward").attr("disabled","disabled");
-      $("#caseReportCaseForm #area").attr("disabled","disabled");
-      $("#caseReportCaseForm #title").attr("disabled","disabled");
-      $("#caseReportCaseForm #position").attr("disabled","disabled");
-      $("#caseReportCaseForm #priority").attr("disabled","disabled");
-      $("#caseReportCaseForm #description").val($("#registrationForm #description").val());
-      $("#caseReportCaseForm #caseID").val($("#registrationForm #caseID").val());
+      $("#allocationCaseForm #department").val('');
+      //$('#allocationCaseForm #department').append("<option value='0'>Select Department</option>");
+
     }
 
 
