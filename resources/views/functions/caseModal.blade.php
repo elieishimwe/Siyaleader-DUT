@@ -173,6 +173,7 @@
                   $("#caseReportCaseForm #area").val('');
                   $("#caseReportCaseForm #title").val('');
                   $("#caseReportCaseForm #position").val('');
+                  $("#caseReportCaseForm #priority").val('');
                   $("#caseReportCaseForm #hseHolderId").val('');
                   $("#caseReportCaseForm #cellphone").removeAttr("disabled");
                   $("#caseReportCaseForm #name").removeAttr("disabled");
@@ -187,6 +188,7 @@
                   $("#caseReportCaseForm #area").removeAttr("disabled");
                   $("#caseReportCaseForm #title").removeAttr("disabled");
                   $("#caseReportCaseForm #position").removeAttr("disabled");
+                  $("#caseReportCaseForm #priority").removeAttr("disabled");
 
     }
   });
