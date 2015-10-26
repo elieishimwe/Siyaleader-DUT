@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\MunicipalityRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Municipality;
@@ -75,11 +76,15 @@ class MunicipalitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+     public function update(MunicipalityRequest $request)
     {
-        //
+        $district       = District::where('id',$request['districtID'])->first();
+        $district->name = $request['name'];
+        $district->updated_by = \Auth::user()->id;
+        $district->save();
+        \Session::flash('success', 'well done! District '.$request['name'].' has been successfully added!');
+        return redirect()->back();
     }
-
     /**
      * Remove the specified resource from storage.
      *
