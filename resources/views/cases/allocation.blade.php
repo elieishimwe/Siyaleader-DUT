@@ -10,20 +10,26 @@
               <div class="col-md-6">
 
               </div>
-               <div class="col-md-6">
-                 <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchAddressBookModal();" data-target=".modalAddressBook">Address Book</a>
 
-              </div>
             </div>
             <div class="modal-body">
                 {!! Form::open(['url' => 'escalateCase', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"escalateCaseForm" ]) !!}
                 {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
 
                 <div class="form-group">
-                    {!! Form::label('Search Box', 'Search Box', array('class' => 'col-md-2 control-label')) !!}
-                    <div class="col-md-6">
-                      {!! Form::text('addresses',NULL,['class' => 'form-control input-sm','id' => 'addresses']) !!}
-                    </div>
+                  {!! Form::label('Department', 'Department', array('class' => 'col-md-3 control-label')) !!}
+                  <div class="col-md-6">
+                  {!! Form::select('department',$selectDepartments,0,['class' => 'form-control' ,'id' => 'department']) !!}
+                  <div id = "error_department"></div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  {!! Form::label('Category', 'Category', array('class' => 'col-md-3 control-label')) !!}
+                  <div class="col-md-6">
+                  {!! Form::select('category',$selectCategories,0,['class' => 'form-control' ,'id' => 'category']) !!}
+                  <div id = "error_category"></div>
+                  </div>
                 </div>
 
                 <div class="form-group">
