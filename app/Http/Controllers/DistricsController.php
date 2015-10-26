@@ -18,7 +18,7 @@ class DistricsController extends Controller
     {
         $districts = District::select(array('id','name','created_at'));
         return \Datatables::of($districts)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDistrictModal({{$id}});" data-target=".modalEditDistrict">Edit</a>')
                             ->make(true);
     }
 
@@ -60,9 +60,11 @@ class DistricsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,District $district)
     {
-        //
+
+        $district    = District::where('id',$id)->first();
+        return [$district];
     }
 
     /**

@@ -201,7 +201,7 @@ Route::post('addProvince', ['middleware' => 'auth', 'uses' => 'ProvincesControll
 */
 Route::get('list-districts/{province}', ['middleware' => 'auth', function($province)
 {
-    $provinceObj = District::find($province);
+    $provinceObj = Province::find($province);
     return view('districts.list',compact('provinceObj'));
 }]);
 

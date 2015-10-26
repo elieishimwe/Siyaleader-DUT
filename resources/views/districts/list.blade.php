@@ -78,26 +78,25 @@
 
   });
 
-   function launchUpdateCategoryModal(id)
+   function launchUpdateDistrictModal(id)
     {
 
-      $(".modal-body #categoryID").val(id);
+      $(".modal-body #districtID").val(id);
 
-        var cell = $("#case_" + id ).data('mmcell');
         $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/categories/"+ id + "')!!}",
+        url     :"{!! url('/districts/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalEditCategory #name").val(data[0].name);
+               $("#modalEditDistrict #name").val(data[0].name);
 
             }
             else {
-               $("#modalEditCategory #name").val('');
+               $("#modalEditDistrict #name").val('');
             }
 
         }
