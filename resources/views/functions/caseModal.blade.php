@@ -3,6 +3,55 @@
   $(document).ready(function() {
 
 
+     $("#province").change(function(){
+
+        $.get("{{ url('/api/dropdown/districts/province')}}",
+        { option: $(this).val()},
+        function(data) {
+        $('#district').empty();
+        $('#municipality').empty();
+        $('#ward').empty();
+        $('#district').removeAttr('disabled');
+        $('#district').append("<option value='0'>Select one</option>");
+        $('#municipality').append("<option value='0'>Select one</option>");
+        $('#ward').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#district').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+
+   })
+
+    $("#district").change(function(){
+        $.get("{{ url('/api/dropdown/municipalities/district')}}",
+        { option: $(this).val() },
+        function(data) {
+        $('#municipality').empty();
+        $('#municipality').removeAttr('disabled');
+        $('#municipality').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#municipality').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+    });
+
+    $("#municipality").change(function(){
+        $.get("{{ url('/api/dropdown/wards/municipality')}}",
+        { option: $(this).val() },
+        function(data) {
+        $('#ward').empty();
+        $('#ward').removeAttr('disabled');
+        $('#ward').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#ward').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+    });
+
+
+
+
+
 
   var activeTab = localStorage.getItem('activeTab');
 
