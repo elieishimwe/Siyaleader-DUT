@@ -955,6 +955,15 @@
 
       });
 
+      $("#closeAllocateCase").on("click",function(){
+
+          $('#modalCaseAllocation').modal('toggle');
+          var caseId       = $("#modalCaseAllocation #caseID").val();
+          launchCaseModal(caseId);
+          $('#modalCase').modal('toggle');
+
+      });
+
 
       $("#closeReferCase").on("click",function(){
 

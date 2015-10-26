@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close"  id="closeReferCase" aria-hidden="true">&times;</button>
+                <button type="button" class="close"  id="closeAllocateCase" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id='depTitle'>Allocate Case</h4>
             </div>
             <div class="row">
