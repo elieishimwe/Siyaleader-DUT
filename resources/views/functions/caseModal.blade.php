@@ -15,6 +15,7 @@
 
               $("#categoryDiv").addClass("hidden");
               $("#subCategoryDiv").addClass("hidden");
+              $("#subSubCategoryDiv").addClass("hidden");
             }
             else {
 

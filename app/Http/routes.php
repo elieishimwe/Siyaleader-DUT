@@ -704,6 +704,14 @@ if ($from == 'category')
               ->lists('name', 'slug');
 }
 
+if ($from == 'sub_category')
+{
+  $object  = Category::where('slug','=',$name)->first();
+  $listing = DB::table('sub_sub_categories')
+              ->where('sub_category','=',$object->id)
+              ->lists('name', 'slug');
+}
+
 return $listing;
 });
 
