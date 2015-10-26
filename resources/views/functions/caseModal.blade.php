@@ -1174,6 +1174,10 @@
                      $("#modalCase #reporter").val(data[0].reporter);
                      $("#modalCase #reporterCell").val(data[0].reporterCell);
                      $("#modalCase #reporterPosition").val(data[0].reporterPosition);
+                     $("#modalCase #household").val(data[0].household);
+                     $("#modalCase #householdCell").val(data[0].householdCell);
+
+
 
                   }
                   else {
