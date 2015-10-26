@@ -82,9 +82,15 @@ class CasesPrioritiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CasePriorityRequest $request)
     {
-        //
+
+        $case               = CasePriority::where('id',$request['casePriorityId'])->first();
+        $case->name         = $request['name'];
+        $case->updated_by   = \Auth::user()->id;
+        $case->save();
+        \Session::flash('success', 'well done! case priority '.$request['name'].' has been successfully updated!');
+        return redirect()->back();
     }
 
     /**
