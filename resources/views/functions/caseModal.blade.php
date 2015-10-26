@@ -771,6 +771,7 @@
         var area          = $("#modalCaseReport #area").val();
         var title         = $("#modalCaseReport #title").val();
         var position      = $("#modalCaseReport #position").val();
+        var priority      = $("#modalCaseReport #priority").val();
 
         var token         = $('input[name="_token"]').val();
         var formData      = {
@@ -789,7 +790,8 @@
                                 ward:ward,
                                 area:area,
                                 title:title,
-                                position:position
+                                position:position,
+                                priority:priority
                             };
 
         $('#modalCaseReport').modal('toggle');

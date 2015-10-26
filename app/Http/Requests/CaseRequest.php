@@ -26,6 +26,7 @@ class CaseRequest extends Request
         return [
 
             'title'         =>'required|not_in:0',
+            'priority'      =>'required|not_in:0',
             'name'          =>'required',
             'surname'       =>'required',
             'language'      =>'required|not_in:0',
