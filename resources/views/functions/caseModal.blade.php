@@ -1724,9 +1724,7 @@
      function launchCaseAllocationModal()
     {
 
-
       $("#allocationCaseForm #department").val('0');
-      //$('#allocationCaseForm #department').append("<option value='0'>Select Department</option>");
 
     }
 
