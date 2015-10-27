@@ -50,14 +50,51 @@
 
 
                 <div class="form-group">
-                    {!! Form::label('Message', 'Message', array('class' => 'col-md-2 control-label')) !!}
+                    <div class="col-md-3"></div>
+
                     <div class="col-md-8">
-                        <textarea rows="5" id="message" name="message" class="form-control" maxlength="500"></textarea>
+                         <!-- Table Hover -->
+                            <div class="block-area" id="tableHover">
+                                <h3 class="block-title">Responders</h3>
+                                <div class="table-responsive overflow">
+                                    <table class="table table-bordered table-hover tile">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Jhon </td>
+                                                <td>Makinton </td>
+                                                <td>@makinton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Malinda</td>
+                                                <td>Hollaway</td>
+                                                <td>@hollway</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Wayn</td>
+                                                <td>Parnel</td>
+                                                <td>@wayne123</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-8">
                        <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Allocate Case</a>
                     </div>
                 </div>
