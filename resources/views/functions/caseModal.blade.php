@@ -1275,6 +1275,13 @@
 
                      }
 
+
+                     if (data[0].house_holder_id == 1) {
+
+                        $("#editCaseDiv").addClass("hidden");
+
+                     }
+
                      $('a[class*="pirobox"]').piroBox_ext({
                           piro_speed : 900,
                           bg_alpha : 0.1,
@@ -1718,7 +1725,7 @@
     {
 
 
-      $("#allocationCaseForm #department").val('');
+      $("#allocationCaseForm #department").val('0');
       //$('#allocationCaseForm #department').append("<option value='0'>Select Department</option>");
 
     }

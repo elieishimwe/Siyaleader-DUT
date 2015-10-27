@@ -14,7 +14,7 @@
                         <div class="row">
                           <div class="col-md-6">
 
-                            <a class="btn btn-xs btn-alt" data-toggle="modal" onclick="launchCaseReportModal()" data-target=".modalCaseReport">Edit Case</a>
+                            <a id="editCaseDiv" class="btn btn-xs btn-alt" data-toggle="modal" onclick="launchCaseReportModal()" data-target=".modalCaseReport">Edit Case</a>
 
                             <a class="btn btn-xs btn-alt" data-toggle="modal" onclick="launchCaseAllocationModal()" data-target=".modalCaseAllocation">Allocate Case</a>
 
