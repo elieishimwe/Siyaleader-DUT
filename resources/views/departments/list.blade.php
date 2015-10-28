@@ -34,6 +34,7 @@
                     <th>Id</th>
                     <th>Created At</th>
                     <th>Name</th>
+                    <th>Acronym</th>
                     <th>Actions</th>
               </tr>
             </thead>
@@ -63,8 +64,8 @@
                  return "<a href='{!! url('list-categories/" + d.id + "') !!}' class='btn btn-sm'>" + d.name + "</a>";
 
                 },"name" : 'name'},
-
-              {data: 'actions',  name: 'actions'},
+                {data: 'acronym', name: 'acronym'},
+                {data: 'actions',  name: 'actions'},
                ],
 
             "aoColumnDefs": [
@@ -90,10 +91,13 @@
             {
 
                $("#modalDepartment #name").val(data[0].name);
+               $("#modalDepartment #acronym").val(data[0].acronym);
+
 
             }
             else {
                $("#modalDepartment #name").val('');
+               $("#modalDepartment #acronym").val('');
             }
 
         }

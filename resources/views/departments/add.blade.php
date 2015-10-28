@@ -17,6 +17,13 @@
                 </div>
             </div>
             <div class="form-group">
+                {!! Form::label('Acronym', 'Acronym', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::text('acronym',NULL,['class' => 'form-control input-sm','id' => 'acronym']) !!}
+                  @if ($errors->has('acronym')) <p class="help-block red">*{{ $errors->first('acronym') }}</p> @endif
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <button type="submit" id='submitUpdateDepartmentForm' type="button" class="btn btn-sm">Add Department</button>
                 </div>

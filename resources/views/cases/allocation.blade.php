@@ -54,41 +54,41 @@
 
                     <div class="col-md-8">
                          <!-- Table Hover -->
-                            <div class="block-area" id="tableHover">
-                                <h3 class="block-title">Responders</h3>
-                                <div class="table-responsive overflow">
-                                    <table class="table table-bordered table-hover tile">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Jhon </td>
-                                                <td>Makinton </td>
-                                                <td>@makinton</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Malinda</td>
-                                                <td>Hollaway</td>
-                                                <td>@hollway</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Wayn</td>
-                                                <td>Parnel</td>
-                                                <td>@wayne123</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                          <div class="block-area" id="tableHover">
+                              <h3 class="block-title">First Responders</h3>
+                              <div class="table-responsive overflow">
+                                  <table class="table table-bordered table-hover tile">
+                                      <thead>
+                                          <tr>
+                                              <th>No.</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>1</td>
+                                              <td>Jhon </td>
+                                              <td>Makinton </td>
+                                              <td>@makinton</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2</td>
+                                              <td>Malinda</td>
+                                              <td>Hollaway</td>
+                                              <td>@hollway</td>
+                                          </tr>
+                                          <tr>
+                                              <td>3</td>
+                                              <td>Wayn</td>
+                                              <td>Parnel</td>
+                                              <td>@wayne123</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
                     </div>
                 </div>
 

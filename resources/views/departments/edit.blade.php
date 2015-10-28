@@ -1,5 +1,5 @@
 <!-- Modal Default -->
-<div class="modal fade modalEditDepartment" id="modalDepartment" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modalEditDepartment" id="modalEditDepartment" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -18,6 +18,13 @@
                 </div>
             </div>
             <div class="form-group">
+                {!! Form::label('Acronym', 'Acronym', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::text('acronym',NULL,['class' => 'form-control input-sm','id' => 'acronym']) !!}
+                  @if ($errors->has('acronym')) <p class="help-block red">*{{ $errors->first('acronym') }}</p> @endif
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <button type="submit" id='submitUpdateDepartmentForm' type="button" class="btn btn-sm">Save Changes</button>
                 </div>
@@ -25,7 +32,7 @@
             </div>
             <div class="modal-footer">
 
-                <!-- <button type="button" class="btn btn-sm" data-dismiss="modal">Close</button> -->
+
             </div>
 
             {!! Form::close() !!}
