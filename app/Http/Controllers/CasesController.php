@@ -651,7 +651,7 @@ class CasesController extends Controller
         $objCase->status      = $objCaseStatus->id;
         $objCase->referred_at = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         $objCase->updated_by  = \Auth::user()->id;
-        $user->save();
+        $objCase->save();
 
 
         return 'ok';
