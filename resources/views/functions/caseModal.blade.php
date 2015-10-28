@@ -102,7 +102,7 @@
 
               $.each(data, function(key, element) {
                  console.log(element.names);
-                 content += "<tr><td>"+element.names+"</td><td>"+element.department;
+                 content += "<tr><td></td><td>"+element.names+"</td><td>"+element.department+"</td><td>"+element.email;
               });
 
               $("#firstRespondersTableBody").html(content);

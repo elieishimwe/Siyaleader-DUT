@@ -62,9 +62,8 @@
                                           <tr>
                                               <th>No.</th>
                                               <th>Names</th>
-                                              <th>Email</th>
                                               <th>Department</th>
-                                              <th>Position</th>
+                                              <th>Email</th>
                                           </tr>
                                       </thead>
                                       <tbody id="firstRespondersTableBody">
