@@ -85,8 +85,8 @@ class UserController extends Controller
     public function getResponders(Request $request)
     {
 
-        $subCategory    = $request['sub_category'];
-        $objSubCategory = SubCategory::where('slug','=',$subCategory)->first();
+        $subCategory        = $request['sub_category'];
+        $objSubCategory     = SubCategory::where('slug','=',$subCategory)->first();
 
         $objCaseResponder   = CaseResponder::where('category','=',$objSubCategory->category)
                                             ->where('sub_category','=',$objSubCategory->id)
@@ -95,6 +95,31 @@ class UserController extends Controller
 
 
         if ($objCaseResponder->sub_sub_category == 0) {
+
+            $firstResponders = explode(",",$firstRespondersObj->first_responder);
+
+            if ($firstRespondersObj->first_responder > 0) {
+
+                       foreach ($firstResponders as $firstResponder) {
+
+                         $user = \DB::table('users')
+                                    ->where('id','=',$firstResponder)
+                                    ->select(\DB::raw(
+                                                "
+                                                id,
+                                                (select CONCAT(name, ' ',surname) ) as firstResponder
+
+                                                "
+                                                  )
+                                            )->first();
+
+                        $response[] = $user;
+
+                        }
+
+            }
+
+
 
             return $objCaseResponder->first_responder;
         }
