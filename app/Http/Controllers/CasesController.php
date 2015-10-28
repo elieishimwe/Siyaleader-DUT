@@ -646,9 +646,13 @@ class CasesController extends Controller
 
         }
 
-        $case       = CaseReport::find($request['caseID']);
-        $caseStatus = CaseStatus::where('name','=','Referred')->first();
-        $case->
+        $objCase              = CaseReport::find($request['caseID']);
+        $objCaseStatus        = CaseStatus::where('name','=','Referred')->first();
+        $objCase->status      = $objCaseStatus->id;
+        $objCase->referred_at = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
+        $objCase->updated_by  = \Auth::user()->id;
+        $user->save();
+
 
         return 'ok';
 
