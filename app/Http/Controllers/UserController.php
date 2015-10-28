@@ -120,7 +120,7 @@ class UserController extends Controller
 
 
 
-            return $objCaseResponder->first_responder;
+            return $response;
         }
 
 
