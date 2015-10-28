@@ -103,6 +103,7 @@ class UserController extends Controller
 
              $user = \DB::table('users')
                         ->join('departments', 'users.department', '=', 'departments.id')
+                        ->join('positions','users.position','=','positions.id')
                         ->where('users.id','=',$firstResponder)
                         ->select(\DB::raw(
                                     "
