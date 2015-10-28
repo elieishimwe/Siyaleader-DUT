@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Requests\CaseRequest;
 use App\Http\Controllers\Controller;
 use App\CaseReport;
+use App\CaseStatus;
 use App\CaseOwner;
 use App\User;
 use App\UserRole;
@@ -644,6 +645,10 @@ class CasesController extends Controller
 
 
         }
+
+        $case       = CaseReport::find($request['caseID']);
+        $caseStatus = CaseStatus::where('name','=','Referred')->first();
+        $case->
 
         return 'ok';
 
