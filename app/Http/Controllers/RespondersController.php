@@ -22,8 +22,20 @@ class RespondersController extends Controller
                         ->where('case_id','=',$id)
                         ->where('type','>',0)
                         ->join('users','users.id','=','cases_owners.user')
+                        ->join('departments','users.department','=','departments.id')
                         ->join('positions','users.position','=','positions.id')
-                        ->select(array('users.id','users.name','users.surname','users.cellphone','positions.name as position','cases_owners.type','cases_owners.accept'));
+                        ->select(
+                                    array(
+                                            'users.id',
+                                            'users.name',
+                                            'users.surname',
+                                            'users.cellphone',
+                                            'positions.name as position',
+                                            'departments.name as department',
+                                            'cases_owners.type',
+                                            'cases_owners.accept'
+                                        )
+                                );
 
         return \Datatables::of($caseResponders)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-dest="{{$id}}" data-name="{{$name}} {{$surname}}" data-toggle="modal" onClick="launchMessageModal({{$id}},this);" data-target=".compose-message"><i class="fa fa-envelope"></i></a>'
