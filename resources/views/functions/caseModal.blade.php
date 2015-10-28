@@ -113,14 +113,16 @@
               });
 
               $("#firstRespondersTableBody").html(content);
-            /*  <tr>
-                  <td>1</td>
-                  <td>Jhon </td>
-                  <td>Makinton </td>
-                  <td>@makinton</td>
-              </tr>*/
 
 
+
+              /* <div class="checkbox m-b-5">
+                        <label>
+                            <input type="checkbox" checked>
+                            This is an awesome sample Checkbox
+                        </label>
+                </div>
+              */
 
                 if (data == 'ok') {
 
