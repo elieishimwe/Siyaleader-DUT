@@ -634,6 +634,10 @@ class CasesController extends Controller
 
         $responders     = explode(',',$request['responders']);
 
+        $caseOwner = new CaseOwner();
+        $caseOwner->case_id = $request['caseID'];
+
+
 
         return $request['caseID'];
 
