@@ -1377,6 +1377,12 @@
 
                      }
 
+                    if (data[0].house_holder_id == 1) {
+
+                        $("#allocateCaseDiv").addClass("hidden");
+
+                     }
+
                      $('a[class*="pirobox"]').piroBox_ext({
                           piro_speed : 900,
                           bg_alpha : 0.1,
