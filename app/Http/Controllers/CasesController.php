@@ -632,14 +632,23 @@ class CasesController extends Controller
 
     public function allocate(Request $request){
 
-        $responders     = explode(',',$request['responders']);
+        $responders     = $request['responders'];
 
-        $caseOwner = new CaseOwner();
-        $caseOwner->case_id = $request['caseID'];
+        foreach ($responders as $responder) {
+
+            $caseOwner = new CaseOwner();
+            $caseOwner->case_id = $request['caseID'];
+            $caseOwner->user = $responder;
+            $caseOwner->save();
+
+
+        }
 
 
 
-        return $request['caseID'];
+
+
+        return $request['responders'];
 
 
     }

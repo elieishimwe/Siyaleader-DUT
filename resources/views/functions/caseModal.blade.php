@@ -110,7 +110,7 @@
               $.each(data, function(key, element) {
 
                  content += "<tr><td><div class='checkbox m-b-5'><label><input type='checkbox'";
-                 content += "name='responders[]' id='responders[]' value="+element.id+" class='pull-left list-check'>";
+                 content += "name='responders' id='responders' value="+element.id+" class='pull-left list-check'>";
                  content += "</label></div></td><td>"+element.names+"</td><td>"+element.department+"</td><td>"+element.email;
               });
 
@@ -843,8 +843,19 @@
 
     $("#submitAllocateCaseForm").on("click",function(){
 
-        var responders = $("#modalCaseAllocation #responders").val();
+
+
+        var obj = {};
+        //obj.responders = $('input[name=responders]:checked').map(function(){
+        responders = $('input[name=responders]').map(function(){
+            return this.value;
+        }).get();
         console.log(responders);
+
+
+
+        //var responders = $("#modalCaseAllocation #responders").val();
+        //console.log(responders);
         var caseID     = $("#modalCaseAllocation #caseID").val();
         var token      = $('input[name="_token"]').val();
         var formData   = {responders:responders,caseID:caseID};
