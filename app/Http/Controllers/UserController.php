@@ -110,7 +110,8 @@ class UserController extends Controller
                                     `users`.`id`,
                                     `users`.`email`,
                                     (select CONCAT(`users`.`name`, ' ',`users`.`surname`) ) as names,
-                                    `departments`.`name` as department
+                                    `departments`.`name` as department,
+                                    `positions`.`name` as position
 
                                     "
                                       )

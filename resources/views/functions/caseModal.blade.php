@@ -98,7 +98,22 @@
               url     :"{!! url('/getResponders')!!}",
               success : function(data){
 
-                console.log(data);
+                var content = "";
+
+              $.each(data, function(key, element) {
+                 console.log(element.names);
+                 content += "<tr><td>"+element.names+"</td><td>"+element.department;
+              });
+
+              $("#firstRespondersTableBody").html(content);
+            /*  <tr>
+                  <td>1</td>
+                  <td>Jhon </td>
+                  <td>Makinton </td>
+                  <td>@makinton</td>
+              </tr>*/
+
+
 
                 if (data == 'ok') {
 
@@ -108,6 +123,8 @@
 
               }
           });
+
+
      });
 
 
