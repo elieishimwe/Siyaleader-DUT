@@ -16,6 +16,9 @@ use App\District;
 use App\Municipality;
 use App\Ward;
 use App\Department;
+use App\Category;
+use App\SubCategory;
+use App\SubSubCategory;
 use App\Title;
 use App\Language;
 use App\CaseResponder;
@@ -83,6 +86,8 @@ class UserController extends Controller
     {
 
         $category       = $request['category'];
+        $objCategory    = Category::find($category);
+        $objDepartment  = Department::find($objCategory->department);
         $caseResponders = new CaseResponder();
 
         return "ok";
