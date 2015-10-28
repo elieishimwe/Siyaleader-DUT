@@ -644,12 +644,7 @@ class CasesController extends Controller
 
         }
 
-
-
-
-
-        return $request['responders'];
-
+        return 'ok';
 
     }
 
