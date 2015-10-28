@@ -630,6 +630,16 @@ class CasesController extends Controller
 
     }
 
+    public function allocate(Request $request){
+
+        $responders     = explode(',',$request['responders']);
+
+
+        return $request['caseID'];
+
+
+    }
+
     /**
      * Display the specified resource.
      *

@@ -13,7 +13,7 @@
 
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => 'escalateCase', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"allocationCaseForm" ]) !!}
+                {!! Form::open(['url' => 'allocateCase', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"allocationCaseForm" ]) !!}
                 {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
 
                 <div class="form-group">
@@ -78,7 +78,7 @@
                 <div class="form-group">
                     <div class="col-md-3"></div>
                     <div class="col-md-8">
-                       <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Allocate Case</a>
+                       <a type="#" id='submitAllocateCaseForm' class="btn btn-sm">Allocate Case</a>
                     </div>
                 </div>
 

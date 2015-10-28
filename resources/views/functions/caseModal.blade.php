@@ -109,20 +109,13 @@
 
               $.each(data, function(key, element) {
 
-                 content += "<tr><td></td><td>"+element.names+"</td><td>"+element.department+"</td><td>"+element.email;
+                 content += "<tr><td><div class='checkbox m-b-5'><label><input type='checkbox'";
+                 content += "name='responders[]' value="+element.id+" class='pull-left list-check'>";
+                 content += "</label></div></td><td>"+element.names+"</td><td>"+element.department+"</td><td>"+element.email;
               });
 
               $("#firstRespondersTableBody").html(content);
 
-
-
-              /* <div class="checkbox m-b-5">
-                        <label>
-                            <input type="checkbox" checked>
-                            This is an awesome sample Checkbox
-                        </label>
-                </div>
-              */
 
                 if (data == 'ok') {
 
@@ -844,6 +837,53 @@
 
 
      });
+
+
+
+
+    $("#submitAllocateCaseForm").on("click",function(){
+
+        var responders = $("#modalCaseAllocation #responders").val();
+        var caseID     = $("#modalCaseAllocation #caseID").val();
+        var token      = $('input[name="_token"]').val();
+        var formData   = {responders:responders,caseID:caseID};
+
+        $('#modalReferCase').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/allocateCase')!!}",
+        beforeSend : function() {
+          HoldOn.open({
+          theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+          message: "<h4> loading please wait... ! </h4>",
+          content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                       // this will replace the theme by something customized.
+          backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                     // Keep in mind is necessary the .css file too.
+          textColor:"white" // Change the font color of the message
+            });
+        },
+        success : function(data){
+
+          if (data == 'ok') {
+            $(".token-input-token").remove();
+            $('#escalateCaseForm')[0].reset();
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escalated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            launchCaseModal(caseID);
+            $('#modalCase').modal('toggle');
+            //HoldOn.close();
+
+          }
+
+        }
+
+    })
+
+    });
+
 
 
      $("#submitEscalateCaseForm").on("click",function(){

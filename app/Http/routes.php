@@ -404,6 +404,7 @@ Route::post('updateSubSubCategory', ['middleware' => 'auth', 'uses' => 'SubSubCa
 Route::get('cases-list/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@index']);
 Route::get('case/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@edit']);
 Route::post('escalateCase', ['middleware' => 'auth', 'uses' => 'CasesController@escalate']);
+Route::post('allocateCase', ['middleware' => 'auth', 'uses' => 'CasesController@allocate']);
 Route::get('acceptCase/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@acceptCase']);
 Route::post('addCaseForm', ['middleware' => 'auth', 'uses' => 'CasesController@captureCase']);
 Route::get('closeCase/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@closeCase']);
