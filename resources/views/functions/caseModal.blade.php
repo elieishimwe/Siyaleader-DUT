@@ -62,25 +62,6 @@
 
           });
 
-          var category =  $(this).val();
-          var formData =  { category : category};
-
-           $.ajax({
-              type    :"GET",
-              data    : formData,
-              url     :"{!! url('/getResponders')!!}",
-              success : function(data){
-
-                if (data == 'ok') {
-
-
-
-                }
-
-              }
-          });
-
-
      });
 
     $("#allocationCaseForm #sub_category").change(function(){
@@ -106,6 +87,24 @@
 
             }
 
+          });
+
+          var sub_category =  $(this).val();
+          var formData =  { sub_category : sub_category};
+
+           $.ajax({
+              type    :"GET",
+              data    : formData,
+              url     :"{!! url('/getResponders')!!}",
+              success : function(data){
+
+                if (data == 'ok') {
+
+
+
+                }
+
+              }
           });
      });
 

@@ -85,12 +85,14 @@ class UserController extends Controller
     public function getResponders(Request $request)
     {
 
-        $category       = $request['category'];
-        $objCategory    = Category::find($category);
-        $objDepartment  = Department::find($objCategory->department);
-        $caseResponders = new CaseResponder();
+        $subCategory    = $request['sub_category'];
+        $objSubCategory = SubCategory::find($subCategory);
 
-        return "ok";
+        $objCaseResponder   = CaseResponder::where('category','=',$objSubCategory->category)
+                                            ->where('sub_category','=',$subCategory)
+                                            ->first();
+
+        return $objCaseResponder;
 
 
     }
