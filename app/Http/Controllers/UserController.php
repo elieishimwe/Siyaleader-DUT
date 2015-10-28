@@ -92,6 +92,13 @@ class UserController extends Controller
                                             ->where('sub_category','=',$objSubCategory->id)
                                             ->first();
 
+
+
+        if ($objCaseResponder->sub_sub_category == 0) {
+
+
+        }
+
         return $objCaseResponder;
 
 
