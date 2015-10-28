@@ -50,9 +50,9 @@
 
 
                 <div class="form-group">
-                    <div class="col-md-3"></div>
+                    <div class="col-md-2"></div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                          <!-- Table Hover -->
                           <div class="block-area" id="firstRespondersTable">
                               <h3 class="block-title">First Responders</h3>
