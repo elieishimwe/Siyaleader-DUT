@@ -5,6 +5,9 @@
 
       $("#allocationCaseForm #department").change(function(){
 
+
+          $("#firstRespondersTableBody").html();
+
           $.get("{{ url('/api/dropdownDepartment/categories/department')}}",
           { option: $(this).val()},
           function(data) {
@@ -38,6 +41,8 @@
 
     $("#allocationCaseForm #category").change(function(){
 
+          $("#firstRespondersTableBody").html();
+
           $.get("{{ url('/api/dropdownDepartment/sub_categories/category')}}",
           { option: $(this).val()},
           function(data) {
@@ -65,6 +70,8 @@
      });
 
     $("#allocationCaseForm #sub_category").change(function(){
+
+          $("#firstRespondersTableBody").html();
 
           $.get("{{ url('/api/dropdownDepartment/sub_sub_categories/sub_category')}}",
           { option: $(this).val()},
@@ -101,7 +108,7 @@
                 var content = "";
 
               $.each(data, function(key, element) {
-                 console.log(element.names);
+
                  content += "<tr><td></td><td>"+element.names+"</td><td>"+element.department+"</td><td>"+element.email;
               });
 
