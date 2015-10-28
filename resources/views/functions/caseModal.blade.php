@@ -844,23 +844,17 @@
     $("#submitAllocateCaseForm").on("click",function(){
 
 
-
         var obj = {};
         //obj.responders = $('input[name=responders]:checked').map(function(){
         responders = $('input[name=responders]').map(function(){
             return this.value;
         }).get();
-        console.log(responders);
 
-
-
-        //var responders = $("#modalCaseAllocation #responders").val();
-        //console.log(responders);
         var caseID     = $("#modalCaseAllocation #caseID").val();
         var token      = $('input[name="_token"]').val();
         var formData   = {responders:responders,caseID:caseID};
 
-        $('#modalReferCase').modal('toggle');
+        $('#modalCaseAllocation').modal('toggle');
 
         $.ajax({
         type    :"POST",
@@ -882,11 +876,11 @@
 
           if (data == 'ok') {
             $(".token-input-token").remove();
-            $('#escalateCaseForm')[0].reset();
-            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escalated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            $('#allocationCaseForm')[0].reset();
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully allocated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             launchCaseModal(caseID);
             $('#modalCase').modal('toggle');
-            //HoldOn.close();
+            HoldOn.close();
 
           }
 
@@ -1825,6 +1819,7 @@
      function launchCaseAllocationModal()
     {
 
+      $('#modalCase').modal('toggle');
       $("#allocationCaseForm #department").val('0');
 
     }
