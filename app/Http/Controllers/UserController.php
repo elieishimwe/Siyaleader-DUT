@@ -96,28 +96,27 @@ class UserController extends Controller
 
         if ($objCaseResponder->sub_sub_category == 0) {
 
-            $firstResponders = explode(",",$firstRespondersObj->first_responder);
+          $firstResponders = explode(",",$objCaseResponder->first_responder);
+          $response        = array();
 
-            if ($firstRespondersObj->first_responder > 0) {
+           foreach ($firstResponders as $firstResponder) {
 
-                       foreach ($firstResponders as $firstResponder) {
+             $user = \DB::table('users')
+                        ->where('id','=',$firstResponder)
+                        ->select(\DB::raw(
+                                    "
+                                    id,
+                                    (select CONCAT(name, ' ',surname) ) as firstResponder
 
-                         $user = \DB::table('users')
-                                    ->where('id','=',$firstResponder)
-                                    ->select(\DB::raw(
-                                                "
-                                                id,
-                                                (select CONCAT(name, ' ',surname) ) as firstResponder
+                                    "
+                                      )
+                                )->first();
 
-                                                "
-                                                  )
-                                            )->first();
-
-                        $response[] = $user;
-
-                        }
+            $response[] = $user;
 
             }
+
+
 
 
 
