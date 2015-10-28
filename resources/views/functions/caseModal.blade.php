@@ -6,7 +6,7 @@
       $("#allocationCaseForm #department").change(function(){
 
 
-          $("#firstRespondersTableBody").html();
+          $("#firstRespondersTableBody").empty();
 
           $.get("{{ url('/api/dropdownDepartment/categories/department')}}",
           { option: $(this).val()},
@@ -41,7 +41,7 @@
 
     $("#allocationCaseForm #category").change(function(){
 
-          $("#firstRespondersTableBody").html();
+          $("#firstRespondersTableBody").empty();
 
           $.get("{{ url('/api/dropdownDepartment/sub_categories/category')}}",
           { option: $(this).val()},
@@ -71,7 +71,7 @@
 
     $("#allocationCaseForm #sub_category").change(function(){
 
-          $("#firstRespondersTableBody").html();
+          $("#firstRespondersTableBody").empty();
 
           $.get("{{ url('/api/dropdownDepartment/sub_sub_categories/sub_category')}}",
           { option: $(this).val()},
