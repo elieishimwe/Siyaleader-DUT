@@ -1821,6 +1821,9 @@
 
       $('#modalCase').modal('toggle');
       $("#allocationCaseForm #department").val('0');
+      $("#allocationCaseForm #categoryDiv").addClass("hidden");
+      $("#allocationCaseForm #subCategoryDiv").addClass("hidden");
+      $("#allocationCaseForm #subSubCategoryDiv").addClass("hidden");
 
     }
 
