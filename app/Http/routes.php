@@ -87,6 +87,8 @@ Route::get('users-list', ['middleware' => 'auth', 'uses' => 'UserController@inde
 
 Route::get('getResponder', ['middleware' => 'auth', 'uses' => 'UserController@responder']);
 
+Route::get('getResponders', ['middleware' => 'auth', 'uses' => 'UserController@getResponders']);
+
 Route::get('add-user', ['middleware' => 'auth', function()
 {
     return view('users.registration');

@@ -77,6 +77,15 @@ class UserController extends Controller
         return $data;
     }
 
+
+    public function getResponders()
+    {
+
+
+
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *

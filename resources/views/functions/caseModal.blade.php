@@ -27,6 +27,31 @@
               $('#allocationCaseForm #category').append("<option value="+ key +">" + element + "</option>");
               });
 
+
+              var department =  $(this).val();
+              var formData   =  { department : department};
+
+               $.ajax({
+                  type    :"GET",
+                  data    : formData,
+                  url     :"{!! url('/getResponders')!!}",
+                  success : function(data){
+
+                    if (data == 'ok') {
+
+                      $('#addCaseNoteForm')[0].reset();
+                      launchCaseModal(caseId);
+                      $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! you case note has been successfully added <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+                      $('#modalCase').modal('toggle');
+                      HoldOn.close();
+
+                    }
+
+                  }
+                 });
+
+
+
             }
 
           });
