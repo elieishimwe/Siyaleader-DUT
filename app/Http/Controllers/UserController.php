@@ -96,10 +96,10 @@ class UserController extends Controller
 
         if ($objCaseResponder->sub_sub_category == 0) {
 
-
+            return $objCaseResponder->first_responder;
         }
 
-        return $objCaseResponder;
+
 
 
     }
