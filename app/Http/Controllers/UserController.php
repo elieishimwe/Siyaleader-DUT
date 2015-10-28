@@ -86,7 +86,7 @@ class UserController extends Controller
     {
 
         $subCategory    = $request['sub_category'];
-        $objSubCategory = SubCategory::find($subCategory);
+        $objSubCategory = SubCategory::where('slug','=',$subCategory)->first();
 
         $objCaseResponder   = CaseResponder::where('category','=',$objSubCategory->category)
                                             ->where('sub_category','=',$subCategory)

@@ -98,6 +98,8 @@
               url     :"{!! url('/getResponders')!!}",
               success : function(data){
 
+                console.log(data);
+
                 if (data == 'ok') {
 
 
