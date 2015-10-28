@@ -107,7 +107,7 @@ class UserController extends Controller
                         ->select(\DB::raw(
                                     "
                                     `users`.`id`,
-                                    (select CONCAT(`users`.`name`, ' ',`users`.`surname`) ) as firstResponder,
+                                    (select CONCAT(`users`.`name`, ' ',`users`.`surname`) ) as names,
                                     `departments`.`name` as department
 
                                     "
