@@ -636,9 +636,10 @@ class CasesController extends Controller
 
         foreach ($responders as $responder) {
 
-            $caseOwner = new CaseOwner();
+            $caseOwner          = new CaseOwner();
             $caseOwner->case_id = $request['caseID'];
-            $caseOwner->user = $responder;
+            $caseOwner->user    = $responder;
+            $caseOwner->type    = 1;
             $caseOwner->save();
 
 
