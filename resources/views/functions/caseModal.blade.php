@@ -1377,7 +1377,7 @@
 
                      }
 
-                    if (data[0].house_holder_id == 1) {
+                    if (data[0].status == 'Referred') {
 
                         $("#allocateCaseDiv").addClass("hidden");
 
