@@ -102,11 +102,13 @@ class UserController extends Controller
            foreach ($firstResponders as $firstResponder) {
 
              $user = \DB::table('users')
-                        ->where('id','=',$firstResponder)
+                        ->join('departments', 'users.department', '=', 'departments.id')
+                        ->where('users.id','=',$firstResponder)
                         ->select(\DB::raw(
                                     "
-                                    id,
-                                    (select CONCAT(name, ' ',surname) ) as firstResponder
+                                    `users`.`id`,
+                                    (select CONCAT(`users`.`name`, ' ',`users`.`surname`) ) as firstResponder,
+                                    `departments`.`name` as department
 
                                     "
                                       )

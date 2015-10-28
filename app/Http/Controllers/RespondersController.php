@@ -170,17 +170,13 @@ class RespondersController extends Controller
                            foreach ($firstResponders as $firstResponder) {
 
                              $user = \DB::table('users')
-                                        ->join('departments', 'users.department', '=', 'departments.id')
                                         ->where('id','=',$firstResponder)
                                         ->select(\DB::raw(
                                                     "
                                                     id,
-                                                    (select CONCAT(name, ' ',surname) ) as firstResponder,
-
-                                                    `departments`.`name` as department
+                                                    (select CONCAT(name, ' ',surname) ) as firstResponder
 
                                                     "
-
                                                       )
                                                 )->first();
 
