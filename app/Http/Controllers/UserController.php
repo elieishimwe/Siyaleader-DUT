@@ -18,6 +18,7 @@ use App\Ward;
 use App\Department;
 use App\Title;
 use App\Language;
+use App\CaseResponder;
 
 
 class UserController extends Controller
@@ -78,10 +79,13 @@ class UserController extends Controller
     }
 
 
-    public function getResponders()
+    public function getResponders(Request $request)
     {
 
+        $category       = $request['category'];
+        $caseResponders = new CaseResponder();
 
+        return "ok";
 
 
     }
